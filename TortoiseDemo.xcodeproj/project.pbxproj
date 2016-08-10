@@ -12,6 +12,7 @@
 		149873D21D5AEB610039ADF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 149873D01D5AEB610039ADF7 /* Main.storyboard */; };
 		149873D41D5AEB610039ADF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 149873D31D5AEB610039ADF7 /* Assets.xcassets */; };
 		149873D71D5AEB610039ADF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 149873D51D5AEB610039ADF7 /* LaunchScreen.storyboard */; };
+		562D1ED4DF50281CC6C8103F /* Pods_TortoiseDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86115498E221B1B2538D3C14 /* Pods_TortoiseDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		149873D31D5AEB610039ADF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		149873D61D5AEB610039ADF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		149873D81D5AEB610039ADF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86115498E221B1B2538D3C14 /* Pods_TortoiseDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TortoiseDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9789486CBACDE7D5384325B /* Pods-TortoiseDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TortoiseDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-TortoiseDemo/Pods-TortoiseDemo.release.xcconfig"; sourceTree = "<group>"; };
+		E4DC301728AFB2577A8D7594 /* Pods-TortoiseDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TortoiseDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TortoiseDemo/Pods-TortoiseDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				562D1ED4DF50281CC6C8103F /* Pods_TortoiseDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		004F771D3EAB62EB6DCEE2FC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E4DC301728AFB2577A8D7594 /* Pods-TortoiseDemo.debug.xcconfig */,
+				D9789486CBACDE7D5384325B /* Pods-TortoiseDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		149873C01D5AEB610039ADF7 = {
 			isa = PBXGroup;
 			children = (
 				149873CB1D5AEB610039ADF7 /* TortoiseDemo */,
 				149873CA1D5AEB610039ADF7 /* Products */,
+				004F771D3EAB62EB6DCEE2FC /* Pods */,
+				5547EA79D3805E820BCC4448 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +80,14 @@
 			path = TortoiseDemo;
 			sourceTree = "<group>";
 		};
+		5547EA79D3805E820BCC4448 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				86115498E221B1B2538D3C14 /* Pods_TortoiseDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 149873DB1D5AEB610039ADF7 /* Build configuration list for PBXNativeTarget "TortoiseDemo" */;
 			buildPhases = (
+				3A912A7140E9869D390B1ED3 /* [CP] Check Pods Manifest.lock */,
 				149873C51D5AEB610039ADF7 /* Sources */,
 				149873C61D5AEB610039ADF7 /* Frameworks */,
 				149873C71D5AEB610039ADF7 /* Resources */,
+				706506C06D3AD70500D0F369 /* [CP] Embed Pods Frameworks */,
+				FD56A5DD88DB48670A3BD824 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3A912A7140E9869D390B1ED3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		706506C06D3AD70500D0F369 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TortoiseDemo/Pods-TortoiseDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD56A5DD88DB48670A3BD824 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TortoiseDemo/Pods-TortoiseDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		149873C51D5AEB610039ADF7 /* Sources */ = {
@@ -254,6 +329,7 @@
 		};
 		149873DC1D5AEB610039ADF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4DC301728AFB2577A8D7594 /* Pods-TortoiseDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TortoiseDemo/Info.plist;
@@ -266,6 +342,7 @@
 		};
 		149873DD1D5AEB610039ADF7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9789486CBACDE7D5384325B /* Pods-TortoiseDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TortoiseDemo/Info.plist;
@@ -295,6 +372,7 @@
 				149873DD1D5AEB610039ADF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
