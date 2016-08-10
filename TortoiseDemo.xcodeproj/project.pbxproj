@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1472483A1D5B107C00461689 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147248381D5B107C00461689 /* Command.swift */; };
+		1472483B1D5B107C00461689 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147248391D5B107C00461689 /* Context.swift */; };
+		1472483D1D5B10AB00461689 /* Value+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1472483C1D5B10AB00461689 /* Value+Helper.swift */; };
+		1472483F1D5B111900461689 /* Tortoise+Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1472483E1D5B111900461689 /* Tortoise+Commands.swift */; };
 		149873CD1D5AEB610039ADF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149873CC1D5AEB610039ADF7 /* AppDelegate.swift */; };
 		149873CF1D5AEB610039ADF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149873CE1D5AEB610039ADF7 /* ViewController.swift */; };
 		149873D21D5AEB610039ADF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 149873D01D5AEB610039ADF7 /* Main.storyboard */; };
@@ -15,6 +19,10 @@
 		149873E71D5AEC8E0039ADF7 /* Tortoise.h in Headers */ = {isa = PBXBuildFile; fileRef = 149873E51D5AEC8E0039ADF7 /* Tortoise.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		149873EA1D5AEC8E0039ADF7 /* Tortoise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 149873E31D5AEC8E0039ADF7 /* Tortoise.framework */; };
 		149873EB1D5AEC8E0039ADF7 /* Tortoise.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 149873E31D5AEC8E0039ADF7 /* Tortoise.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1498740F1D5AF3C90039ADF7 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1498740E1D5AF3C90039ADF7 /* Canvas.swift */; };
+		149874111D5AF41B0039ADF7 /* Tortoise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149874101D5AF41B0039ADF7 /* Tortoise.swift */; };
+		149874131D5AF4510039ADF7 /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149874121D5AF4510039ADF7 /* Value.swift */; };
+		149874151D5AFAD20039ADF7 /* MyCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149874141D5AFAD20039ADF7 /* MyCanvas.swift */; };
 		562D1ED4DF50281CC6C8103F /* Pods_TortoiseDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86115498E221B1B2538D3C14 /* Pods_TortoiseDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +51,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		147248381D5B107C00461689 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Command.swift; path = Tortoise/Private/Command.swift; sourceTree = "<group>"; };
+		147248391D5B107C00461689 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Context.swift; path = Tortoise/Private/Context.swift; sourceTree = "<group>"; };
+		1472483C1D5B10AB00461689 /* Value+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Value+Helper.swift"; sourceTree = "<group>"; };
+		1472483E1D5B111900461689 /* Tortoise+Commands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tortoise+Commands.swift"; sourceTree = "<group>"; };
 		149873C91D5AEB610039ADF7 /* TortoiseDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TortoiseDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		149873CC1D5AEB610039ADF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		149873CE1D5AEB610039ADF7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +65,10 @@
 		149873E31D5AEC8E0039ADF7 /* Tortoise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Tortoise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		149873E51D5AEC8E0039ADF7 /* Tortoise.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tortoise.h; sourceTree = "<group>"; };
 		149873E61D5AEC8E0039ADF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1498740E1D5AF3C90039ADF7 /* Canvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
+		149874101D5AF41B0039ADF7 /* Tortoise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tortoise.swift; sourceTree = "<group>"; };
+		149874121D5AF4510039ADF7 /* Value.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Value.swift; sourceTree = "<group>"; };
+		149874141D5AFAD20039ADF7 /* MyCanvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCanvas.swift; sourceTree = "<group>"; };
 		86115498E221B1B2538D3C14 /* Pods_TortoiseDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TortoiseDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9789486CBACDE7D5384325B /* Pods-TortoiseDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TortoiseDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-TortoiseDemo/Pods-TortoiseDemo.release.xcconfig"; sourceTree = "<group>"; };
 		E4DC301728AFB2577A8D7594 /* Pods-TortoiseDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TortoiseDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TortoiseDemo/Pods-TortoiseDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -87,6 +103,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		147248371D5B104C00461689 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				1472483C1D5B10AB00461689 /* Value+Helper.swift */,
+				147248381D5B107C00461689 /* Command.swift */,
+				147248391D5B107C00461689 /* Context.swift */,
+			);
+			name = Private;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		149873C01D5AEB610039ADF7 = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +139,7 @@
 			children = (
 				149873CC1D5AEB610039ADF7 /* AppDelegate.swift */,
 				149873CE1D5AEB610039ADF7 /* ViewController.swift */,
+				149874141D5AFAD20039ADF7 /* MyCanvas.swift */,
 				149873D01D5AEB610039ADF7 /* Main.storyboard */,
 				149873D31D5AEB610039ADF7 /* Assets.xcassets */,
 				149873D51D5AEB610039ADF7 /* LaunchScreen.storyboard */,
@@ -123,8 +151,13 @@
 		149873E41D5AEC8E0039ADF7 /* Tortoise */ = {
 			isa = PBXGroup;
 			children = (
+				149874121D5AF4510039ADF7 /* Value.swift */,
+				149874101D5AF41B0039ADF7 /* Tortoise.swift */,
+				1472483E1D5B111900461689 /* Tortoise+Commands.swift */,
+				1498740E1D5AF3C90039ADF7 /* Canvas.swift */,
 				149873E51D5AEC8E0039ADF7 /* Tortoise.h */,
 				149873E61D5AEC8E0039ADF7 /* Info.plist */,
+				147248371D5B104C00461689 /* Private */,
 			);
 			path = Tortoise;
 			sourceTree = "<group>";
@@ -207,6 +240,7 @@
 					};
 					149873E21D5AEC8E0039ADF7 = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -303,6 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				149874151D5AFAD20039ADF7 /* MyCanvas.swift in Sources */,
 				149873CF1D5AEB610039ADF7 /* ViewController.swift in Sources */,
 				149873CD1D5AEB610039ADF7 /* AppDelegate.swift in Sources */,
 			);
@@ -312,6 +347,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				149874111D5AF41B0039ADF7 /* Tortoise.swift in Sources */,
+				1472483D1D5B10AB00461689 /* Value+Helper.swift in Sources */,
+				1498740F1D5AF3C90039ADF7 /* Canvas.swift in Sources */,
+				149874131D5AF4510039ADF7 /* Value.swift in Sources */,
+				1472483F1D5B111900461689 /* Tortoise+Commands.swift in Sources */,
+				1472483B1D5B107C00461689 /* Context.swift in Sources */,
+				1472483A1D5B107C00461689 /* Command.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +480,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E4DC301728AFB2577A8D7594 /* Pods-TortoiseDemo.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TortoiseDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -451,6 +494,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D9789486CBACDE7D5384325B /* Pods-TortoiseDemo.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TortoiseDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -463,6 +507,7 @@
 		149873EC1D5AEC8E0039ADF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -475,6 +520,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.temoki.Tortoise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -484,6 +530,7 @@
 		149873ED1D5AEC8E0039ADF7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -530,6 +577,7 @@
 				149873ED1D5AEC8E0039ADF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
