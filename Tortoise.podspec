@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.description = "Tortoise Description"
   s.homepage = 'https://github.com/temoki/Tortoise'
   s.license = { :type => 'MIT', :file => 'LICENSE' }
-  s.authors  = { 'temoki' }
+  s.authors = 'temoki'
   s.frameworks = "Foundation", "UIKit", "CoreGraphics"
   s.source = { :git => "https://github.com/temoki/Tortoise" }
   s.source_files = "Tortoise/*"
