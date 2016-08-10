@@ -12,7 +12,9 @@ import Tortoise
 class MyCanvas: Canvas {
     
     override func draw(withTortoise 🐢: Tortoise) {
-        🐢.Repeat(12) { 🐢.Repeat(4) { 🐢.Forward(50).Right(90) }.Forward(10).Right(30) }.Run()
+        //🐢.Repeat(12) { 🐢.Repeat(4) { 🐢.Forward(50).Right(90) }.Forward(10).Right(30) }.Run()
+        🐢.Repeat(4) { 🐢.PenDown().Right(90).Forward(100).PenUp().Back(100) }.Run()
     }
+    
     
 }

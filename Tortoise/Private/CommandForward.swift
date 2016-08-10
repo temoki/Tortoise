@@ -6,7 +6,7 @@
 //  Copyright © 2016 temoki. All rights reserved.
 //
 
-import Foundation
+import CoreGraphics
 
 class CommandForward: Command {
     
@@ -17,17 +17,16 @@ class CommandForward: Command {
     }
     
     func execute(context: Context) {
-        let t = CGAffineTransform(translationX: context.posX, y: context.posY).rotate(context.heading)
-
-        let p1 = CGPoint.zero.apply(transform: t)
-        let p2 = CGPoint(x: distance, y: 0).apply(transform: t)
-        
-        context.cgContext.moveTo(x: p1.x, y: p1.y)
-        context.cgContext.addLineTo(x: p2.x, y: p2.y)
-        context.cgContext.strokePath()
-        
-        context.posX = p2.x
-        context.posY = p2.y
+        let transform = CGAffineTransform(translationX: context.pos.x, y: context.pos.y).rotate(context.heading)
+        let newPos = CGPoint(x: distance, y: 0).apply(transform: transform)
+        if context.penDown {
+            context.cgContext.moveTo(x: context.pos.x, y: context.pos.y)
+            context.cgContext.addLineTo(x: newPos.x, y: newPos.y)
+            context.cgContext.strokePath()
+        } else {
+            context.cgContext.moveTo(x: newPos.x, y: newPos.y)
+        }
+        context.pos = newPos
     }
     
 }

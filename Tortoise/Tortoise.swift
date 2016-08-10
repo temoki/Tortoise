@@ -14,22 +14,23 @@ final public class Tortoise {
     
     /// Context
     private let context: Context
-
+    
     /// Commands
     private var commands: [Command] = []
 
     /// Initializer
     /// - parameter context: Graphics context
-    public required init(cgContext: CGContext) {
-        context = Context(cgContext: cgContext)
+    public required init(cgContext: CGContext, canvasSize: Size) {
+        context = Context(cgContext: cgContext, canvasSize: canvasSize)
     }
 
     /// Run commands
     public func Run() {
-        commands.append(CommandDrawTortoise())
+        CommandInitialize().execute(context: context)
         commands.forEach { (command) in
             command.execute(context: context)
         }
+        CommandDrawTortoise().execute(context: context)
         commands.removeAll()
     }
     

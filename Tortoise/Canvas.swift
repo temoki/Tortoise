@@ -11,6 +11,8 @@ import UIKit
 /// Tortoise Graphics Canvas for iOS
 public class Canvas: UIView {
     
+    // MARK: - Initializer
+    
     public override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = UIColor.white()
@@ -21,17 +23,15 @@ public class Canvas: UIView {
         backgroundColor = UIColor.white()
     }
     
+    
+    // MARK: - Drawing
+
     final public override func draw(_ rect: CGRect) {
         guard let context = UIGraphicsGetCurrentContext() else { return }
         context.saveGState()
         
-        // Convert origin
-        context.translate(x: 0, y: self.bounds.height)
-        context.scale(x: 1, y: -1)
-        context.translate(x: self.bounds.width*0.5, y: self.bounds.height*0.5)
-        
         // Draw
-        draw(withTortoise: Tortoise(cgContext: context))
+        draw(withTortoise: Tortoise(cgContext: context, canvasSize: self.bounds.size))
         
         context.restoreGState()
     }

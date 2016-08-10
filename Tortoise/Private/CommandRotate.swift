@@ -1,5 +1,5 @@
 //
-//  CommandLeft.swift
+//  CommandRotate.swift
 //  Tortoise
 //
 //  Created by temoki on 2016/08/10.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CommandLeft: Command {
+class CommandRotate: Command {
     
     private let angle: Value
     

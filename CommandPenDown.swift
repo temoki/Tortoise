@@ -1,5 +1,5 @@
 //
-//  CommandRight.swift
+//  CommandPenDown.swift
 //  Tortoise
 //
 //  Created by temoki on 2016/08/10.
@@ -8,16 +8,16 @@
 
 import Foundation
 
-class CommandRight: Command {
+class CommandPenDown: Command {
     
-    private let angle: Value
+    let penDown: Bool
     
-    init(angle: Value) {
-        self.angle = angle
+    init(_ penDown: Bool) {
+        self.penDown = penDown
     }
     
     func execute(context: Context) {
-        context.heading -= angle.radian
+        context.penDown = penDown
     }
     
 }

@@ -6,12 +6,12 @@
 //  Copyright © 2016 temoki. All rights reserved.
 //
 
-import Foundation
+import CoreGraphics
 
 class CommandDrawTortoise: Command {
     
     func execute(context: Context) {
-        let t = CGAffineTransform(translationX: context.posX, y: context.posY).rotate(context.heading)
+        let t = CGAffineTransform(translationX: context.pos.x, y: context.pos.y).rotate(context.heading)
         
         let p1 = CGPoint(x:  10, y:  0).apply(transform: t)
         let p2 = CGPoint(x: -10, y:  5).apply(transform: t)

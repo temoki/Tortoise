@@ -10,3 +10,5 @@ import Foundation
 
 /// Value type in the Tortoise's world
 public typealias Value = CGFloat
+public typealias Point = CGPoint
+public typealias Size = CGSize

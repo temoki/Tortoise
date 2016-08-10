@@ -6,7 +6,7 @@
 //  Copyright © 2016 temoki. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 /// Tortoise command
 protocol Command {

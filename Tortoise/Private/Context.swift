@@ -6,7 +6,6 @@
 //  Copyright © 2016 temoki. All rights reserved.
 //
 
-import Foundation
 import CoreGraphics
 
 class Context {
@@ -14,16 +13,19 @@ class Context {
     /// Graphics context
     var cgContext: CGContext
     
+    /// Canvas Size
+    var canvasSize: Size
+    
     /// Tortoise's current state
-    var posX: Value = 0
-    var posY: Value = 0
+    var pos: Point = Point.zero
     var heading: Value = Value(90).radian
-    var penDown: Bool = false
+    var penDown: Bool = true
     
     /// Initializer
     /// - parameter context: Graphics context
-    required init(cgContext: CGContext) {
+    required init(cgContext: CGContext, canvasSize: CGSize) {
         self.cgContext = cgContext
+        self.canvasSize = canvasSize
     }
 
 }

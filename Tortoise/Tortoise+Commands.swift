@@ -8,35 +8,48 @@
 
 import Foundation
 
-/// Tortoise drawing commands
+/// Tortoise commands
 public extension Tortoise {
     
-    /// Move the turtle forward distance pixels.
+    /// Move the tortoise forward distance pixels.
     /// If the pen is down, a line is drawn.
     public func Forward(_ distance: Value) -> Tortoise {
         add(command: CommandForward(distance: distance))
         return self
     }
     
-    /// Move the turtle backwards distance pixels.
+    /// Move the tortoise backwards distance pixels.
     /// Draws a line if the pen is down.
     public func Back(_ distance: Value) -> Tortoise {
-        add(command: CommandBack(distance: distance))
+        add(command: CommandForward(distance: -distance))
         return self
     }
     
-    /// Rotate the turtle clockwise through angle degrees.
+    /// Rotate the tortoise clockwise through angle degrees.
     public func Right(_ angle: Value) -> Tortoise {
-        add(command: CommandRight(angle: angle))
+        add(command: CommandRotate(angle: -angle))
         return self
     }
 
-    /// Rotate the turtle anti-clockwise through angle degrees.
+    /// Rotate the tortoise anti-clockwise through angle degrees.
     public func Left(_ angle: Value) -> Tortoise {
-        add(command: CommandLeft(angle: angle))
+        add(command: CommandRotate(angle: angle))
         return self
     }
     
+    /// Put the pen into draw state.
+    /// If the tortoise moves, it will draw a line.
+    public func PenDown() -> Tortoise {
+        add(command: CommandPenDown(true))
+        return self
+    }
+
+    /// Put the pen into non-draw state.
+    public func PenUp() -> Tortoise {
+        add(command: CommandPenDown(false))
+        return self
+    }
+
 }
 
 /// Tortoise control commands
