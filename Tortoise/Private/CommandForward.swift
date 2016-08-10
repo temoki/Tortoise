@@ -9,13 +9,13 @@
 import CoreGraphics
 
 class CommandForward: Command {
-    
+
     private let distance: Value
-    
+
     init(distance: Value) {
         self.distance = distance
     }
-    
+
     func execute(context: Context) {
         let pos = context.cgContext.currentPointOfPath
         let transform = CGAffineTransform(translationX: pos.x, y: pos.y).rotate(context.heading)
@@ -26,5 +26,5 @@ class CommandForward: Command {
         }
         context.cgContext.moveTo(x: newPos.x, y: newPos.y)
     }
-    
+
 }

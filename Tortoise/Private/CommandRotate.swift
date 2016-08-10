@@ -9,15 +9,15 @@
 import Foundation
 
 class CommandRotate: Command {
-    
+
     private let angle: Value
-    
+
     init(angle: Value) {
         self.angle = angle
     }
-    
+
     func execute(context: Context) {
         context.heading += angle.radian
     }
-    
+
 }

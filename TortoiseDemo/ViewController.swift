@@ -10,7 +10,7 @@ import UIKit
 import Tortoise
 
 class ViewController: UIViewController {
-    
+
     @IBOutlet weak var canvas: Canvas!
 
     override func viewDidLoad() {
@@ -22,4 +22,3 @@ class ViewController: UIViewController {
     }
 
 }
-

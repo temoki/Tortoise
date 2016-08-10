@@ -9,15 +9,15 @@
 import Foundation
 
 class CommandPenDown: Command {
-    
+
     let penDown: Bool
-    
+
     init(_ penDown: Bool) {
         self.penDown = penDown
     }
-    
+
     func execute(context: Context) {
         context.penDown = penDown
     }
-    
+
 }

@@ -14,6 +14,5 @@ protocol Command {
     /// Execute this command
     /// - parameter context: Context
     func execute(context: Context)
-    
-}
 
+}

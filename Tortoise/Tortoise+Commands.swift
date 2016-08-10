@@ -10,21 +10,21 @@ import Foundation
 
 /// Tortoise commands
 public extension Tortoise {
-    
+
     /// Move the tortoise forward distance pixels.
     /// If the pen is down, a line is drawn.
     public func Forward(_ distance: Value) -> Tortoise {
         add(command: CommandForward(distance: distance))
         return self
     }
-    
+
     /// Move the tortoise backwards distance pixels.
     /// Draws a line if the pen is down.
     public func Back(_ distance: Value) -> Tortoise {
         add(command: CommandForward(distance: -distance))
         return self
     }
-    
+
     /// Rotate the tortoise clockwise through angle degrees.
     public func Right(_ angle: Value) -> Tortoise {
         add(command: CommandRotate(angle: -angle))
@@ -36,7 +36,7 @@ public extension Tortoise {
         add(command: CommandRotate(angle: angle))
         return self
     }
-    
+
     /// Put the pen into draw state.
     /// If the tortoise moves, it will draw a line.
     public func PenDown() -> Tortoise {
@@ -54,7 +54,7 @@ public extension Tortoise {
 
 /// Tortoise control commands
 public extension Tortoise {
-    
+
     public func Repeat(_ value: Value, handler: (Void) -> Tortoise) -> Tortoise {
         let repeatTimes = Int(value)
         for _ in 0 ..< repeatTimes {
@@ -62,5 +62,5 @@ public extension Tortoise {
         }
         return self
     }
-    
+
 }

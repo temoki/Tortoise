@@ -10,10 +10,10 @@ import CoreGraphics
 
 /// Tortoise
 final public class Tortoise {
-    
+
     /// Context
     private let context: Context
-    
+
     /// Commands
     private var commands: [Command] = []
 
@@ -32,10 +32,10 @@ final public class Tortoise {
         commands.removeAll()
         CommandDrawTortoise().execute(context: context)
     }
-    
+
     /// Add command
     internal func add(command: Command) {
         commands.append(command)
     }
-    
+
 }
