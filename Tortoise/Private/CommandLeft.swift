@@ -1,0 +1,23 @@
+//
+//  CommandLeft.swift
+//  Tortoise
+//
+//  Created by temoki on 2016/08/10.
+//  Copyright © 2016 temoki. All rights reserved.
+//
+
+import Foundation
+
+class CommandLeft: Command {
+    
+    private let angle: Value
+    
+    init(angle: Value) {
+        self.angle = angle
+    }
+    
+    func execute(context: Context) {
+        context.heading += angle.radian
+    }
+    
+}

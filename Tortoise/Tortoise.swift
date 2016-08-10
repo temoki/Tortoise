@@ -24,9 +24,9 @@ final public class Tortoise {
         context = Context(cgContext: cgContext)
     }
 
-    /// Execute commands
-    public func Execute() {
-        commands.append(DrawTortoiseCommand())
+    /// Run commands
+    public func Run() {
+        commands.append(CommandDrawTortoise())
         commands.forEach { (command) in
             command.execute(context: context)
         }

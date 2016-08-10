@@ -11,13 +11,29 @@ import Foundation
 /// Tortoise drawing commands
 public extension Tortoise {
     
-    public func Forward(_ value: Value) -> Tortoise {
-        add(command: ForwardCommand(value: value))
+    /// Move the turtle forward distance pixels.
+    /// If the pen is down, a line is drawn.
+    public func Forward(_ distance: Value) -> Tortoise {
+        add(command: CommandForward(distance: distance))
         return self
     }
     
-    public func Right(_ value: Value) -> Tortoise {
-        add(command: RightCommand(value: value))
+    /// Move the turtle backwards distance pixels.
+    /// Draws a line if the pen is down.
+    public func Back(_ distance: Value) -> Tortoise {
+        add(command: CommandBack(distance: distance))
+        return self
+    }
+    
+    /// Rotate the turtle clockwise through angle degrees.
+    public func Right(_ angle: Value) -> Tortoise {
+        add(command: CommandRight(angle: angle))
+        return self
+    }
+
+    /// Rotate the turtle anti-clockwise through angle degrees.
+    public func Left(_ angle: Value) -> Tortoise {
+        add(command: CommandLeft(angle: angle))
         return self
     }
     
