@@ -36,7 +36,7 @@ public class Canvas: UIView {
         context.restoreGState()
     }
     
-    public func draw(withTortoise tortoise: Tortoise) {
+    public func draw(withTortoise 🐢: Tortoise) {
     }
     
 }

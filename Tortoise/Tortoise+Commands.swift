@@ -8,16 +8,29 @@
 
 import Foundation
 
-/// Tortoise commands
+/// Tortoise drawing commands
 public extension Tortoise {
     
-    public func forward(_ value: Value) -> Tortoise {
-        add(command: Forward(value: value))
+    public func Forward(_ value: Value) -> Tortoise {
+        add(command: ForwardCommand(value: value))
         return self
     }
     
-    public func right(_ value: Value) -> Tortoise {
-        add(command: Right(value: value))
+    public func Right(_ value: Value) -> Tortoise {
+        add(command: RightCommand(value: value))
+        return self
+    }
+    
+}
+
+/// Tortoise control commands
+public extension Tortoise {
+    
+    public func Repeat(_ value: Value, handler: (Void) -> Tortoise) -> Tortoise {
+        let repeatTimes = Int(value)
+        for _ in 0 ..< repeatTimes {
+            let _ = handler()
+        }
         return self
     }
     

@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		1472483A1D5B107C00461689 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147248381D5B107C00461689 /* Command.swift */; };
 		1472483B1D5B107C00461689 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147248391D5B107C00461689 /* Context.swift */; };
-		1472483D1D5B10AB00461689 /* Value+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1472483C1D5B10AB00461689 /* Value+Helper.swift */; };
 		1472483F1D5B111900461689 /* Tortoise+Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1472483E1D5B111900461689 /* Tortoise+Commands.swift */; };
+		147248481D5B137300461689 /* Command+Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147248451D5B137300461689 /* Command+Drawing.swift */; };
+		147248491D5B137300461689 /* Value+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147248461D5B137300461689 /* Value+Helper.swift */; };
 		149873CD1D5AEB610039ADF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149873CC1D5AEB610039ADF7 /* AppDelegate.swift */; };
 		149873CF1D5AEB610039ADF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149873CE1D5AEB610039ADF7 /* ViewController.swift */; };
 		149873D21D5AEB610039ADF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 149873D01D5AEB610039ADF7 /* Main.storyboard */; };
@@ -53,8 +54,9 @@
 /* Begin PBXFileReference section */
 		147248381D5B107C00461689 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Command.swift; path = Tortoise/Private/Command.swift; sourceTree = "<group>"; };
 		147248391D5B107C00461689 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Context.swift; path = Tortoise/Private/Context.swift; sourceTree = "<group>"; };
-		1472483C1D5B10AB00461689 /* Value+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Value+Helper.swift"; sourceTree = "<group>"; };
 		1472483E1D5B111900461689 /* Tortoise+Commands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tortoise+Commands.swift"; sourceTree = "<group>"; };
+		147248451D5B137300461689 /* Command+Drawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Command+Drawing.swift"; path = "Tortoise/Private/Command+Drawing.swift"; sourceTree = "<group>"; };
+		147248461D5B137300461689 /* Value+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Value+Helper.swift"; path = "Tortoise/Private/Value+Helper.swift"; sourceTree = "<group>"; };
 		149873C91D5AEB610039ADF7 /* TortoiseDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TortoiseDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		149873CC1D5AEB610039ADF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		149873CE1D5AEB610039ADF7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,9 +108,10 @@
 		147248371D5B104C00461689 /* Private */ = {
 			isa = PBXGroup;
 			children = (
-				1472483C1D5B10AB00461689 /* Value+Helper.swift */,
-				147248381D5B107C00461689 /* Command.swift */,
+				147248461D5B137300461689 /* Value+Helper.swift */,
 				147248391D5B107C00461689 /* Context.swift */,
+				147248381D5B107C00461689 /* Command.swift */,
+				147248451D5B137300461689 /* Command+Drawing.swift */,
 			);
 			name = Private;
 			path = ..;
@@ -348,7 +351,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				149874111D5AF41B0039ADF7 /* Tortoise.swift in Sources */,
-				1472483D1D5B10AB00461689 /* Value+Helper.swift in Sources */,
+				147248491D5B137300461689 /* Value+Helper.swift in Sources */,
+				147248481D5B137300461689 /* Command+Drawing.swift in Sources */,
 				1498740F1D5AF3C90039ADF7 /* Canvas.swift in Sources */,
 				149874131D5AF4510039ADF7 /* Value.swift in Sources */,
 				1472483F1D5B111900461689 /* Tortoise+Commands.swift in Sources */,

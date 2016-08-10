@@ -11,14 +11,11 @@ import Tortoise
 
 class MyCanvas: Canvas {
     
-    override func draw(withTortoise tortoise: Tortoise) {
-        tortoise
-            .forward(50)
-            .right(90)
-            .forward(50)
-            .right(90)
-            .forward(50)
-            .execute()
+    override func draw(withTortoise 🐢: Tortoise) {
+        🐢.Repeat(100) {
+                🐢.Forward(100)
+                    .Right(70)
+            }.Execute()
     }
     
 }

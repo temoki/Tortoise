@@ -25,8 +25,8 @@ final public class Tortoise {
     }
 
     /// Execute commands
-    public func execute() {
-        commands.append(DrawTortoise())
+    public func Execute() {
+        commands.append(DrawTortoiseCommand())
         commands.forEach { (command) in
             command.execute(context: context)
         }
