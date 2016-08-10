@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		1472483A1D5B107C00461689 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147248381D5B107C00461689 /* Command.swift */; };
 		1472483B1D5B107C00461689 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147248391D5B107C00461689 /* Context.swift */; };
-		1472483F1D5B111900461689 /* Tortoise+Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1472483E1D5B111900461689 /* Tortoise+Commands.swift */; };
+		1472483F1D5B111900461689 /* Tortoise+MoveCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1472483E1D5B111900461689 /* Tortoise+MoveCommands.swift */; };
 		147248481D5B137300461689 /* CommandDrawTortoise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147248451D5B137300461689 /* CommandDrawTortoise.swift */; };
 		147248491D5B137300461689 /* Value+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147248461D5B137300461689 /* Value+Helper.swift */; };
 		14761E091D5B67FA004A6843 /* CommandForward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14761E051D5B67FA004A6843 /* CommandForward.swift */; };
 		14761E0B1D5B67FA004A6843 /* CommandRotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14761E071D5B67FA004A6843 /* CommandRotate.swift */; };
-		14761E0D1D5B6BF1004A6843 /* CommandPenDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14761E0C1D5B6BF1004A6843 /* CommandPenDown.swift */; };
 		14761E111D5B6F89004A6843 /* CommandInitialize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14761E101D5B6F89004A6843 /* CommandInitialize.swift */; };
+		14761E141D5B835B004A6843 /* Tortoise+PenCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14761E131D5B835B004A6843 /* Tortoise+PenCommands.swift */; };
+		14761E161D5B8389004A6843 /* Tortoise+ControlCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14761E151D5B8389004A6843 /* Tortoise+ControlCommands.swift */; };
+		14761E181D5B83CA004A6843 /* CommandPenDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14761E171D5B83CA004A6843 /* CommandPenDown.swift */; };
+		14761E1C1D5B88F2004A6843 /* CommandHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14761E1B1D5B88F2004A6843 /* CommandHome.swift */; };
 		149873CD1D5AEB610039ADF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149873CC1D5AEB610039ADF7 /* AppDelegate.swift */; };
 		149873CF1D5AEB610039ADF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149873CE1D5AEB610039ADF7 /* ViewController.swift */; };
 		149873D21D5AEB610039ADF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 149873D01D5AEB610039ADF7 /* Main.storyboard */; };
@@ -57,13 +60,16 @@
 /* Begin PBXFileReference section */
 		147248381D5B107C00461689 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Command.swift; path = Tortoise/Private/Command.swift; sourceTree = "<group>"; };
 		147248391D5B107C00461689 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Context.swift; path = Tortoise/Private/Context.swift; sourceTree = "<group>"; };
-		1472483E1D5B111900461689 /* Tortoise+Commands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tortoise+Commands.swift"; sourceTree = "<group>"; };
+		1472483E1D5B111900461689 /* Tortoise+MoveCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tortoise+MoveCommands.swift"; sourceTree = "<group>"; };
 		147248451D5B137300461689 /* CommandDrawTortoise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommandDrawTortoise.swift; path = Tortoise/Private/CommandDrawTortoise.swift; sourceTree = "<group>"; };
 		147248461D5B137300461689 /* Value+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Value+Helper.swift"; path = "Tortoise/Private/Value+Helper.swift"; sourceTree = "<group>"; };
 		14761E051D5B67FA004A6843 /* CommandForward.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommandForward.swift; path = Tortoise/Private/CommandForward.swift; sourceTree = "<group>"; };
 		14761E071D5B67FA004A6843 /* CommandRotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommandRotate.swift; path = Tortoise/Private/CommandRotate.swift; sourceTree = "<group>"; };
-		14761E0C1D5B6BF1004A6843 /* CommandPenDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandPenDown.swift; sourceTree = "<group>"; };
 		14761E101D5B6F89004A6843 /* CommandInitialize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommandInitialize.swift; path = Tortoise/Private/CommandInitialize.swift; sourceTree = "<group>"; };
+		14761E131D5B835B004A6843 /* Tortoise+PenCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tortoise+PenCommands.swift"; sourceTree = "<group>"; };
+		14761E151D5B8389004A6843 /* Tortoise+ControlCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tortoise+ControlCommands.swift"; sourceTree = "<group>"; };
+		14761E171D5B83CA004A6843 /* CommandPenDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommandPenDown.swift; path = Tortoise/Private/CommandPenDown.swift; sourceTree = "<group>"; };
+		14761E1B1D5B88F2004A6843 /* CommandHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommandHome.swift; path = Tortoise/Private/CommandHome.swift; sourceTree = "<group>"; };
 		149873C91D5AEB610039ADF7 /* TortoiseDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TortoiseDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		149873CC1D5AEB610039ADF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		149873CE1D5AEB610039ADF7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -117,8 +123,9 @@
 				147248381D5B107C00461689 /* Command.swift */,
 				147248451D5B137300461689 /* CommandDrawTortoise.swift */,
 				14761E051D5B67FA004A6843 /* CommandForward.swift */,
+				14761E1B1D5B88F2004A6843 /* CommandHome.swift */,
 				14761E101D5B6F89004A6843 /* CommandInitialize.swift */,
-				14761E0C1D5B6BF1004A6843 /* CommandPenDown.swift */,
+				14761E171D5B83CA004A6843 /* CommandPenDown.swift */,
 				14761E071D5B67FA004A6843 /* CommandRotate.swift */,
 				147248391D5B107C00461689 /* Context.swift */,
 				147248461D5B137300461689 /* Value+Helper.swift */,
@@ -166,7 +173,9 @@
 			children = (
 				149874121D5AF4510039ADF7 /* Value.swift */,
 				149874101D5AF41B0039ADF7 /* Tortoise.swift */,
-				1472483E1D5B111900461689 /* Tortoise+Commands.swift */,
+				14761E151D5B8389004A6843 /* Tortoise+ControlCommands.swift */,
+				1472483E1D5B111900461689 /* Tortoise+MoveCommands.swift */,
+				14761E131D5B835B004A6843 /* Tortoise+PenCommands.swift */,
 				149873E51D5AEC8E0039ADF7 /* Tortoise.h */,
 				149873E61D5AEC8E0039ADF7 /* Info.plist */,
 				147248371D5B104C00461689 /* Private */,
@@ -376,13 +385,16 @@
 				149874111D5AF41B0039ADF7 /* Tortoise.swift in Sources */,
 				147248491D5B137300461689 /* Value+Helper.swift in Sources */,
 				147248481D5B137300461689 /* CommandDrawTortoise.swift in Sources */,
-				14761E0D1D5B6BF1004A6843 /* CommandPenDown.swift in Sources */,
+				14761E161D5B8389004A6843 /* Tortoise+ControlCommands.swift in Sources */,
+				14761E181D5B83CA004A6843 /* CommandPenDown.swift in Sources */,
 				149874131D5AF4510039ADF7 /* Value.swift in Sources */,
-				1472483F1D5B111900461689 /* Tortoise+Commands.swift in Sources */,
+				1472483F1D5B111900461689 /* Tortoise+MoveCommands.swift in Sources */,
 				14761E111D5B6F89004A6843 /* CommandInitialize.swift in Sources */,
+				14761E1C1D5B88F2004A6843 /* CommandHome.swift in Sources */,
 				14761E0B1D5B67FA004A6843 /* CommandRotate.swift in Sources */,
 				1472483B1D5B107C00461689 /* Context.swift in Sources */,
 				14761E091D5B67FA004A6843 /* CommandForward.swift in Sources */,
+				14761E141D5B835B004A6843 /* Tortoise+PenCommands.swift in Sources */,
 				1472483A1D5B107C00461689 /* Command.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

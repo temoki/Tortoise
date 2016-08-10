@@ -1,6 +1,6 @@
 //
-//  Tortoise+Commands.swift
-//  TortoiseDemo
+//  Tortoise+MoveCommands.swift
+//  Tortoise
 //
 //  Created by temoki on 2016/08/10.
 //  Copyright © 2016 temoki. All rights reserved.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// Tortoise commands
+/// Tortoise move commands
 public extension Tortoise {
 
     /// Move the tortoise forward distance pixels.
@@ -39,29 +39,10 @@ public extension Tortoise {
         return self
     }
 
-    /// Put the pen into draw state.
-    /// If the tortoise moves, it will draw a line.
-    public func PenDown() -> Tortoise {
-        add(command: CommandPenDown(true))
-        return self
-    }
-
-    /// Put the pen into non-draw state.
-    public func PenUp() -> Tortoise {
-        add(command: CommandPenDown(false))
-        return self
-    }
-
-}
-
-/// Tortoise control commands
-public extension Tortoise {
-
-    /// Run statements statements number times.
-    public func Repeat(_ number: Value, statements: (Void) -> Tortoise) -> Tortoise {
-        for _ in 0 ..< Int(number) {
-            let _ = statements()
-        }
+    /// Move the tortoise to the middle of the screen (position [0 0])
+    /// and set its heading to zero (pointing straight up).
+    public func Home() -> Tortoise {
+        add(command: CommandHome())
         return self
     }
 
