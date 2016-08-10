@@ -25,6 +25,7 @@ class Context {
     required init(cgContext: CGContext, canvasSize: CGSize) {
         self.cgContext = cgContext
         self.canvasSize = canvasSize
+        self.cgContext.saveGState()
         self.reset()
     }
 

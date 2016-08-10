@@ -25,12 +25,12 @@ final public class Tortoise {
 
     /// Run commands
     public func Run() {
-        CommandInitialize().execute(context: context)
+        context.reset()
+        commands.append(CommandDrawTortoise())
         commands.forEach { (command) in
             command.execute(context: context)
         }
         commands.removeAll()
-        CommandDrawTortoise().execute(context: context)
     }
 
     /// Add command
