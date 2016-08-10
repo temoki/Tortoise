@@ -13,6 +13,8 @@ public extension Tortoise {
 
     /// Move the tortoise forward distance pixels.
     /// If the pen is down, a line is drawn.
+    /// - parameter distance: Distance
+    /// - return: self
     public func Forward(_ distance: Value) -> Tortoise {
         add(command: CommandForward(distance: distance))
         return self
@@ -55,10 +57,10 @@ public extension Tortoise {
 /// Tortoise control commands
 public extension Tortoise {
 
-    public func Repeat(_ value: Value, handler: (Void) -> Tortoise) -> Tortoise {
-        let repeatTimes = Int(value)
-        for _ in 0 ..< repeatTimes {
-            let _ = handler()
+    /// Run statements statements number times.
+    public func Repeat(_ number: Value, statements: (Void) -> Tortoise) -> Tortoise {
+        for _ in 0 ..< Int(number) {
+            let _ = statements()
         }
         return self
     }
