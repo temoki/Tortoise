@@ -6,7 +6,6 @@
 //  Copyright © 2016 temoki. All rights reserved.
 //
 
-import Foundation
 import CoreGraphics
 
 /// Tortoise
@@ -30,8 +29,8 @@ final public class Tortoise {
         commands.forEach { (command) in
             command.execute(context: context)
         }
-        CommandDrawTortoise().execute(context: context)
         commands.removeAll()
+        CommandDrawTortoise().execute(context: context)
     }
     
     /// Add command

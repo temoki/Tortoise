@@ -17,7 +17,6 @@ class Context {
     var canvasSize: Size
     
     /// Tortoise's current state
-    var pos: Point = Point.zero
     var heading: Value = Value(90).radian
     var penDown: Bool = true
     
@@ -26,6 +25,11 @@ class Context {
     required init(cgContext: CGContext, canvasSize: CGSize) {
         self.cgContext = cgContext
         self.canvasSize = canvasSize
+        self.cgContext.saveGState()
+    }
+    
+    deinit {
+        self.cgContext.restoreGState()
     }
 
 }

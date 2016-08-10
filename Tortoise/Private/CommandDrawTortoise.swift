@@ -11,17 +11,22 @@ import CoreGraphics
 class CommandDrawTortoise: Command {
     
     func execute(context: Context) {
-        let t = CGAffineTransform(translationX: context.pos.x, y: context.pos.y).rotate(context.heading)
+        // Define triangle's 3 points.
+        let pos = context.cgContext.currentPointOfPath
+        let transform = CGAffineTransform(translationX: pos.x, y: pos.y).rotate(context.heading)
+        let pos1 = CGPoint(x:  10, y:  0).apply(transform: transform)
+        let pos2 = CGPoint(x: -10, y:  5).apply(transform: transform)
+        let pos3 = CGPoint(x: -10, y: -5).apply(transform: transform)
         
-        let p1 = CGPoint(x:  10, y:  0).apply(transform: t)
-        let p2 = CGPoint(x: -10, y:  5).apply(transform: t)
-        let p3 = CGPoint(x: -10, y: -5).apply(transform: t)
-        
-        context.cgContext.moveTo(x: p1.x, y: p1.y)
-        context.cgContext.addLineTo(x: p2.x, y: p2.y)
-        context.cgContext.addLineTo(x: p3.x, y: p3.y)
-        context.cgContext.addLineTo(x: p1.x, y: p1.y)
+        // Draw
+        context.cgContext.moveTo(x: pos1.x, y: pos1.y)
+        context.cgContext.addLineTo(x: pos2.x, y: pos2.y)
+        context.cgContext.addLineTo(x: pos3.x, y: pos3.y)
+        context.cgContext.closePath()
         context.cgContext.fillPath()
+        
+        // Back to current point
+        context.cgContext.moveTo(x: pos.x, y: pos.y)
     }
 
 }

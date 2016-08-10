@@ -17,16 +17,14 @@ class CommandForward: Command {
     }
     
     func execute(context: Context) {
-        let transform = CGAffineTransform(translationX: context.pos.x, y: context.pos.y).rotate(context.heading)
+        let pos = context.cgContext.currentPointOfPath
+        let transform = CGAffineTransform(translationX: pos.x, y: pos.y).rotate(context.heading)
         let newPos = CGPoint(x: distance, y: 0).apply(transform: transform)
         if context.penDown {
-            context.cgContext.moveTo(x: context.pos.x, y: context.pos.y)
             context.cgContext.addLineTo(x: newPos.x, y: newPos.y)
             context.cgContext.strokePath()
-        } else {
-            context.cgContext.moveTo(x: newPos.x, y: newPos.y)
         }
-        context.pos = newPos
+        context.cgContext.moveTo(x: newPos.x, y: newPos.y)
     }
     
 }
