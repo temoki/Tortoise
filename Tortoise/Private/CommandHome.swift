@@ -11,7 +11,8 @@ import CoreGraphics
 class CommandHome: Command {
 
     func execute(context: Context) {
-        context.home()
+        context.resetPos()
+        context.resetHeading()
     }
 
 }

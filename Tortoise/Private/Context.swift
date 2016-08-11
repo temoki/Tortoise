@@ -10,6 +10,13 @@ import CoreGraphics
 
 class Context {
 
+    /// Default Values
+    static let defaultPosX: Value = 0
+    static let defaultPosY: Value = 0
+    static let defaultHeading = Value(90).radian
+    static let defaultPenDown = true
+    static let defaultPenColor = 1
+
     /// Graphics context
     let cgContext: CGContext
 
@@ -21,8 +28,8 @@ class Context {
     let colorPalette = ColorPalette()
 
     /// Tortoise's current state
-    var heading: Value = Value(90).radian
-    var penDown: Bool = true
+    var heading: Value = Context.defaultHeading
+    var penDown: Bool = Context.defaultPenDown
 
     /// Initializer
     /// - parameter context: Graphics context
@@ -49,19 +56,24 @@ class Context {
         cgContext.scale(x: 1, y: -1)
         cgContext.translate(x: canvasWidth*0.5, y: canvasHeight*0.5)
 
-        // Color
-        let color = colorPalette.color(number: 1)
-        cgContext.setStrokeColor(color.cgColor)
-
         // Tortoise's current state
-        penDown = true
-        home()
+        resetPos()
+        resetHeading()
+        resetPen()
     }
 
-    /// Back to home
-    func home() {
-        heading = Value(90).radian
-        cgContext.moveTo(x: 0, y: 0)
+    func resetPos() {
+        cgContext.moveTo(x: Context.defaultPosX, y: Context.defaultPosY)
+    }
+
+    func resetHeading() {
+        heading = Context.defaultHeading
+    }
+
+    func resetPen() {
+        penDown = Context.defaultPenDown
+        cgContext.setStrokeColor(
+            colorPalette.color(number: Context.defaultPenColor).cgColor)
     }
 
 }
