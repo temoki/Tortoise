@@ -26,9 +26,22 @@ public extension Tortoise {
         return self
     }
 
+    /// Set the drawing colour to colour-number.
+    /// This is the colour number used to draw lines and do fills.
+    /// - parameter number: Color number
+    /// - return: self
+    /// Use SetRGB to set this colour number to a particular colour value.
     public func SetPenColor(_ number: Value) -> Tortoise {
         add(command: CommandSetPenColor(number: number.number))
         return self
     }
 
+    /// Set the width of the pen to width.
+    /// New lines are drawn with this width.
+    /// - parameter width: Pen width
+    /// - return: self
+    public func SetPenWidth(_ width: Value) -> Tortoise {
+        add(command: CommandSetPenWidth(width))
+        return self
+    }
 }
