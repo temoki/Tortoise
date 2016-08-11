@@ -32,3 +32,21 @@ class Canvas: UIView {
     }
 }
 ```
+
+## Commands
+
+* `Forward`
+* `Back`
+* `Right`
+* `Left`
+* `Home`
+* `SetHeading`
+* `SetPosition`
+* `SetX`
+* `SetY`
+* `Arc`
+* `PenDown`
+* `PenUp`
+* `SetPenColor`
+* `SetPenWidth`
+* `Repeat`
