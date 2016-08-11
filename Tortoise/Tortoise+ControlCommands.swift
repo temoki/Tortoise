@@ -22,15 +22,4 @@ public extension Tortoise {
         return self
     }
 
-    /// Run statements statements number times.
-    /// - parameter number: Repeat times
-    /// - parameter statements: Repeat statements (with repeat number)
-    /// - returns: self
-    public func RepeatN(_ times: Value, statements: (Value) -> Tortoise) -> Tortoise {
-        for number in 0 ..< times.number {
-            let _ = statements(Value(number))
-        }
-        return self
-    }
-
 }
