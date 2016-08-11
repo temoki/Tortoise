@@ -20,4 +20,9 @@ extension Value {
         get { return self * 180 / .pi }
     }
 
+    /// to number
+    var number: Int {
+        get { return Swift.max(Int(self), 0) }
+    }
+
 }

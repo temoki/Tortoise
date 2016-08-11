@@ -22,18 +22,24 @@ public extension Tortoise {
 
     /// Move the tortoise backwards distance pixels.
     /// Draws a line if the pen is down.
+    /// - parameter distance: Distance
+    /// - return: self
     public func Back(_ distance: Value) -> Tortoise {
         add(command: CommandForward(distance: -distance))
         return self
     }
 
     /// Rotate the tortoise clockwise through angle degrees.
+    /// - parameter angle: Angle (degree)
+    /// - return: self
     public func Right(_ angle: Value) -> Tortoise {
         add(command: CommandRotate(angle: -angle))
         return self
     }
 
     /// Rotate the tortoise anti-clockwise through angle degrees.
+    /// - parameter angle: Angle (degree)
+    /// - return: self
     public func Left(_ angle: Value) -> Tortoise {
         add(command: CommandRotate(angle: angle))
         return self
@@ -41,6 +47,7 @@ public extension Tortoise {
 
     /// Move the tortoise to the middle of the screen (position [0 0])
     /// and set its heading to zero (pointing straight up).
+    /// - return: self
     public func Home() -> Tortoise {
         add(command: CommandHome())
         return self

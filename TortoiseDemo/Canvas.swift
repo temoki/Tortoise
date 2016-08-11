@@ -13,9 +13,12 @@ class Canvas: UIView {
 
     override func draw(_ rect: CGRect) {
         guard let cgContext = UIGraphicsGetCurrentContext() else { return }
-        let 🐢 = Tortoise(cgContext: cgContext, canvasSize: self.bounds.size)
-        🐢.Repeat(36) {
-            🐢.Forward(100).Right(70)
+        let 🐢 = Tortoise(cgContext: cgContext,
+                            canvasWidth: self.bounds.size.width,
+                            canvasHeight: self.bounds.size.height)
+
+        🐢.RepeatN(100) { (number) -> Tortoise in
+            🐢.SetPenColor(number).Forward(100).Right(85)
         }.Run()
     }
 

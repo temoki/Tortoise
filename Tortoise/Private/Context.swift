@@ -14,7 +14,11 @@ class Context {
     let cgContext: CGContext
 
     /// Canvas Size
-    let canvasSize: Size
+    let canvasWidth: Value
+    let canvasHeight: Value
+
+    /// ColorList
+    let colorList = ColorList()
 
     /// Tortoise's current state
     var heading: Value = Value(90).radian
@@ -22,9 +26,10 @@ class Context {
 
     /// Initializer
     /// - parameter context: Graphics context
-    required init(cgContext: CGContext, canvasSize: CGSize) {
+    required init(cgContext: CGContext, canvasWidth: Value, canvasHeight: Value) {
         self.cgContext = cgContext
-        self.canvasSize = canvasSize
+        self.canvasWidth = canvasWidth
+        self.canvasHeight = canvasHeight
         self.cgContext.saveGState()
         self.reset()
     }
@@ -40,10 +45,15 @@ class Context {
         cgContext.saveGState()
 
         // Convert origin
-        cgContext.translate(x: 0, y: canvasSize.height)
+        cgContext.translate(x: 0, y: canvasHeight)
         cgContext.scale(x: 1, y: -1)
-        cgContext.translate(x: canvasSize.width*0.5, y: canvasSize.height*0.5)
+        cgContext.translate(x: canvasWidth*0.5, y: canvasHeight*0.5)
 
+        // Color
+        let color = colorList.color(number: 1)
+        cgContext.setStrokeColor(color.cgColor)
+
+        // Tortoise's current state
         penDown = true
         home()
     }
