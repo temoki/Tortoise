@@ -74,4 +74,22 @@ public extension Tortoise {
         return self
     }
 
+    /// Set the x-co-ordinate of the tortoise to x.
+    /// Draws a line if the pen is down.
+    /// - parameter x: X coordinate
+    /// - return: self
+    public func SetX(_ x: Value) -> Tortoise {
+        add(command: CommandSetX(x: x))
+        return self
+    }
+
+    /// Set the y-co-ordinate of the tortoise to y.
+    /// Draws a line if the pen is down.
+    /// - parameter y: Y coordinate
+    /// - return: self
+    public func SetY(_ y: Value) -> Tortoise {
+        add(command: CommandSetY(y: y))
+        return self
+    }
+
 }
