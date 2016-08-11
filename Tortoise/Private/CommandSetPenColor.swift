@@ -10,7 +10,7 @@ import CoreGraphics
 
 class CommandSetPenColor: Command {
 
-    let number: Int
+    private let number: Int
 
     init(number: Int) {
         self.number = number

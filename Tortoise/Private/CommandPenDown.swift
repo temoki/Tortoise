@@ -10,7 +10,7 @@ import CoreGraphics
 
 class CommandPenDown: Command {
 
-    let penDown: Bool
+    private let penDown: Bool
 
     init(_ penDown: Bool) {
         self.penDown = penDown

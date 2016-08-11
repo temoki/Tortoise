@@ -10,7 +10,7 @@ import CoreGraphics
 
 class CommandSetHeading: Command {
 
-    let angle: Value
+    private let angle: Value
 
     init(angle: Value) {
         self.angle = angle

@@ -10,7 +10,7 @@ import CoreGraphics
 
 class CommandSetY: Command {
 
-    let posY: Value
+    private let posY: Value
 
     init(_ y: Value) {
         self.posY = y

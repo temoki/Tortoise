@@ -10,8 +10,8 @@ import CoreGraphics
 
 class CommandSetPosition: Command {
 
-    let posX: Value
-    let posY: Value
+    private let posX: Value
+    private let posY: Value
 
     init(x: Value, y: Value) {
         self.posX = x
