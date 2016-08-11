@@ -6,7 +6,7 @@
 //  Copyright © 2016 temoki. All rights reserved.
 //
 
-import CoreGraphics
+import Foundation
 
 class CommandHome: Command {
 

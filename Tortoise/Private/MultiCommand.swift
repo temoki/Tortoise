@@ -3,10 +3,10 @@
 //  Tortoise
 //
 //  Created by temoki on 2016/08/11.
-//  Copyright © 2016年 temoki. All rights reserved.
+//  Copyright © 2016 temoki. All rights reserved.
 //
 
-import Foundation
+import CoreGraphics
 
 class MultiCommand: Command {
 

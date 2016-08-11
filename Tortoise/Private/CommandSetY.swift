@@ -6,13 +6,13 @@
 //  Copyright © 2016 temoki. All rights reserved.
 //
 
-import Foundation
+import CoreGraphics
 
 class CommandSetY: Command {
 
     let posY: Value
 
-    init(y: Value) {
+    init(_ y: Value) {
         self.posY = y
     }
 

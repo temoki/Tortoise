@@ -79,7 +79,7 @@ public extension Tortoise {
     /// - parameter x: X coordinate
     /// - return: self
     public func SetX(_ x: Value) -> Tortoise {
-        add(command: CommandSetX(x: x))
+        add(command: CommandSetX(x))
         return self
     }
 
@@ -88,7 +88,7 @@ public extension Tortoise {
     /// - parameter y: Y coordinate
     /// - return: self
     public func SetY(_ y: Value) -> Tortoise {
-        add(command: CommandSetY(y: y))
+        add(command: CommandSetY(y))
         return self
     }
 
