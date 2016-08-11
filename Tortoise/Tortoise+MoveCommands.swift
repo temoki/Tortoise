@@ -92,4 +92,16 @@ public extension Tortoise {
         return self
     }
 
+    /// Draws an arc of radius radius,
+    /// entred on the current tortoise position and starting
+    /// at the current heading, sweeping clockwise through angle angle.
+    /// Draws a line if the pen is down.
+    /// - parameter angle: Angle (degree)
+    /// - parameter radius: Radius
+    /// - return: self
+    public func Arc(_ angle: Value, _ radius: Value) -> Tortoise {
+        add(command: CommandArc(angle: angle, radius: radius))
+        return self
+    }
+
 }
