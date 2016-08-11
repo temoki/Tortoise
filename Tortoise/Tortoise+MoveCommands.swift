@@ -66,6 +66,9 @@ public extension Tortoise {
 
     /// Move the tortoise to position x,y.
     /// If the pen is down, a line is drawn in the current colour.
+    /// - parameter x: X coordinate
+    /// - parameter y: Y coordinate
+    /// - return: self
     public func SetPosition(_ x: Value, _ y: Value) -> Tortoise {
         add(command: CommandSetPosition(x: x, y: y))
         return self
