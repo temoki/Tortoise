@@ -17,9 +17,13 @@ class Canvas: UIView {
                             canvasWidth: self.bounds.size.width,
                             canvasHeight: self.bounds.size.height)
 
-        🐢.RepeatN(100) { (number) -> Tortoise in
-            🐢.SetPenColor(number).Forward(100).Right(85)
-        }.Run()
+        🐢.SetPenWidth(0.5)
+            .SetPenColor(3)
+            .Repeat(400) {
+                🐢.Repeat(34) {
+                    🐢.Forward(12).Right(10)}.Right(90)
+            }.Run()
+
     }
 
 }
