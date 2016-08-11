@@ -17,7 +17,7 @@ class CommandSetPenColor: Command {
     }
 
     func execute(context: Context) {
-        let color = context.colorList.color(number: self.number)
+        let color = context.colorPalette.color(number: self.number)
         context.cgContext.setStrokeColor(color.cgColor)
     }
 

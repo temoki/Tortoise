@@ -17,8 +17,8 @@ class Context {
     let canvasWidth: Value
     let canvasHeight: Value
 
-    /// ColorList
-    let colorList = ColorList()
+    /// Color Palette
+    let colorPalette = ColorPalette()
 
     /// Tortoise's current state
     var heading: Value = Value(90).radian
@@ -50,7 +50,7 @@ class Context {
         cgContext.translate(x: canvasWidth*0.5, y: canvasHeight*0.5)
 
         // Color
-        let color = colorList.color(number: 1)
+        let color = colorPalette.color(number: 1)
         cgContext.setStrokeColor(color.cgColor)
 
         // Tortoise's current state
