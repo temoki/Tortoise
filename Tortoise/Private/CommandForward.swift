@@ -18,7 +18,8 @@ class CommandForward: Command {
 
     func execute(context: Context) {
         let pos = context.cgContext.currentPointOfPath
-        let transform = CGAffineTransform(translationX: pos.x, y: pos.y).rotate(context.heading)
+        let transform = CGAffineTransform(translationX: pos.x, y: pos.y)
+            .rotate(context.heading.radian)
         let newPos = CGPoint(x: distance, y: 0).apply(transform: transform)
         if context.penDown {
             context.cgContext.addLineTo(x: newPos.x, y: newPos.y)

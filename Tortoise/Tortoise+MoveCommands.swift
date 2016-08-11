@@ -53,8 +53,8 @@ public extension Tortoise {
         return self
     }
 
-    /// Set the turtle heading to angle.
-    /// The heading is the direction in which the turtle is pointing.
+    /// Set the tortoise heading to angle.
+    /// The heading is the direction in which the tortoise is pointing.
     /// Straight up is a heading of zero.
     /// The heading increases as you go clockwise - straight down is 180.
     /// - parameter angle: Angle (degree)
@@ -64,7 +64,7 @@ public extension Tortoise {
         return self
     }
 
-    /// Move the turtle to position x,y.
+    /// Move the tortoise to position x,y.
     /// If the pen is down, a line is drawn in the current colour.
     public func SetPosition(_ x: Value, _ y: Value) -> Tortoise {
         add(command: CommandSetPosition(x: x, y: y))

@@ -11,9 +11,9 @@ import CoreGraphics
 class Context {
 
     /// Default Values
-    static let defaultPosX: Value = 0
-    static let defaultPosY: Value = 0
-    static let defaultHeading = Value(90).radian
+    static let defaultPosX = Value(0)
+    static let defaultPosY = Value(0)
+    static let defaultHeading = Value(90)
     static let defaultPenDown = true
     static let defaultPenColor = 1
 
@@ -28,8 +28,8 @@ class Context {
     let colorPalette = ColorPalette()
 
     /// Tortoise's current state
-    var heading: Value = Context.defaultHeading
-    var penDown: Bool = Context.defaultPenDown
+    var heading = Context.defaultHeading
+    var penDown = Context.defaultPenDown
 
     /// Initializer
     /// - parameter context: Graphics context

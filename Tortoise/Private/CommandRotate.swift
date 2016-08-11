@@ -17,7 +17,7 @@ class CommandRotate: Command {
     }
 
     func execute(context: Context) {
-        context.heading += angle.radian
+        context.heading += angle
     }
 
 }

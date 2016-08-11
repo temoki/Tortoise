@@ -13,7 +13,8 @@ class CommandDrawTortoise: Command {
     func execute(context: Context) {
         // Define triangle's 3 points.
         let pos = context.cgContext.currentPointOfPath
-        let transform = CGAffineTransform(translationX: pos.x, y: pos.y).rotate(context.heading)
+        let transform = CGAffineTransform(translationX: pos.x, y: pos.y)
+            .rotate(context.heading.radian)
         let pos1 = CGPoint(x:  10, y:  0).apply(transform: transform)
         let pos2 = CGPoint(x: -10, y:  5).apply(transform: transform)
         let pos3 = CGPoint(x: -10, y: -5).apply(transform: transform)
