@@ -2,3 +2,14 @@ opt_in_rules:
   - empty_count
   - force_unwrapping
 #  - missing_docs
+
+variable_name:
+  excluded:
+    - x
+    - y
+    - z
+    - r
+    - g
+    - b
+    - a
+    

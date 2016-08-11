@@ -8,7 +8,6 @@
 
 import CoreGraphics
 
-// swiftlint:disable variable_name
 class RGBColor {
 
     private static let colorSpace = CGColorSpaceCreateDeviceRGB()
