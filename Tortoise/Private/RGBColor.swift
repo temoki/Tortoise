@@ -10,36 +10,60 @@ import CoreGraphics
 
 class RGBColor {
 
+    /// RGB color space
     private static let colorSpace = CGColorSpaceCreateDeviceRGB()
 
-    // swiftlint:disable:next force_unwrapping
-    private static let blackColor = CGColor(colorSpace: colorSpace, components: [0, 0, 0, 1])!
+    /// Default black color
+    private static let blackCGColor = CGColor(colorSpace: colorSpace, components: [0, 0, 0, 1])!
+    // swiftlint:disable:previous force_unwrapping
 
+    /// Red component
     let r: Value
-    let g: Value
-    let b: Value
-    let a: Value
 
+    /// Green component
+    let g: Value
+
+    /// Blue component
+    let b: Value
+
+    /// Opacity component
+    let opacity: Value
+
+    /// Alpha computed from opacity
+    var alpha: Value {
+        get { return 1 - opacity }
+    }
+
+    /// CGColor
     let cgColor: CGColor
 
-    init(r: Value, g: Value, b: Value, a: Value = 1, high: Value = 1) {
+    /// Initializer
+    /// - parameter r: Red component
+    /// - parameter g: Green component
+    /// - parameter b: Blue component
+    /// - parameter opacity: Opacity component
+    /// - parameter high: High value of each components
+    init(r: Value, g: Value, b: Value, opacity: Value = 0, high: Value = 1) {
         self.r = min(max(r/high, 0), 1)
         self.g = min(max(g/high, 0), 1)
         self.b = min(max(b/high, 0), 1)
-        self.a = min(max(a/high, 0), 1)
+        self.opacity = min(max(opacity/high, 0), 1)
 
-        let components = [self.r, self.g, self.b, self.a]
+        let components = [self.r, self.g, self.b, (1 - self.opacity)]
         let cgColor = CGColor(colorSpace: RGBColor.colorSpace, components: components)
-        self.cgColor =  cgColor ?? RGBColor.blackColor
+        self.cgColor =  cgColor ?? RGBColor.blackCGColor
     }
 
-    convenience init(_ components: [CGFloat], high: Value = 1) {
+    /// Initializer
+    /// - parameter components: RGB and Opacity components
+    /// - parameter high: High value of each component
+    convenience init(_ components: [Value], high: Value = 1) {
         var reversedComponents = Array(components.reversed())
         let r = reversedComponents.popLast() ?? 0
         let g = reversedComponents.popLast() ?? 0
         let b = reversedComponents.popLast() ?? 0
-        let a = reversedComponents.popLast() ?? 1
-        self.init(r: r, g: g, b: b, a: a, high: high)
+        let opacity = reversedComponents.popLast() ?? 0
+        self.init(r: r, g: g, b: b, opacity: opacity, high: high)
 
     }
 
