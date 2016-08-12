@@ -15,8 +15,8 @@ public extension Tortoise {
     /// - parameter number: Repeat times
     /// - parameter statements: Repeat statements
     /// - returns: self
-    public func Repeat(_ times: Value, _ statements: (Void) -> Tortoise) -> Tortoise {
-        for _ in 0 ..< times.number {
+    public func Repeat(_ times: Number, _ statements: (Void) -> Tortoise) -> Tortoise {
+        for _ in 0 ..< times.integer {
             let _ = statements()
         }
         return self

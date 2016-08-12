@@ -10,9 +10,9 @@ import CoreGraphics
 
 class CommandSetPenWidth: Command {
 
-    private let width: Value
+    private let width: Number
 
-    init(_ width: Value) {
+    init(_ width: Number) {
         self.width = width
     }
 

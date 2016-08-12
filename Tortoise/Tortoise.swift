@@ -19,7 +19,7 @@ final public class Tortoise {
 
     /// Initializer
     /// - parameter context: Graphics context
-    public required init(cgContext: CGContext, canvasWidth: Value, canvasHeight: Value) {
+    public required init(cgContext: CGContext, canvasWidth: Number, canvasHeight: Number) {
         context = Context(cgContext: cgContext,
                           canvasWidth: canvasWidth, canvasHeight: canvasHeight)
     }

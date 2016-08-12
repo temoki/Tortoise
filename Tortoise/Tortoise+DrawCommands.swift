@@ -16,7 +16,7 @@ public extension Tortoise {
     /// - parameter x: X coordinate
     /// - parameter y: Y coordinate
     /// - returns: self
-    public func Dot(_ x: Value, _ y: Value) -> Tortoise {
+    public func Dot(_ x: Number, _ y: Number) -> Tortoise {
         add(command: CommandDot(x: x, y: y))
         return self
     }
@@ -28,7 +28,7 @@ public extension Tortoise {
     /// - parameter angle: Angle (degree)
     /// - parameter radius: Radius
     /// - returns: self
-    public func Arc(_ angle: Value, _ radius: Value) -> Tortoise {
+    public func Arc(_ angle: Number, _ radius: Number) -> Tortoise {
         add(command: CommandArc(angle: angle, radius: radius))
         return self
     }

@@ -10,9 +10,9 @@ import CoreGraphics
 
 class CommandRotate: Command {
 
-    private let angle: Value
+    private let angle: Number
 
-    init(angle: Value) {
+    init(angle: Number) {
         self.angle = angle
     }
 

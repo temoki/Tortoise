@@ -15,7 +15,7 @@ public extension Tortoise {
     /// If the pen is down, a line is drawn.
     /// - parameter distance: Distance
     /// - returns: self
-    public func Forward(_ distance: Value) -> Tortoise {
+    public func Forward(_ distance: Number) -> Tortoise {
         add(command: CommandForward(distance: distance))
         return self
     }
@@ -24,7 +24,7 @@ public extension Tortoise {
     /// Draws a line if the pen is down.
     /// - parameter distance: Distance
     /// - returns: self
-    public func Back(_ distance: Value) -> Tortoise {
+    public func Back(_ distance: Number) -> Tortoise {
         add(command: CommandForward(distance: -distance))
         return self
     }
@@ -32,7 +32,7 @@ public extension Tortoise {
     /// Rotate the tortoise clockwise through angle degrees.
     /// - parameter angle: Angle (degree)
     /// - returns: self
-    public func Right(_ angle: Value) -> Tortoise {
+    public func Right(_ angle: Number) -> Tortoise {
         add(command: CommandRotate(angle: -angle))
         return self
     }
@@ -40,7 +40,7 @@ public extension Tortoise {
     /// Rotate the tortoise anti-clockwise through angle degrees.
     /// - parameter angle: Angle (degree)
     /// - returns: self
-    public func Left(_ angle: Value) -> Tortoise {
+    public func Left(_ angle: Number) -> Tortoise {
         add(command: CommandRotate(angle: angle))
         return self
     }
@@ -59,7 +59,7 @@ public extension Tortoise {
     /// The heading increases as you go clockwise - straight down is 180.
     /// - parameter angle: Angle (degree)
     /// - returns: self
-    public func SetHeading(_ angle: Value) -> Tortoise {
+    public func SetHeading(_ angle: Number) -> Tortoise {
         add(command: CommandSetHeading(angle: angle))
         return self
     }
@@ -69,7 +69,7 @@ public extension Tortoise {
     /// - parameter x: X coordinate
     /// - parameter y: Y coordinate
     /// - returns: self
-    public func SetPosition(_ x: Value, _ y: Value) -> Tortoise {
+    public func SetPosition(_ x: Number, _ y: Number) -> Tortoise {
         add(command: CommandSetPosition(x: x, y: y))
         return self
     }
@@ -78,7 +78,7 @@ public extension Tortoise {
     /// Draws a line if the pen is down.
     /// - parameter x: X coordinate
     /// - returns: self
-    public func SetX(_ x: Value) -> Tortoise {
+    public func SetX(_ x: Number) -> Tortoise {
         add(command: CommandSetX(x))
         return self
     }
@@ -87,7 +87,7 @@ public extension Tortoise {
     /// Draws a line if the pen is down.
     /// - parameter y: Y coordinate
     /// - returns: self
-    public func SetY(_ y: Value) -> Tortoise {
+    public func SetY(_ y: Number) -> Tortoise {
         add(command: CommandSetY(y))
         return self
     }

@@ -1,5 +1,5 @@
 //
-//  Value.swift
+//  Number.swift
 //  Tortoise
 //
 //  Created by temoki on 2016/08/10.
@@ -8,5 +8,5 @@
 
 import Foundation
 
-/// Value type in the Tortoise's world
-public typealias Value = CGFloat
+/// Number type in the Tortoise's world
+public typealias Number = CGFloat

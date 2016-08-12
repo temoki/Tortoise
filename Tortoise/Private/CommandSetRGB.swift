@@ -11,9 +11,9 @@ import CoreGraphics
 class CommandSetRGB: Command {
 
     private let number: Int
-    private let components: [Value]
+    private let components: [Number]
 
-    init(number: Int, components: [Value]) {
+    init(number: Int, components: [Number]) {
         self.number = number
         self.components = components
     }

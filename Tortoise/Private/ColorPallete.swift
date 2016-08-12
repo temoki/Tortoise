@@ -13,7 +13,7 @@ class ColorPalette {
     // Material Design: Color Palette
     // https://material.google.com/style/color.html
     private class func defaultColors() -> [RGBColor] {
-        let h: Value = 255
+        let h: Number = 255
         return [
             RGBColor(components: [255, 255, 255], high: h),  // White
             RGBColor(components: [0, 0, 0], high: h),        // Black

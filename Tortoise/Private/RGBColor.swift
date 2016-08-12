@@ -18,19 +18,19 @@ class RGBColor {
     // swiftlint:disable:previous force_unwrapping
 
     /// Red component
-    let r: Value
+    let r: Number
 
     /// Green component
-    let g: Value
+    let g: Number
 
     /// Blue component
-    let b: Value
+    let b: Number
 
     /// Opacity component
-    let opacity: Value
+    let opacity: Number
 
     /// Alpha computed from opacity
-    var alpha: Value {
+    var alpha: Number {
         get { return 1 - opacity }
     }
 
@@ -43,7 +43,7 @@ class RGBColor {
     /// - parameter b: Blue component
     /// - parameter opacity: Opacity component
     /// - parameter high: High value of each components
-    init(r: Value, g: Value, b: Value, opacity: Value = 0, high: Value = 1) {
+    init(r: Number, g: Number, b: Number, opacity: Number = 0, high: Number = 1) {
         self.r = min(max(r/high, 0), 1)
         self.g = min(max(g/high, 0), 1)
         self.b = min(max(b/high, 0), 1)
@@ -57,7 +57,7 @@ class RGBColor {
     /// Initializer
     /// - parameter components: RGB and Opacity components
     /// - parameter high: High value of each component
-    convenience init(components: [Value], high: Value = 1) {
+    convenience init(components: [Number], high: Number = 1) {
         var reversedComponents = Array(components.reversed())
         let r = reversedComponents.popLast() ?? 0
         let g = reversedComponents.popLast() ?? 0

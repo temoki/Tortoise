@@ -31,8 +31,8 @@ public extension Tortoise {
     /// Use SetRGB to set this colour number to a particular colour value.
     /// - parameter number: Color number
     /// - returns: self
-    public func SetPenColor(_ number: Value) -> Tortoise {
-        add(command: CommandSetPenColor(number: number.number))
+    public func SetPenColor(_ number: Number) -> Tortoise {
+        add(command: CommandSetPenColor(number: number.integer))
         return self
     }
 
@@ -40,7 +40,7 @@ public extension Tortoise {
     /// New lines are drawn with this width.
     /// - parameter width: Pen width
     /// - returns: self
-    public func SetPenWidth(_ width: Value) -> Tortoise {
+    public func SetPenWidth(_ width: Number) -> Tortoise {
         add(command: CommandSetPenWidth(width))
         return self
     }
@@ -55,8 +55,8 @@ public extension Tortoise {
     /// - parameter number: Color number
     /// - parameter componets: RGB and Opacity components
     /// - returns: self
-    public func SetRGB(_ number: Value, _ components: [Value]) -> Tortoise {
-        add(command: CommandSetRGB(number: number.number, components: components))
+    public func SetRGB(_ number: Number, _ components: [Number]) -> Tortoise {
+        add(command: CommandSetRGB(number: number.integer, components: components))
         return self
     }
 

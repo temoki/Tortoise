@@ -10,9 +10,9 @@ import CoreGraphics
 
 class CommandForward: Command {
 
-    private let distance: Value
+    private let distance: Number
 
-    init(distance: Value) {
+    init(distance: Number) {
         self.distance = distance
     }
 

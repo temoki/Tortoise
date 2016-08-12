@@ -10,10 +10,10 @@ import CoreGraphics
 
 class CommandDot: Command {
 
-    private let posX: Value
-    private let posY: Value
+    private let posX: Number
+    private let posY: Number
 
-    init(x: Value, y: Value) {
+    init(x: Number, y: Number) {
         self.posX = x
         self.posY = y
     }

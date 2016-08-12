@@ -10,10 +10,10 @@ import CoreGraphics
 
 class CommandArc: Command {
 
-    private let angle: Value
-    private let radius: Value
+    private let angle: Number
+    private let radius: Number
 
-    init(angle: Value, radius: Value) {
+    init(angle: Number, radius: Number) {
         self.angle = angle
         self.radius = radius
     }

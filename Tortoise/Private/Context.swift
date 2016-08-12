@@ -11,19 +11,19 @@ import CoreGraphics
 class Context {
 
     /// Default Values
-    static let defaultPosX = Value(0)
-    static let defaultPosY = Value(0)
-    static let defaultHeading = Value(90)
+    static let defaultPosX = Number(0)
+    static let defaultPosY = Number(0)
+    static let defaultHeading = Number(90)
     static let defaultPenDown = true
     static let defaultPenColor = Int(1)
-    static let defaultPenWidth = Value(1)
+    static let defaultPenWidth = Number(1)
 
     /// Graphics context
     let cgContext: CGContext
 
     /// Canvas Size
-    let canvasWidth: Value
-    let canvasHeight: Value
+    let canvasWidth: Number
+    let canvasHeight: Number
 
     /// Color Palette
     let colorPalette = ColorPalette()
@@ -36,7 +36,7 @@ class Context {
 
     /// Initializer
     /// - parameter context: Graphics context
-    required init(cgContext: CGContext, canvasWidth: Value, canvasHeight: Value) {
+    required init(cgContext: CGContext, canvasWidth: Number, canvasHeight: Number) {
         self.cgContext = cgContext
         self.canvasWidth = canvasWidth
         self.canvasHeight = canvasHeight

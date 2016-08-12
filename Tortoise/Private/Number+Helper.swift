@@ -1,5 +1,5 @@
 //
-//  Value+Helper.swift
+//  Number+Helper.swift
 //  Tortoise
 //
 //  Created by temoki on 2016/08/10.
@@ -8,20 +8,20 @@
 
 import CoreGraphics
 
-extension Value {
+extension Number {
 
     /// to radian
-    var radian: Value {
+    var radian: Number {
         get { return self * .pi / 180 }
     }
 
     /// to degree
-    var degree: Value {
+    var degree: Number {
         get { return self * 180 / .pi }
     }
 
-    /// to number
-    var number: Int {
+    /// to integer
+    var integer: Int {
         get { return Swift.max(Int(self), 0) }
     }
 
