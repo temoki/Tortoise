@@ -17,16 +17,12 @@ class Canvas: UIView {
                             canvasWidth: self.bounds.size.width,
                             canvasHeight: self.bounds.size.height)
 
-        🐢.SetPenWidth(10).Dot(100, 100).Run()
-
-        /*
         🐢.SetPenWidth(0.5)
             .SetPenColor(3)
             .Repeat(400) {
                 🐢.Repeat(34) {
                     🐢.Forward(12).Right(10)}.Right(90)
             }.Run()
-         */
 
     }
 
