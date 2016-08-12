@@ -17,7 +17,8 @@ class CommandSetPenWidth: Command {
     }
 
     func execute(context: Context) {
-        context.cgContext.setLineWidth(width)
+        context.penWidth = self.width
+        context.cgContext.setLineWidth(context.penWidth)
     }
 
 }

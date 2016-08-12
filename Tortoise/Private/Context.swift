@@ -15,7 +15,8 @@ class Context {
     static let defaultPosY = Value(0)
     static let defaultHeading = Value(90)
     static let defaultPenDown = true
-    static let defaultPenColor = 1
+    static let defaultPenColor = Int(1)
+    static let defaultPenWidth = Value(1)
 
     /// Graphics context
     let cgContext: CGContext
@@ -30,6 +31,8 @@ class Context {
     /// Tortoise's current state
     var heading = Context.defaultHeading
     var penDown = Context.defaultPenDown
+    var penColor = Context.defaultPenColor
+    var penWidth = Context.defaultPenWidth
 
     /// Initializer
     /// - parameter context: Graphics context
@@ -72,8 +75,15 @@ class Context {
 
     func resetPen() {
         penDown = Context.defaultPenDown
-        cgContext.setStrokeColor(
-            colorPalette.color(number: Context.defaultPenColor).cgColor)
+
+        penColor = Context.defaultPenColor
+        let color = colorPalette.color(number: penColor)
+        cgContext.setStrokeColor(color.cgColor)
+        cgContext.setFillColor(color.cgColor)
+
+        penWidth = Context.defaultPenWidth
+        cgContext.setLineWidth(penWidth)
+
     }
 
 }
