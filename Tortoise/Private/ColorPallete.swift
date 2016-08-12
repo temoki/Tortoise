@@ -15,26 +15,26 @@ class ColorPalette {
     private class func defaultColors() -> [RGBColor] {
         let h: Value = 255
         return [
-            RGBColor([255, 255, 255, 0], high: h),  // White
-            RGBColor([0, 0, 0, 0], high: h),        // Black
-            RGBColor([244, 67, 54, 0], high: h),    // Red
-            RGBColor([233, 30, 99, 0], high: h),    // Pink
-            RGBColor([156, 39, 176, 0], high: h),   // Purple
-            RGBColor([103, 58, 183, 0], high: h),   // Deep Purple
-            RGBColor([63, 81, 181, 0], high: h),    // Indigo
-            RGBColor([33, 150, 243, 0], high: h),   // Blue
-            RGBColor([3, 169, 244, 0], high: h),    // Light Blue
-            RGBColor([0, 188, 212, 0], high: h),    // Cyan
-            RGBColor([0, 150, 136, 0], high: h),    // Teal
-            RGBColor([76, 175, 80, 0], high: h),    // Green
-            RGBColor([139, 195, 74, 0], high: h),   // Light Green
-            RGBColor([205, 220, 57, 0], high: h),   // Lime
-            RGBColor([255, 235, 59, 0], high: h),   // Yellow
-            RGBColor([255, 193, 7, 0], high: h),    // Amber
-            RGBColor([255, 152, 0, 0], high: h),    // Orange
-            RGBColor([255, 87, 34, 0], high: h),    // Deep Orange
-            RGBColor([158, 158, 158, 0], high: h),  // Grey
-            RGBColor([96, 123, 139, 0], high: h)    // Blue Grey
+            RGBColor(components: [255, 255, 255], high: h),  // White
+            RGBColor(components: [0, 0, 0], high: h),        // Black
+            RGBColor(components: [244, 67, 54], high: h),    // Red
+            RGBColor(components: [233, 30, 99], high: h),    // Pink
+            RGBColor(components: [156, 39, 176], high: h),   // Purple
+            RGBColor(components: [103, 58, 183], high: h),   // Deep Purple
+            RGBColor(components: [63, 81, 181], high: h),    // Indigo
+            RGBColor(components: [33, 150, 243], high: h),   // Blue
+            RGBColor(components: [3, 169, 244], high: h),    // Light Blue
+            RGBColor(components: [0, 188, 212], high: h),    // Cyan
+            RGBColor(components: [0, 150, 136], high: h),    // Teal
+            RGBColor(components: [76, 175, 80], high: h),    // Green
+            RGBColor(components: [139, 195, 74], high: h),   // Light Green
+            RGBColor(components: [205, 220, 57], high: h),   // Lime
+            RGBColor(components: [255, 235, 59], high: h),   // Yellow
+            RGBColor(components: [255, 193, 7], high: h),    // Amber
+            RGBColor(components: [255, 152, 0], high: h),    // Orange
+            RGBColor(components: [255, 87, 34], high: h),    // Deep Orange
+            RGBColor(components: [158, 158, 158], high: h),  // Grey
+            RGBColor(components: [96, 123, 139], high: h)    // Blue Grey
         ]
     }
 

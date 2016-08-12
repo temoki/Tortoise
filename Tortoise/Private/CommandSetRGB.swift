@@ -19,7 +19,7 @@ class CommandSetRGB: Command {
     }
 
     func execute(context: Context) {
-        context.colorPalette.set(color: RGBColor(components), number: number)
+        context.colorPalette.set(color: RGBColor(components: components), number: number)
     }
 
 }

@@ -57,7 +57,7 @@ class RGBColor {
     /// Initializer
     /// - parameter components: RGB and Opacity components
     /// - parameter high: High value of each component
-    convenience init(_ components: [Value], high: Value = 1) {
+    convenience init(components: [Value], high: Value = 1) {
         var reversedComponents = Array(components.reversed())
         let r = reversedComponents.popLast() ?? 0
         let g = reversedComponents.popLast() ?? 0
