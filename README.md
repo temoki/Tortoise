@@ -44,6 +44,7 @@ class Canvas: UIView {
 * `SetPosition`
 * `SetX`
 * `SetY`
+* `Dot`
 * `Arc`
 * `PenDown`
 * `PenUp`
