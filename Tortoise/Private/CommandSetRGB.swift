@@ -10,15 +10,17 @@ import CoreGraphics
 
 class CommandSetRGB: Command {
 
-    private let number: Int
-    private let components: [Number]
+    private let number: NumberOutput
+    private let components: [NumberOutput]
 
-    init(number: Int, components: [Number]) {
+    init(number: NumberOutput, components: [NumberOutput]) {
         self.number = number
         self.components = components
     }
 
     func execute(context: Context) {
+        let number = self.number.output(context: context).integer
+        let components = self.components.map { $0.output(context: context) }
         context.colorPalette.set(color: RGBColor(components: components), number: number)
     }
 

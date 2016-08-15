@@ -10,15 +10,17 @@ import CoreGraphics
 
 class CommandSetPosition: Command {
 
-    private let posX: Number
-    private let posY: Number
+    private let x: NumberOutput
+    private let y: NumberOutput
 
-    init(x: Number, y: Number) {
-        self.posX = x
-        self.posY = y
+    init(x: NumberOutput, y: NumberOutput) {
+        self.x = x
+        self.y = y
     }
 
     func execute(context: Context) {
+        let posX = x.output(context: context)
+        let posY = y.output(context: context)
         if context.penDown {
             context.cgContext.addLineTo(x: posX, y: posY)
             context.cgContext.strokePath()

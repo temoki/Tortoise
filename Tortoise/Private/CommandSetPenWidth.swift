@@ -10,14 +10,14 @@ import CoreGraphics
 
 class CommandSetPenWidth: Command {
 
-    private let width: Number
+    private let width: NumberOutput
 
-    init(_ width: Number) {
+    init(_ width: NumberOutput) {
         self.width = width
     }
 
     func execute(context: Context) {
-        context.penWidth = self.width
+        context.penWidth = width.output(context: context)
         context.cgContext.setLineWidth(context.penWidth)
     }
 

@@ -11,13 +11,39 @@ import Foundation
 /// Tortoise draw commands
 public extension Tortoise {
 
+    // MARK:- Dot
+
+    /// Put a dot of the current colour at position x y on the screen.
+    /// Note that positive y-values go up the screen.
+    /// - parameter x: X coordinate
+    /// - parameter y: Y coordinate
+    /// - returns: self
+    public func Dot(_ x: NumberOutput, _ y: NumberOutput) -> Tortoise {
+        add(command: CommandDot(x: x, y: y))
+        return self
+    }
+
     /// Put a dot of the current colour at position x y on the screen.
     /// Note that positive y-values go up the screen.
     /// - parameter x: X coordinate
     /// - parameter y: Y coordinate
     /// - returns: self
     public func Dot(_ x: Number, _ y: Number) -> Tortoise {
-        add(command: CommandDot(x: x, y: y))
+        return Dot(.Value(x), .Value(y))
+    }
+
+
+    // MARK:- Arc
+
+    /// Draws an arc of radius radius,
+    /// entred on the current tortoise position and starting
+    /// at the current heading, sweeping clockwise through angle angle.
+    /// Draws a line if the pen is down.
+    /// - parameter angle: Angle (degree)
+    /// - parameter radius: Radius
+    /// - returns: self
+    public func Arc(_ angle: NumberOutput, _ radius: NumberOutput) -> Tortoise {
+        add(command: CommandArc(angle: angle, radius: radius))
         return self
     }
 
@@ -29,8 +55,7 @@ public extension Tortoise {
     /// - parameter radius: Radius
     /// - returns: self
     public func Arc(_ angle: Number, _ radius: Number) -> Tortoise {
-        add(command: CommandArc(angle: angle, radius: radius))
-        return self
+        return Arc(.Value(angle), .Value(radius))
     }
 
 }

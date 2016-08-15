@@ -10,16 +10,18 @@ import CoreGraphics
 
 class CommandArc: Command {
 
-    private let angle: Number
-    private let radius: Number
+    private let angle: NumberOutput
+    private let radius: NumberOutput
 
-    init(angle: Number, radius: Number) {
+    init(angle: NumberOutput, radius: NumberOutput) {
         self.angle = angle
         self.radius = radius
     }
 
     func execute(context: Context) {
         guard context.penDown else { return }
+        let angle = self.angle.output(context: context)
+        let radius = self.radius.output(context: context)
 
         // Current position = Center of Arc
         let centerPos = context.cgContext.currentPointOfPath

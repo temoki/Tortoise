@@ -10,13 +10,14 @@ import CoreGraphics
 
 class CommandSetX: Command {
 
-    private let posX: Number
+    private let x: NumberOutput
 
-    init(_ x: Number) {
-        self.posX = x
+    init(_ x: NumberOutput) {
+        self.x = x
     }
 
     func execute(context: Context) {
+        let posX = x.output(context: context)
         let posY = context.cgContext.currentPointOfPath.y
         if context.penDown {
             context.cgContext.addLineTo(x: posX, y: posY)

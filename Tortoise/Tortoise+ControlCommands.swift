@@ -11,6 +11,8 @@ import Foundation
 /// Tortoise control commands
 public extension Tortoise {
 
+    // MARK:- Repeat
+
     /// Run statements statements number times.
     /// - parameter number: Repeat times
     /// - parameter statements: Repeat statements

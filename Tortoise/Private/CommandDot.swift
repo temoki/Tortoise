@@ -10,16 +10,18 @@ import CoreGraphics
 
 class CommandDot: Command {
 
-    private let posX: Number
-    private let posY: Number
+    private let x: NumberOutput
+    private let y: NumberOutput
 
-    init(x: Number, y: Number) {
-        self.posX = x
-        self.posY = y
+    init(x: NumberOutput, y: NumberOutput) {
+        self.x = x
+        self.y = y
     }
 
     func execute(context: Context) {
         if context.penDown {
+            let posX = x.output(context: context)
+            let posY = y.output(context: context)
             let dotRect = CGRect(x: posX - (context.penWidth / 2),
                                  y: posY - (context.penWidth / 2),
                                  width: context.penWidth,

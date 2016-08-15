@@ -10,14 +10,16 @@ import CoreGraphics
 
 class CommandRotate: Command {
 
-    private let angle: Number
+    private let angle: NumberOutput
+    private let right: Bool
 
-    init(angle: Number) {
+    init(angle: NumberOutput, right: Bool = false) {
         self.angle = angle
+        self.right = right
     }
 
     func execute(context: Context) {
-        context.heading += angle
+        context.heading += angle.output(context: context) * (right ? -1 : 1)
     }
 
 }

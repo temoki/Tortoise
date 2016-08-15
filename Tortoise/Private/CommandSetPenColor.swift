@@ -10,14 +10,14 @@ import CoreGraphics
 
 class CommandSetPenColor: Command {
 
-    private let number: Int
+    private let number: NumberOutput
 
-    init(number: Int) {
+    init(number: NumberOutput) {
         self.number = number
     }
 
     func execute(context: Context) {
-        context.penColor = self.number
+        context.penColor = number.output(context: context).integer
         let color = context.colorPalette.color(number: context.penColor)
         context.cgContext.setStrokeColor(color.cgColor)
         context.cgContext.setFillColor(color.cgColor)

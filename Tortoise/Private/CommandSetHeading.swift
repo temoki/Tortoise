@@ -10,14 +10,14 @@ import CoreGraphics
 
 class CommandSetHeading: Command {
 
-    private let angle: Number
+    private let angle: NumberOutput
 
-    init(angle: Number) {
+    init(angle: NumberOutput) {
         self.angle = angle
     }
 
     func execute(context: Context) {
-        context.heading = Context.defaultHeading - angle
+        context.heading = Context.defaultHeading - angle.output(context: context)
     }
 
 }
