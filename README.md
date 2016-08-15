@@ -7,11 +7,27 @@ This project supports only Swift 3 and Xcode 8.
 ## Example
 
 ```swift
-🐢.SetPenWidth(0.5).SetPenColor(3)
-    .Repeat(400) {
-        🐢.Repeat(34) {
-            🐢.Forward(12).Right(10)
-        }.Right(90)
+🐢.SetRGB(0, [0.8, 0.8, 0.8])
+    .Repeat(12) { 🐢
+        .SetPenWidth(2)
+        .Right(15)
+        .Repeat(6) { 🐢
+            .SetPenColor(.PenColor({ $0 + 1 }))
+            .Forward(50)
+            .Right(60)
+        }
+        .SetPenWidth(1)
+        .Right(15)
+        .Repeat(6) { 🐢
+            .SetPenColor(.PenColor({ $0 + 1 }))
+            .Forward(20)
+            .Right(60)
+        }
+    }
+    .SetPenWidth(3)
+    .SetPenColor(0)
+    .Back(150)
+    .SetPenColor(1)
     .Run()
 ```
 
@@ -51,4 +67,10 @@ class Canvas: UIView {
 * `SetPenColor`
 * `SetPenWidth`
 * `SetRGB`
+* `Random`
+* `Heading`
+* `Position`
+* `PenColor`
+* `PenWidth`
+* `CanvasSize`
 * `Repeat`
