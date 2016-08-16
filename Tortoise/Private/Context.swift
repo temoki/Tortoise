@@ -29,12 +29,12 @@ class Context {
     let colorPalette = ColorPalette()
 
     /// Tortoise's current state
-    var posX = Context.defaultPosX
-    var posY = Context.defaultPosY
-    var heading = Context.defaultHeading
-    var penDown = Context.defaultPenDown
-    var penColor = Context.defaultPenColor
-    var penWidth = Context.defaultPenWidth
+    private(set) var posX = Context.defaultPosX
+    private(set) var posY = Context.defaultPosY
+    private(set) var heading = Context.defaultHeading
+    private(set) var penDown = Context.defaultPenDown
+    private(set) var penColor = Context.defaultPenColor
+    private(set) var penWidth = Context.defaultPenWidth
 
     /// Initializer
     /// - parameter context: Graphics context
@@ -57,7 +57,9 @@ class Context {
         resetCanvas()
         setPosition()
         setHeading()
-        setPen()
+        setPenDown()
+        setPenColor()
+        setPenWidth()
     }
 
     /// Reset canvas
@@ -87,20 +89,23 @@ class Context {
         self.heading = heading
     }
 
-    /// Set pen state
-    func setPen(down: Bool = Context.defaultPenDown,
-                color: Int = Context.defaultPenColor,
-                width: Number = Context.defaultPenWidth) {
+    /// Set pen down
+    func setPenDown(_ down: Bool = Context.defaultPenDown) {
         penDown = down
+    }
 
+    /// Set pen color
+    func setPenColor(_ color: Int = Context.defaultPenColor) {
         penColor = color
         let rgbColor = colorPalette.color(number: penColor)
         bitmapContext.setStrokeColor(rgbColor.cgColor)
         bitmapContext.setFillColor(rgbColor.cgColor)
+    }
 
+    /// Set pen width
+    func setPenWidth(_ width: Number = Context.defaultPenWidth) {
         penWidth = width
         bitmapContext.setLineWidth(penWidth)
-
     }
 
     // Output CGImage

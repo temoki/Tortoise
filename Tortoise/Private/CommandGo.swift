@@ -19,8 +19,7 @@ class CommandGo: Command {
     }
 
     func execute(context: Context) {
-        let pos = context.bitmapContext.currentPointOfPath
-        let transform = CGAffineTransform(translationX: pos.x, y: pos.y)
+        let transform = CGAffineTransform(translationX: context.posX, y: context.posY)
             .rotate(context.heading.radian)
         let x = distance.output(context: context) * (back ? -1 : 1)
         let newPos = CGPoint(x: x, y: 0).apply(transform: transform)
@@ -28,7 +27,7 @@ class CommandGo: Command {
             context.bitmapContext.addLineTo(x: newPos.x, y: newPos.y)
             context.bitmapContext.strokePath()
         }
-        context.bitmapContext.moveTo(x: newPos.x, y: newPos.y)
+        context.setPosition(x: newPos.x, y: newPos.y)
     }
 
 }

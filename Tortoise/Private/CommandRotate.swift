@@ -19,7 +19,7 @@ class CommandRotate: Command {
     }
 
     func execute(context: Context) {
-        context.heading += angle.output(context: context) * (right ? -1 : 1)
+        context.setHeading(context.heading + angle.output(context: context) * (right ? -1 : 1))
     }
 
 }

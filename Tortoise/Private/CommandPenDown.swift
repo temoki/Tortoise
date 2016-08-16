@@ -17,7 +17,7 @@ class CommandPenDown: Command {
     }
 
     func execute(context: Context) {
-        context.penDown = penDown
+        context.setPenDown(penDown)
     }
 
 }
