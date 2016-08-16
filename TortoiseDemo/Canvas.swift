@@ -11,11 +11,15 @@ import Tortoise
 
 class Canvas: UIView {
 
-    override func draw(_ rect: CGRect) {
-        guard let cgContext = UIGraphicsGetCurrentContext() else { return }
-        let 🐢 = Tortoise(cgContext: cgContext,
-                            canvasWidth: self.bounds.size.width,
-                            canvasHeight: self.bounds.size.height)
+    // swiftlint:disable:next variable_name
+    var 🐢: Tortoise?
+
+    func draw() {
+        if self.🐢 == nil {
+            self.🐢 = Tortoise(canvasWidth: self.bounds.width,
+                                 canvasHeight: self.bounds.height)
+        }
+        guard let 🐢 = self.🐢 else { return }
 
         🐢.SetRGB(0, [0.8, 0.8, 0.8])
             .Repeat(12) { 🐢
@@ -40,6 +44,13 @@ class Canvas: UIView {
             .SetPenColor(1)
             .Run()
 
+        setNeedsDisplay()
+    }
+
+    override func draw(_ rect: CGRect) {
+        guard let image = 🐢?.Image else { return }
+        guard let currencContext = UIGraphicsGetCurrentContext() else { return }
+        currencContext.draw(in: self.bounds, image: image)
     }
 
 }

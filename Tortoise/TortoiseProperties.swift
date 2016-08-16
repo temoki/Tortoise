@@ -35,8 +35,7 @@ public class TortoiseProperties {
 
     /// Position
     public var Position: (x: Number, y: Number) {
-        let position = context.cgContext.currentPointOfPath
-        return (x: position.x, y: position.y)
+        return (x: context.posX, y: context.posY)
     }
 
     /// Pen width

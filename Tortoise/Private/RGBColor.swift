@@ -10,13 +10,6 @@ import CoreGraphics
 
 class RGBColor {
 
-    /// RGB color space
-    private static let colorSpace = CGColorSpaceCreateDeviceRGB()
-
-    /// Default black color
-    private static let blackCGColor = CGColor(colorSpace: colorSpace, components: [0, 0, 0, 1])!
-    // swiftlint:disable:previous force_unwrapping
-
     /// Red component
     let r: Number
 
@@ -50,8 +43,8 @@ class RGBColor {
         self.opacity = min(max(opacity/high, 0), 1)
 
         let components = [self.r, self.g, self.b, (1 - self.opacity)]
-        let cgColor = CGColor(colorSpace: RGBColor.colorSpace, components: components)
-        self.cgColor =  cgColor ?? RGBColor.blackCGColor
+        let cgColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: components)
+        self.cgColor =  cgColor ?? CGColor.blackColor
     }
 
     /// Initializer

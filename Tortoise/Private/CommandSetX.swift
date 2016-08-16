@@ -18,12 +18,12 @@ class CommandSetX: Command {
 
     func execute(context: Context) {
         let posX = x.output(context: context)
-        let posY = context.cgContext.currentPointOfPath.y
+        let posY = context.bitmapContext.currentPointOfPath.y
         if context.penDown {
-            context.cgContext.addLineTo(x: posX, y: posY)
-            context.cgContext.strokePath()
+            context.bitmapContext.addLineTo(x: posX, y: posY)
+            context.bitmapContext.strokePath()
         }
-        context.cgContext.moveTo(x: posX, y: posY)
+        context.bitmapContext.moveTo(x: posX, y: posY)
     }
 
 }

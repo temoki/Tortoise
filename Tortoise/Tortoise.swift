@@ -19,19 +19,28 @@ final public class Tortoise {
 
     /// Initializer
     /// - parameter context: Graphics context
-    public required init(cgContext: CGContext, canvasWidth: Number, canvasHeight: Number) {
-        context = Context(cgContext: cgContext,
-                          canvasWidth: canvasWidth, canvasHeight: canvasHeight)
+    public required init(canvasWidth: Number, canvasHeight: Number) {
+        context = Context(canvasWidth: canvasWidth, canvasHeight: canvasHeight)
     }
 
-    /// Run commands
+    /// Run all commands
     public func Run() {
+        context.resetAll()
         commands.append(CommandDrawTortoise())
         commands.forEach { (command) in
             command.execute(context: context)
         }
+    }
+
+    /// Clear all commands
+    public func Clear() {
         commands.removeAll()
-        context.reset()
+    }
+
+    /// Drawn bitmap image
+    public var Image: CGImage? {
+        // swiftlint:disable:previous variable_name
+        return context.outputImage
     }
 
     /// Add command

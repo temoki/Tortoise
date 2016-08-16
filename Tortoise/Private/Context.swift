@@ -18,8 +18,8 @@ class Context {
     static let defaultPenColor = Int(1)
     static let defaultPenWidth = Number(1)
 
-    /// Graphics context
-    let cgContext: CGContext
+    /// Bitmap context
+    let bitmapContext: CGContext
 
     /// Canvas Size
     let canvasWidth: Number
@@ -29,6 +29,8 @@ class Context {
     let colorPalette = ColorPalette()
 
     /// Tortoise's current state
+    var posX = Context.defaultPosX
+    var posY = Context.defaultPosY
     var heading = Context.defaultHeading
     var penDown = Context.defaultPenDown
     var penColor = Context.defaultPenColor
@@ -36,54 +38,75 @@ class Context {
 
     /// Initializer
     /// - parameter context: Graphics context
-    required init(cgContext: CGContext, canvasWidth: Number, canvasHeight: Number) {
-        self.cgContext = cgContext
+    required init(canvasWidth: Number, canvasHeight: Number) {
+        self.bitmapContext = CGContext(data: nil,
+                                       width: canvasWidth.integer,
+                                       height: canvasHeight.integer,
+                                       bitsPerComponent: 8,
+                                       bytesPerRow: canvasWidth.integer * 4,
+                                       space: CGColorSpaceCreateDeviceRGB(),
+                                       bitmapInfo: CGImageAlphaInfo.premultipliedFirst.rawValue)!
+        // swiftlint:disable:previous force_unwrapping
+
         self.canvasWidth = canvasWidth
         self.canvasHeight = canvasHeight
-        self.cgContext.saveGState()
-        self.reset()
     }
 
-    /// Deinit
-    deinit {
-        cgContext.restoreGState()
+    /// Reset all
+    func resetAll() {
+        resetCanvas()
+        setPosition()
+        setHeading()
+        setPen()
     }
 
-    /// Reset context
-    func reset() {
-        cgContext.restoreGState()
-        cgContext.saveGState()
-
+    /// Reset canvas
+    func resetCanvas() {
         // Convert origin
-        cgContext.translate(x: 0, y: canvasHeight)
-        cgContext.scale(x: 1, y: -1)
-        cgContext.translate(x: canvasWidth*0.5, y: canvasHeight*0.5)
+        bitmapContext.translate(x: 0, y: canvasHeight)
+        bitmapContext.scale(x: 1, y: -1)
+        bitmapContext.translate(x: canvasWidth*0.5, y: canvasHeight*0.5)
 
-        // Tortoise's current state
-        resetPos()
-        resetHeading()
-        resetPen()
+        let clearRect = CGRect(x: 0, y: 0, width: canvasWidth, height: canvasHeight)
+        bitmapContext.clear(clearRect)
+        bitmapContext.saveGState()
+        bitmapContext.setFillColor(CGColor.clearColor)
+        bitmapContext.fill(clearRect)
+        bitmapContext.restoreGState()
     }
 
-    func resetPos() {
-        cgContext.moveTo(x: Context.defaultPosX, y: Context.defaultPosY)
+    /// Set position
+    func setPosition(x: Number = Context.defaultPosX, y: Number = Context.defaultPosY) {
+        posX = x
+        posY = y
+        bitmapContext.moveTo(x: posX, y: posY)
     }
 
-    func resetHeading() {
-        heading = Context.defaultHeading
+    /// Set heading
+    func setHeading(_ heading: Number = Context.defaultHeading) {
+        self.heading = heading
     }
 
-    func resetPen() {
-        penDown = Context.defaultPenDown
+    /// Set pen state
+    func setPen(down: Bool = Context.defaultPenDown,
+                color: Int = Context.defaultPenColor,
+                width: Number = Context.defaultPenWidth) {
+        penDown = down
 
-        penColor = Context.defaultPenColor
-        let color = colorPalette.color(number: penColor)
-        cgContext.setStrokeColor(color.cgColor)
-        cgContext.setFillColor(color.cgColor)
+        penColor = color
+        let rgbColor = colorPalette.color(number: penColor)
+        bitmapContext.setStrokeColor(rgbColor.cgColor)
+        bitmapContext.setFillColor(rgbColor.cgColor)
 
-        penWidth = Context.defaultPenWidth
-        cgContext.setLineWidth(penWidth)
+        penWidth = width
+        bitmapContext.setLineWidth(penWidth)
 
+    }
+
+    // Output CGImage
+    var outputImage: CGImage? {
+        bitmapContext.flush()
+        return bitmapContext.makeImage()
     }
 
 }

@@ -22,10 +22,10 @@ class CommandSetPosition: Command {
         let posX = x.output(context: context)
         let posY = y.output(context: context)
         if context.penDown {
-            context.cgContext.addLineTo(x: posX, y: posY)
-            context.cgContext.strokePath()
+            context.bitmapContext.addLineTo(x: posX, y: posY)
+            context.bitmapContext.strokePath()
         }
-        context.cgContext.moveTo(x: posX, y: posY)
+        context.bitmapContext.moveTo(x: posX, y: posY)
     }
 
 }
