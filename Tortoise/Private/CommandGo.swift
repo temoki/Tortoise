@@ -27,7 +27,7 @@ class CommandGo: Command {
             context.bitmapContext.addLineTo(x: newPos.x, y: newPos.y)
             context.bitmapContext.strokePath()
         }
-        context.setPosition(x: newPos.x, y: newPos.y)
+        context.setPosition(newPos.x, newPos.y)
     }
 
 }

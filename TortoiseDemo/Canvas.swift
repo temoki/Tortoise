@@ -12,9 +12,10 @@ import Tortoise
 class Canvas: UIView {
 
     // swiftlint:disable:next variable_name
-    var 🐢: Tortoise?
+    private var 🐢: Tortoise?
+    private var timer: Timer?
 
-    func draw() {
+    func commandTortoise() {
         if self.🐢 == nil {
             self.🐢 = Tortoise(canvasWidth: self.bounds.width,
                                  canvasHeight: self.bounds.height)
@@ -42,9 +43,29 @@ class Canvas: UIView {
             .SetPenColor(0)
             .Back(150)
             .SetPenColor(1)
-            .Run()
+            .Done()
+    }
 
+    func drawAtOnce() {
+        guard let 🐢 = self.🐢 else { return }
+        🐢.RunAll()
         setNeedsDisplay()
+    }
+
+    func drawOneByOne() {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 1/60, repeats: true) { [weak self] (timer) in
+            guard let 🐢 = self?.🐢 else {
+                timer.invalidate()
+                return
+            }
+            if 🐢.RunNext() {
+                self?.setNeedsDisplay()
+            } else {
+                self?.timer?.invalidate()
+                self?.timer = nil
+            }
+        }
     }
 
     override func draw(_ rect: CGRect) {

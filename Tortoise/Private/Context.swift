@@ -62,6 +62,15 @@ class Context {
         setPenWidth()
     }
 
+    /// Restore bitmap context
+    func restoreBitmapContext() {
+        setPosition(posX, posY)
+        setHeading(heading)
+        setPenDown(penDown)
+        setPenColor(penColor)
+        setPenWidth(penWidth)
+    }
+
     /// Reset canvas
     func resetCanvas() {
         // Convert origin
@@ -78,7 +87,7 @@ class Context {
     }
 
     /// Set position
-    func setPosition(x: Number = Context.defaultPosX, y: Number = Context.defaultPosY) {
+    func setPosition(_ x: Number = Context.defaultPosX, _ y: Number = Context.defaultPosY) {
         posX = x
         posY = y
         bitmapContext.moveTo(x: posX, y: posY)

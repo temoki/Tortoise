@@ -23,7 +23,9 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        canvas.draw()
+        canvas.commandTortoise()
+        //canvas.drawAtOnce()
+        canvas.drawOneByOne()
     }
 
 }
