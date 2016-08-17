@@ -74,9 +74,9 @@ class Context {
     /// Reset canvas
     func resetCanvas() {
         // Convert origin
-        bitmapContext.translate(x: 0, y: canvasHeight)
-        bitmapContext.scale(x: 1, y: -1)
-        bitmapContext.translate(x: canvasWidth*0.5, y: canvasHeight*0.5)
+        bitmapContext.translateBy(x: 0, y: canvasHeight)
+        bitmapContext.scaleBy(x: 1, y: -1)
+        bitmapContext.translateBy(x: canvasWidth*0.5, y: canvasHeight*0.5)
 
         let clearRect = CGRect(x: 0, y: 0, width: canvasWidth, height: canvasHeight)
         bitmapContext.clear(clearRect)
@@ -90,7 +90,7 @@ class Context {
     func setPosition(_ x: Number = Context.defaultPosX, _ y: Number = Context.defaultPosY) {
         posX = x
         posY = y
-        bitmapContext.moveTo(x: posX, y: posY)
+        bitmapContext.move(to: CGPoint(x: posX, y: posY))
     }
 
     /// Set heading

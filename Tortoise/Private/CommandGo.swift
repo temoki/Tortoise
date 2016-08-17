@@ -20,11 +20,11 @@ class CommandGo: Command {
 
     func execute(context: Context) {
         let transform = CGAffineTransform(translationX: context.posX, y: context.posY)
-            .rotate(context.heading.radian)
+            .rotated(by: context.heading.radian)
         let x = distance.output(context: context) * (back ? -1 : 1)
-        let newPos = CGPoint(x: x, y: 0).apply(transform: transform)
+        let newPos = CGPoint(x: x, y: 0).applying(transform)
         if context.penDown {
-            context.bitmapContext.addLineTo(x: newPos.x, y: newPos.y)
+            context.bitmapContext.addLine(to: newPos)
             context.bitmapContext.strokePath()
         }
         context.setPosition(newPos.x, newPos.y)

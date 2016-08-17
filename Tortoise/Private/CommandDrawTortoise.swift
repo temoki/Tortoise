@@ -14,20 +14,20 @@ class CommandDrawTortoise: Command {
         // Define triangle's 3 points.
         let pos = context.bitmapContext.currentPointOfPath
         let transform = CGAffineTransform(translationX: pos.x, y: pos.y)
-            .rotate(context.heading.radian)
-        let pos1 = CGPoint(x:  10, y:  0).apply(transform: transform)
-        let pos2 = CGPoint(x: -10, y:  5).apply(transform: transform)
-        let pos3 = CGPoint(x: -10, y: -5).apply(transform: transform)
+            .rotated(by: context.heading.radian)
+        let pos1 = CGPoint(x:  10, y:  0).applying(transform)
+        let pos2 = CGPoint(x: -10, y:  5).applying(transform)
+        let pos3 = CGPoint(x: -10, y: -5).applying(transform)
 
         // Draw
-        context.bitmapContext.moveTo(x: pos1.x, y: pos1.y)
-        context.bitmapContext.addLineTo(x: pos2.x, y: pos2.y)
-        context.bitmapContext.addLineTo(x: pos3.x, y: pos3.y)
+        context.bitmapContext.move(to: pos1)
+        context.bitmapContext.addLine(to: pos2)
+        context.bitmapContext.addLine(to: pos3)
         context.bitmapContext.closePath()
         context.bitmapContext.fillPath()
 
         // Back to current point
-        context.bitmapContext.moveTo(x: pos.x, y: pos.y)
+        context.bitmapContext.move(to: pos)
     }
 
 }

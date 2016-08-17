@@ -28,21 +28,21 @@ class CommandArc: Command {
 
         // Arc start position
         let transform = CGAffineTransform(translationX: centerPos.x, y: centerPos.y)
-            .rotate(context.heading.radian)
-        let startPos = CGPoint(x: radius, y: 0).apply(transform: transform)
+            .rotated(by: context.heading.radian)
+        let startPos = CGPoint(x: radius, y: 0).applying(transform)
 
         // Arc start and end angle
         let startAngle = context.heading.radian
         let endAngle = startAngle - angle.radian
 
         // Draw
-        context.bitmapContext.moveTo(x: startPos.x, y: startPos.y)
-        context.bitmapContext.addArc(centerX: centerPos.x, y: centerPos.y, radius: radius,
-                                     startAngle: startAngle, endAngle: endAngle, clockwise: 1)
+        context.bitmapContext.move(to: startPos)
+        context.bitmapContext.addArc(center: centerPos, radius: radius,
+                                     startAngle: startAngle, endAngle: endAngle, clockwise: true)
         context.bitmapContext.strokePath()
 
         // Back to current position
-        context.bitmapContext.moveTo(x: centerPos.x, y: centerPos.y)
+        context.bitmapContext.move(to: centerPos)
     }
 
 }

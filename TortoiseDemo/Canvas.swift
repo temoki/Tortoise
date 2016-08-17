@@ -71,7 +71,7 @@ class Canvas: UIView {
     override func draw(_ rect: CGRect) {
         guard let image = 🐢?.Image else { return }
         guard let currencContext = UIGraphicsGetCurrentContext() else { return }
-        currencContext.draw(in: self.bounds, image: image)
+        currencContext.draw(image, in: self.bounds)
     }
 
 }
