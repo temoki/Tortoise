@@ -31,7 +31,8 @@ This project supports only Swift 3 and Xcode 8.
     .Run()
 ```
 
-<img src="https://github.com/temoki/Tortoise/blob/master/ReadmeImages/example.png" width="300" />
+<img src="https://github.com/temoki/Tortoise/blob/master/ReadmeImages/example.png" width="300" /> <img src="https://github.com/temoki/Tortoise/blob/master/ReadmeImages/example.gif" width="300" />
+
 
 ## Usage
 
