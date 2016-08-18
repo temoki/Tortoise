@@ -2,7 +2,7 @@
 
 Tortoise is a turtle graphics engine for iOS.
 
-This project supports only Swift 3 and Xcode 8.
+This project now developing with Swift 3 and Xcode 8 beta 6.
 
 ## Example
 
@@ -33,18 +33,18 @@ This project supports only Swift 3 and Xcode 8.
 
 ## Usage
 
-* Instantiate `Tortoise` with `CGContext` instance and canvas size.
-
 ```swift
-class Canvas: UIView {
-    override func draw(_ rect: CGRect) {
-        let 🐢 = Tortoise(cgContext: UIGraphicsGetCurrentContext()!,
-                          canvasWidth: self.bounds.size.width,
-                          canvasHeight: self.bounds.size.height)
+// Instantiate 🐢 with canvas size.
+let 🐢 = Tortoise(canvasWidth: 300, canvasHeight: 300)
+        
+// Command 🐢 to draw.
+🐢.Forward(100).Done()
+        
+// Run and render.
+🐢.RunAll()
 
-        // Command 🐢 to draw.
-    }
-}
+// Get rendered image.
+let image = 🐢.image
 ```
 
 ## Commands
