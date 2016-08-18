@@ -19,13 +19,13 @@ class CommandSetPosition: Command {
     }
 
     func execute(context: Context) {
-        let posX = x.output(context: context)
-        let posY = y.output(context: context)
+        let pos = CGPoint(x: x.output(context: context),
+                          y: y.output(context: context))
         if context.penDown {
-            context.cgContext.addLineTo(x: posX, y: posY)
-            context.cgContext.strokePath()
+            context.bitmapContext.addLine(to: pos)
+            context.bitmapContext.strokePath()
         }
-        context.cgContext.moveTo(x: posX, y: posY)
+        context.bitmapContext.move(to: pos)
     }
 
 }

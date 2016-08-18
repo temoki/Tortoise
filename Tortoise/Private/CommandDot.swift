@@ -26,7 +26,7 @@ class CommandDot: Command {
                                  y: posY - (context.penWidth / 2),
                                  width: context.penWidth,
                                  height: context.penWidth)
-            context.cgContext.fill(dotRect)
+            context.bitmapContext.fill(dotRect)
         }
     }
 

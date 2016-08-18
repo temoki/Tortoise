@@ -18,72 +18,107 @@ class Context {
     static let defaultPenColor = Int(1)
     static let defaultPenWidth = Number(1)
 
-    /// Graphics context
-    let cgContext: CGContext
+    /// Bitmap context
+    let bitmapContext: CGContext
 
     /// Canvas Size
     let canvasWidth: Number
     let canvasHeight: Number
+    let canvasRect: CGRect
+
+    /// Tortoise Image
+    let tortoiseImage: CGImage?
 
     /// Color Palette
     let colorPalette = ColorPalette()
 
     /// Tortoise's current state
-    var heading = Context.defaultHeading
-    var penDown = Context.defaultPenDown
-    var penColor = Context.defaultPenColor
-    var penWidth = Context.defaultPenWidth
+    private(set) var posX = Context.defaultPosX
+    private(set) var posY = Context.defaultPosY
+    private(set) var heading = Context.defaultHeading
+    private(set) var penDown = Context.defaultPenDown
+    private(set) var penColor = Context.defaultPenColor
+    private(set) var penWidth = Context.defaultPenWidth
 
     /// Initializer
     /// - parameter context: Graphics context
-    required init(cgContext: CGContext, canvasWidth: Number, canvasHeight: Number) {
-        self.cgContext = cgContext
+    required init(canvasWidth: Number, canvasHeight: Number, tortoiseImage: CGImage? = nil) {
+        self.bitmapContext = CGContext(data: nil,
+                                       width: canvasWidth.integer,
+                                       height: canvasHeight.integer,
+                                       bitsPerComponent: 8,
+                                       bytesPerRow: canvasWidth.integer * 4,
+                                       space: CGColorSpaceCreateDeviceRGB(),
+                                       bitmapInfo: CGImageAlphaInfo.premultipliedFirst.rawValue)!
+        // swiftlint:disable:previous force_unwrapping
+
         self.canvasWidth = canvasWidth
         self.canvasHeight = canvasHeight
-        self.cgContext.saveGState()
-        self.reset()
-    }
-
-    /// Deinit
-    deinit {
-        cgContext.restoreGState()
-    }
-
-    /// Reset context
-    func reset() {
-        cgContext.restoreGState()
-        cgContext.saveGState()
+        self.tortoiseImage = tortoiseImage
+        self.canvasRect = CGRect(x: -(canvasWidth*0.5),
+                                 y: -(canvasHeight*0.5),
+                                 width: canvasWidth,
+                                 height: canvasHeight)
 
         // Convert origin
-        cgContext.translate(x: 0, y: canvasHeight)
-        cgContext.scale(x: 1, y: -1)
-        cgContext.translate(x: canvasWidth*0.5, y: canvasHeight*0.5)
-
-        // Tortoise's current state
-        resetPos()
-        resetHeading()
-        resetPen()
+        bitmapContext.translateBy(x: 0, y: canvasHeight)
+        bitmapContext.scaleBy(x: 1, y: -1)
+        bitmapContext.translateBy(x: canvasWidth*0.5, y: canvasHeight*0.5)
     }
 
-    func resetPos() {
-        cgContext.moveTo(x: Context.defaultPosX, y: Context.defaultPosY)
+    /// Reset bitmap context
+    func resetBitmapContext() {
+        clearCanvas()
+        setPosition()
+        setHeading()
+        setPenDown()
+        setPenColor()
+        setPenWidth()
     }
 
-    func resetHeading() {
-        heading = Context.defaultHeading
+    func clearCanvas() {
+        bitmapContext.clear(canvasRect)
+        bitmapContext.saveGState()
+        bitmapContext.setFillColor(CGColor.clearColor)
+        bitmapContext.fill(canvasRect)
+        bitmapContext.restoreGState()
     }
 
-    func resetPen() {
-        penDown = Context.defaultPenDown
+    /// Set position
+    func setPosition(_ x: Number = Context.defaultPosX, _ y: Number = Context.defaultPosY) {
+        posX = x
+        posY = y
+        bitmapContext.move(to: CGPoint(x: posX, y: posY))
+    }
 
-        penColor = Context.defaultPenColor
-        let color = colorPalette.color(number: penColor)
-        cgContext.setStrokeColor(color.cgColor)
-        cgContext.setFillColor(color.cgColor)
+    /// Set heading
+    func setHeading(_ heading: Number = Context.defaultHeading) {
+        self.heading = heading
+    }
 
-        penWidth = Context.defaultPenWidth
-        cgContext.setLineWidth(penWidth)
+    /// Set pen down
+    func setPenDown(_ down: Bool = Context.defaultPenDown) {
+        penDown = down
+    }
 
+    /// Set pen color
+    func setPenColor(_ color: Int = Context.defaultPenColor) {
+        penColor = color
+        let rgbColor = colorPalette.color(number: penColor)
+        bitmapContext.setStrokeColor(rgbColor.cgColor)
+        bitmapContext.setFillColor(rgbColor.cgColor)
+    }
+
+    /// Set pen width
+    func setPenWidth(_ width: Number = Context.defaultPenWidth) {
+        penWidth = width
+        bitmapContext.setLineWidth(penWidth)
+    }
+
+    // Output CGImage
+    var outputImage: CGImage? {
+        bitmapContext.flush()
+        return bitmapContext.makeImage()
     }
 
 }

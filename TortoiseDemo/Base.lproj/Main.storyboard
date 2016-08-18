@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11173.2" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11143.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,13 +22,37 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5n4-kv-Zxv" customClass="Canvas" customModule="TortoiseDemo" customModuleProvider="target">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubU-hm-blR">
+                                <state key="normal" title="Draw at once"/>
+                                <connections>
+                                    <action selector="drawAtOnceWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9xN-3s-5jc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yku-fx-hBD">
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="clearWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P01-9e-UXB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYK-yv-gYV">
+                                <state key="normal" title="Draw one by one"/>
+                                <connections>
+                                    <action selector="drawOneByOneWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="00H-9U-xIX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NYK-yv-gYV" secondAttribute="bottom" constant="8" id="0vv-sC-LQ8"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yku-fx-hBD" secondAttribute="bottom" constant="8" id="JTR-9S-UOk"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5n4-kv-Zxv" secondAttribute="bottom" id="Kne-KB-Cz9"/>
                             <constraint firstItem="5n4-kv-Zxv" firstAttribute="leading" secondItem="rLk-L1-tgy" secondAttribute="leading" id="P2L-ao-wFh"/>
                             <constraint firstAttribute="trailing" secondItem="5n4-kv-Zxv" secondAttribute="trailing" id="VLz-9M-uO1"/>
                             <constraint firstItem="5n4-kv-Zxv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="VVv-3j-Wi4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ubU-hm-blR" secondAttribute="bottom" constant="8" id="YXh-Tv-MHt"/>
+                            <constraint firstItem="yku-fx-hBD" firstAttribute="centerX" secondItem="rLk-L1-tgy" secondAttribute="centerX" id="c3q-wP-e6q"/>
+                            <constraint firstItem="ubU-hm-blR" firstAttribute="leading" secondItem="rLk-L1-tgy" secondAttribute="leadingMargin" constant="8" id="mqh-qV-LkW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NYK-yv-gYV" secondAttribute="trailing" constant="8" id="zQZ-pC-hCY"/>
                         </constraints>
                     </view>
                     <connections>

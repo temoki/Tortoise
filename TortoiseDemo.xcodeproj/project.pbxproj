@@ -43,6 +43,7 @@
 		149874111D5AF41B0039ADF7 /* Tortoise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149874101D5AF41B0039ADF7 /* Tortoise.swift */; };
 		149874131D5AF4510039ADF7 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149874121D5AF4510039ADF7 /* Number.swift */; };
 		149874151D5AFAD20039ADF7 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149874141D5AFAD20039ADF7 /* Canvas.swift */; };
+		149AC6241D63615E000C52C8 /* CGColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149AC6231D63615E000C52C8 /* CGColorExtension.swift */; };
 		14A280251D5DB28D007A66FD /* CommandSetRGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A280241D5DB28D007A66FD /* CommandSetRGB.swift */; };
 		562D1ED4DF50281CC6C8103F /* Pods_TortoiseDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86115498E221B1B2538D3C14 /* Pods_TortoiseDemo.framework */; };
 /* End PBXBuildFile section */
@@ -110,6 +111,7 @@
 		149874101D5AF41B0039ADF7 /* Tortoise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tortoise.swift; sourceTree = "<group>"; };
 		149874121D5AF4510039ADF7 /* Number.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Number.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		149874141D5AFAD20039ADF7 /* Canvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
+		149AC6231D63615E000C52C8 /* CGColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGColorExtension.swift; path = Tortoise/Private/CGColorExtension.swift; sourceTree = "<group>"; };
 		14A280241D5DB28D007A66FD /* CommandSetRGB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = CommandSetRGB.swift; path = Tortoise/Private/CommandSetRGB.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		86115498E221B1B2538D3C14 /* Pods_TortoiseDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TortoiseDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9789486CBACDE7D5384325B /* Pods-TortoiseDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TortoiseDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-TortoiseDemo/Pods-TortoiseDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 		147248371D5B104C00461689 /* Private */ = {
 			isa = PBXGroup;
 			children = (
+				149AC6231D63615E000C52C8 /* CGColorExtension.swift */,
 				14761E231D5C6563004A6843 /* ColorPallete.swift */,
 				147248381D5B107C00461689 /* Command.swift */,
 				14432F721D5CD08E00FDEFE7 /* CommandArc.swift */,
@@ -438,6 +441,7 @@
 				14761E281D5C6563004A6843 /* RGBColor.swift in Sources */,
 				14761E1C1D5B88F2004A6843 /* CommandHome.swift in Sources */,
 				140ACC841D5DC4A900E23F24 /* CommandDot.swift in Sources */,
+				149AC6241D63615E000C52C8 /* CGColorExtension.swift in Sources */,
 				14761E0B1D5B67FA004A6843 /* CommandRotate.swift in Sources */,
 				1472483B1D5B107C00461689 /* Context.swift in Sources */,
 				14761E091D5B67FA004A6843 /* CommandGo.swift in Sources */,
@@ -500,8 +504,10 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -548,8 +554,10 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

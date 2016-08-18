@@ -19,16 +19,15 @@ class CommandGo: Command {
     }
 
     func execute(context: Context) {
-        let pos = context.cgContext.currentPointOfPath
-        let transform = CGAffineTransform(translationX: pos.x, y: pos.y)
-            .rotate(context.heading.radian)
+        let transform = CGAffineTransform(translationX: context.posX, y: context.posY)
+            .rotated(by: context.heading.radian)
         let x = distance.output(context: context) * (back ? -1 : 1)
-        let newPos = CGPoint(x: x, y: 0).apply(transform: transform)
+        let newPos = CGPoint(x: x, y: 0).applying(transform)
         if context.penDown {
-            context.cgContext.addLineTo(x: newPos.x, y: newPos.y)
-            context.cgContext.strokePath()
+            context.bitmapContext.addLine(to: newPos)
+            context.bitmapContext.strokePath()
         }
-        context.cgContext.moveTo(x: newPos.x, y: newPos.y)
+        context.setPosition(newPos.x, newPos.y)
     }
 
 }

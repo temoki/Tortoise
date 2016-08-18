@@ -11,8 +11,8 @@ import Foundation
 class CommandHome: Command {
 
     func execute(context: Context) {
-        context.resetPos()
-        context.resetHeading()
+        context.setPosition()
+        context.setHeading()
     }
 
 }
