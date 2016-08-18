@@ -24,6 +24,7 @@ class Context {
     /// Canvas Size
     let canvasWidth: Number
     let canvasHeight: Number
+    let canvasRect: CGRect
 
     /// Color Palette
     let colorPalette = ColorPalette()
@@ -50,11 +51,20 @@ class Context {
 
         self.canvasWidth = canvasWidth
         self.canvasHeight = canvasHeight
+        self.canvasRect = CGRect(x: -(canvasWidth*0.5),
+                                 y: -(canvasHeight*0.5),
+                                 width: canvasWidth,
+                                 height: canvasHeight)
+
+        // Convert origin
+        bitmapContext.translateBy(x: 0, y: canvasHeight)
+        bitmapContext.scaleBy(x: 1, y: -1)
+        bitmapContext.translateBy(x: canvasWidth*0.5, y: canvasHeight*0.5)
     }
 
-    /// Reset all
-    func resetAll() {
-        resetCanvas()
+    /// Reset bitmap context
+    func resetBitmapContext() {
+        clearCanvas()
         setPosition()
         setHeading()
         setPenDown()
@@ -62,27 +72,11 @@ class Context {
         setPenWidth()
     }
 
-    /// Restore bitmap context
-    func restoreBitmapContext() {
-        setPosition(posX, posY)
-        setHeading(heading)
-        setPenDown(penDown)
-        setPenColor(penColor)
-        setPenWidth(penWidth)
-    }
-
-    /// Reset canvas
-    func resetCanvas() {
-        // Convert origin
-        bitmapContext.translateBy(x: 0, y: canvasHeight)
-        bitmapContext.scaleBy(x: 1, y: -1)
-        bitmapContext.translateBy(x: canvasWidth*0.5, y: canvasHeight*0.5)
-
-        let clearRect = CGRect(x: 0, y: 0, width: canvasWidth, height: canvasHeight)
-        bitmapContext.clear(clearRect)
+    func clearCanvas() {
+        bitmapContext.clear(canvasRect)
         bitmapContext.saveGState()
         bitmapContext.setFillColor(CGColor.clearColor)
-        bitmapContext.fill(clearRect)
+        bitmapContext.fill(canvasRect)
         bitmapContext.restoreGState()
     }
 

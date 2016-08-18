@@ -28,12 +28,13 @@ final public class Tortoise {
 
     /// Done
     public func Done() {
+        // end of method chane
     }
 
     /// Run all commands
     public func RunAll() {
         nextCommand = 0
-        context.resetAll()
+        context.resetBitmapContext()
         commands.forEach { (command) in
             command.execute(context: context)
         }
@@ -45,19 +46,16 @@ final public class Tortoise {
     public func RunNext() -> Bool {
         // Check whethre it has next
         guard nextCommand < commands.count else {
-            CommandDrawTortoise().execute(context: context)
             nextCommand = 0
             return false
         }
 
-        // At first time, reset context
-        if nextCommand == 0 {
-            context.resetAll()
+        // Run commands
+        context.resetBitmapContext()
+        for i in 0...nextCommand {
+            commands[i].execute(context: context)
         }
-
-        // Run command
-        context.restoreBitmapContext()
-        commands[nextCommand].execute(context: context)
+        CommandDrawTortoise().execute(context: context)
 
         nextCommand += 1
         return true

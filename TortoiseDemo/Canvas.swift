@@ -12,14 +12,18 @@ import Tortoise
 class Canvas: UIView {
 
     // swiftlint:disable:next variable_name
-    private var 🐢: Tortoise?
-    private var timer: Timer?
+    var 🐢: Tortoise?
 
-    func commandTortoise() {
+    private var animationMode = false
+
+    func setup() {
         if self.🐢 == nil {
             self.🐢 = Tortoise(canvasWidth: self.bounds.width,
                                  canvasHeight: self.bounds.height)
         }
+    }
+
+    func commandTortoise() {
         guard let 🐢 = self.🐢 else { return }
 
         🐢.SetRGB(0, [0.8, 0.8, 0.8])
@@ -41,30 +45,24 @@ class Canvas: UIView {
             }
             .SetPenWidth(3)
             .SetPenColor(0)
-            .Back(150)
+            .Right(180)
+            .Forward(150)
             .SetPenColor(1)
             .Done()
     }
 
     func drawAtOnce() {
         guard let 🐢 = self.🐢 else { return }
+        animationMode = false
         🐢.RunAll()
         setNeedsDisplay()
     }
 
     func drawOneByOne() {
-        timer?.invalidate()
-        timer = Timer.scheduledTimer(withTimeInterval: 1/60, repeats: true) { [weak self] (timer) in
-            guard let 🐢 = self?.🐢 else {
-                timer.invalidate()
-                return
-            }
-            if 🐢.RunNext() {
-                self?.setNeedsDisplay()
-            } else {
-                self?.timer?.invalidate()
-                self?.timer = nil
-            }
+        guard let 🐢 = self.🐢 else { return }
+        animationMode = true
+        if 🐢.RunNext() {
+            self.setNeedsDisplay()
         }
     }
 
@@ -72,6 +70,9 @@ class Canvas: UIView {
         guard let image = 🐢?.Image else { return }
         guard let currencContext = UIGraphicsGetCurrentContext() else { return }
         currencContext.draw(image, in: self.bounds)
+        if animationMode {
+            DispatchQueue.main.async { self.drawOneByOne() }
+        }
     }
 
 }
