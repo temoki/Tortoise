@@ -24,10 +24,7 @@ This project supports only Swift 3 and Xcode 8.
             .Right(60)
         }
     }
-    .SetPenWidth(3)
-    .SetPenColor(0)
-    .Back(150)
-    .SetPenColor(1)
+    .Home()
     .Run()
 ```
 
