@@ -25,6 +25,13 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         canvas.setup()
         canvas.drawAtOnce()
+        let image = UIImage(named: "Tortoise")
+        print(image)
+    }
+
+    @IBAction func clear(sender: UIButton) {
+        canvas.🐢?.Clear()
+        canvas.drawAtOnce()
     }
 
     @IBAction func drawAtOnce(sender: UIButton) {
@@ -58,11 +65,8 @@ class ViewController: UIViewController {
                     .Right(60)
                 }
             }
-            .SetPenWidth(3)
-            .SetPenColor(0)
-            .Right(180)
-            .Forward(150)
-            .SetPenColor(1)
+            .Home()
             .Done()
     }
+
 }

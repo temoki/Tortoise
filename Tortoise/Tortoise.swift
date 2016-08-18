@@ -22,8 +22,10 @@ final public class Tortoise {
 
     /// Initializer
     /// - parameter context: Graphics context
-    public required init(canvasWidth: Number, canvasHeight: Number) {
-        context = Context(canvasWidth: canvasWidth, canvasHeight: canvasHeight)
+    public required init(canvasWidth: Number, canvasHeight: Number, tortoiseImage: CGImage? = nil) {
+        context = Context(canvasWidth: canvasWidth,
+                          canvasHeight: canvasHeight,
+                          tortoiseImage: tortoiseImage)
     }
 
     /// Done

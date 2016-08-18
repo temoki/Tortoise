@@ -19,36 +19,9 @@ class Canvas: UIView {
     func setup() {
         if self.🐢 == nil {
             self.🐢 = Tortoise(canvasWidth: self.bounds.width,
-                                 canvasHeight: self.bounds.height)
+                                 canvasHeight: self.bounds.height,
+                                 tortoiseImage: #imageLiteral(resourceName: "Tortoise").cgImage)
         }
-    }
-
-    func commandTortoise() {
-        guard let 🐢 = self.🐢 else { return }
-
-        🐢.SetRGB(0, [0.8, 0.8, 0.8])
-            .Repeat(12) { 🐢
-                .SetPenWidth(2)
-                .Right(15)
-                .Repeat(6) { 🐢
-                    .SetPenColor(.PenColor({ $0 + 1 }))
-                    .Forward(50)
-                    .Right(60)
-                }
-                .SetPenWidth(1)
-                .Right(15)
-                .Repeat(6) { 🐢
-                    .SetPenColor(.PenColor({ $0 + 1 }))
-                    .Forward(20)
-                    .Right(60)
-                }
-            }
-            .SetPenWidth(3)
-            .SetPenColor(0)
-            .Right(180)
-            .Forward(150)
-            .SetPenColor(1)
-            .Done()
     }
 
     func drawAtOnce() {

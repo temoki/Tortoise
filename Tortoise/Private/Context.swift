@@ -26,6 +26,9 @@ class Context {
     let canvasHeight: Number
     let canvasRect: CGRect
 
+    /// Tortoise Image
+    let tortoiseImage: CGImage?
+
     /// Color Palette
     let colorPalette = ColorPalette()
 
@@ -39,7 +42,7 @@ class Context {
 
     /// Initializer
     /// - parameter context: Graphics context
-    required init(canvasWidth: Number, canvasHeight: Number) {
+    required init(canvasWidth: Number, canvasHeight: Number, tortoiseImage: CGImage? = nil) {
         self.bitmapContext = CGContext(data: nil,
                                        width: canvasWidth.integer,
                                        height: canvasHeight.integer,
@@ -51,6 +54,7 @@ class Context {
 
         self.canvasWidth = canvasWidth
         self.canvasHeight = canvasHeight
+        self.tortoiseImage = tortoiseImage
         self.canvasRect = CGRect(x: -(canvasWidth*0.5),
                                  y: -(canvasHeight*0.5),
                                  width: canvasWidth,

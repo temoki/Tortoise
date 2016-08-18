@@ -28,6 +28,12 @@
                                     <action selector="drawAtOnceWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9xN-3s-5jc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yku-fx-hBD">
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="clearWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P01-9e-UXB"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYK-yv-gYV">
                                 <state key="normal" title="Draw one by one"/>
                                 <connections>
@@ -38,11 +44,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NYK-yv-gYV" secondAttribute="bottom" constant="8" id="0vv-sC-LQ8"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yku-fx-hBD" secondAttribute="bottom" constant="8" id="JTR-9S-UOk"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5n4-kv-Zxv" secondAttribute="bottom" id="Kne-KB-Cz9"/>
                             <constraint firstItem="5n4-kv-Zxv" firstAttribute="leading" secondItem="rLk-L1-tgy" secondAttribute="leading" id="P2L-ao-wFh"/>
                             <constraint firstAttribute="trailing" secondItem="5n4-kv-Zxv" secondAttribute="trailing" id="VLz-9M-uO1"/>
                             <constraint firstItem="5n4-kv-Zxv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="VVv-3j-Wi4"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ubU-hm-blR" secondAttribute="bottom" constant="8" id="YXh-Tv-MHt"/>
+                            <constraint firstItem="yku-fx-hBD" firstAttribute="centerX" secondItem="rLk-L1-tgy" secondAttribute="centerX" id="c3q-wP-e6q"/>
                             <constraint firstItem="ubU-hm-blR" firstAttribute="leading" secondItem="rLk-L1-tgy" secondAttribute="leadingMargin" constant="8" id="mqh-qV-LkW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NYK-yv-gYV" secondAttribute="trailing" constant="8" id="zQZ-pC-hCY"/>
                         </constraints>
