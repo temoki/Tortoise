@@ -1,8 +1,8 @@
 # Tortoise
 
-Tortoise is a turtle graphics engine for iOS.
+A turtle graphics engine for iOS written in Swift.
 
-This project now developing with Swift 3 and Xcode 8 beta 6.
+This is now developing with Swift 3 and Xcode 8 beta 6.
 
 ## Example
 
@@ -72,3 +72,17 @@ let image = 🐢.image
 * `PenWidth`
 * `CanvasSize`
 * `Repeat`
+
+## Roadmap
+
+* `ShowTurtle`, `HideTurtle`, `Shown?` command
+* `SetBackground`, `Background` command
+* `CleanScreen`, `Clean` command
+* `Towards` command
+* `SetLineCap`, `SetLineDash` command
+* `SetCanvasSize` commnad
+* `If` statement support
+* Procedure support
+* `Canvas` view
+* SPM/Carthage/Cocoapods installation
+* macOS support
