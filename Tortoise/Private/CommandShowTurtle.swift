@@ -1,5 +1,5 @@
 //
-//  CommandShowTurtle.swift
+//  CommandShowTortoise.swift
 //  Tortoise
 //
 //  Created by temoki on 2016/08/20.
@@ -8,7 +8,7 @@
 
 import CoreGraphics
 
-class CommandShowTurtle: Command {
+class CommandShowTortoise: Command {
 
     private let show: Bool
 
