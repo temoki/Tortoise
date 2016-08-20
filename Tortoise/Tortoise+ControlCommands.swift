@@ -24,4 +24,24 @@ public extension Tortoise {
         return self
     }
 
+
+    // MARK:- ShowTurtle
+
+    /// Show the turtle if it is hidden.
+    /// - returns: self
+    public func ShowTurtle() -> Tortoise {
+        add(command: CommandShowTurtle(show: true))
+        return self
+    }
+
+    // MARK:- HideTurtle
+
+    /// Hide the turtle. Its position remains the same.
+    /// Drawing happens in the same way, and the turtleʼs position is affected by drawing commands
+    /// in the same way as when it is showing.
+    public func HideTurtle() -> Tortoise {
+        add(command: CommandShowTurtle(show: false))
+        return self
+    }
+
 }

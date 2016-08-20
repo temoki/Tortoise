@@ -1,0 +1,23 @@
+//
+//  CommandShowTurtle.swift
+//  Tortoise
+//
+//  Created by temoki on 2016/08/20.
+//  Copyright © 2016 temoki. All rights reserved.
+//
+
+import CoreGraphics
+
+class CommandShowTurtle: Command {
+
+    private let show: Bool
+
+    init(show: Bool) {
+        self.show = show
+    }
+
+    func execute(context: Context) {
+        context.show = show
+    }
+
+}
