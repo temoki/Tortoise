@@ -27,7 +27,7 @@ class Canvas: UIView {
     func drawAtOnce() {
         guard let 🐢 = self.🐢 else { return }
         animationMode = false
-        🐢.RunAll()
+        🐢.Run()
         setNeedsDisplay()
     }
 

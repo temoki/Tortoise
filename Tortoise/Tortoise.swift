@@ -34,7 +34,7 @@ final public class Tortoise {
     }
 
     /// Run all commands
-    public func RunAll() {
+    public func Run() {
         nextCommand = 0
         context.resetBitmapContext()
         commands.forEach { (command) in
