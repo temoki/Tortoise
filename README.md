@@ -41,7 +41,7 @@ let 🐢 = Tortoise(canvasWidth: 300, canvasHeight: 300)
 🐢.Forward(100).Done()
         
 // Run and render.
-🐢.RunAll()
+🐢.Run()
 
 // Get rendered image.
 let image = 🐢.image
