@@ -83,8 +83,8 @@ let image = 🐢.image
 ### Control
 
 * `Repeat`
-* `ShowTurtle`
-* `HideTurtle`
+* `ShowTortoise`
+* `HideTortoise`
 
 ## Requirements
 
