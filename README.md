@@ -73,6 +73,15 @@ let image = 🐢.image
 * `CanvasSize`
 * `Repeat`
 
+## Requirements
+
+* Swift 3 (Xcode 8 beta 6)
+* iOS 10.0 beta
+
+## Installation
+
+T.B.D.
+
 ## Roadmap
 
 * `ShowTurtle`, `HideTurtle`, `Shown?` command
