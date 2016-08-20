@@ -11,6 +11,7 @@ import CoreGraphics
 class Context {
 
     /// Default Values
+    static let defaultShow = true
     static let defaultPosX = Number(0)
     static let defaultPosY = Number(0)
     static let defaultHeading = Number(90)
@@ -33,6 +34,7 @@ class Context {
     let colorPalette = ColorPalette()
 
     /// Tortoise's current state
+    var show = Context.defaultShow
     private(set) var posX = Context.defaultPosX
     private(set) var posY = Context.defaultPosY
     private(set) var heading = Context.defaultHeading

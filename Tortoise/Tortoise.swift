@@ -40,7 +40,9 @@ final public class Tortoise {
         commands.forEach { (command) in
             command.execute(context: context)
         }
-        CommandDrawTortoise().execute(context: context)
+        if context.show {
+            CommandDrawTortoise().execute(context: context)
+        }
     }
 
     /// Run next command
@@ -57,7 +59,9 @@ final public class Tortoise {
         for i in 0...nextCommand {
             commands[i].execute(context: context)
         }
-        CommandDrawTortoise().execute(context: context)
+        if context.show {
+            CommandDrawTortoise().execute(context: context)
+        }
 
         nextCommand += 1
         return true
