@@ -90,7 +90,8 @@ T.B.D.
 * `Towards` command
 * `SetLineCap`, `SetLineDash` command
 * `SetCanvasSize` commnad
-* `If` statement support
+* `If`, `While`, `For` statement support
+* Variable support
 * Procedure support
 * `Canvas` view
 * SPM/Carthage/Cocoapods installation
