@@ -36,10 +36,10 @@ This is now developing with Swift 3 and Xcode 8 beta 6.
 ```swift
 // Instantiate 🐢 with canvas size.
 let 🐢 = Tortoise(canvasWidth: 300, canvasHeight: 300)
-        
+
 // Command 🐢 to draw.
 🐢.Forward(100).Done()
-        
+
 // Run and render.
 🐢.Run()
 
@@ -48,6 +48,8 @@ let image = 🐢.image
 ```
 
 ## Commands
+
+### Move and Draw
 
 * `Forward`
 * `Back`
@@ -60,18 +62,29 @@ let image = 🐢.image
 * `SetY`
 * `Dot`
 * `Arc`
+
+### Pen and Canvas state
+
 * `PenDown`
 * `PenUp`
 * `SetPenColor`
 * `SetPenWidth`
 * `SetRGB`
+
+### Output
+
 * `Random`
 * `Heading`
 * `Position`
 * `PenColor`
 * `PenWidth`
 * `CanvasSize`
+
+### Control
+
 * `Repeat`
+* `ShowTurtle`
+* `HideTurtle`
 
 ## Requirements
 
@@ -84,12 +97,12 @@ T.B.D.
 
 ## Roadmap
 
-* `ShowTurtle`, `HideTurtle`, `Shown?` command
+* `Shown?` command
 * `SetBackground`, `Background` command
 * `CleanScreen`, `Clean` command
 * `Towards` command
 * `SetLineCap`, `SetLineDash` command
-* `SetCanvasSize` commnad
+* `SetCanvasSize` command
 * `If`, `While`, `For` statement support
 * Variable support
 * Procedure support
