@@ -12,6 +12,8 @@
 		142EA1BC1D69AE3800D1D050 /* Output.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142EA1BB1D69AE3800D1D050 /* Output.swift */; };
 		142EA1BE1D69B7CD00D1D050 /* CommandBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142EA1BD1D69B7CD00D1D050 /* CommandBack.swift */; };
 		142EA1C01D69B8FB00D1D050 /* CommandRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142EA1BF1D69B8FB00D1D050 /* CommandRight.swift */; };
+		142EA1C21D69BA0F00D1D050 /* CommandClearScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142EA1C11D69BA0F00D1D050 /* CommandClearScreen.swift */; };
+		142EA1C41D69BA8A00D1D050 /* CommandClean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142EA1C31D69BA8A00D1D050 /* CommandClean.swift */; };
 		14432F671D5CC14D00FDEFE7 /* CommandSetHeading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14432F661D5CC14D00FDEFE7 /* CommandSetHeading.swift */; };
 		14432F691D5CC46800FDEFE7 /* CommandSetX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14432F681D5CC46800FDEFE7 /* CommandSetX.swift */; };
 		14432F6B1D5CC97300FDEFE7 /* MultiCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14432F6A1D5CC97300FDEFE7 /* MultiCommand.swift */; };
@@ -81,6 +83,8 @@
 		142EA1BB1D69AE3800D1D050 /* Output.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Output.swift; sourceTree = "<group>"; };
 		142EA1BD1D69B7CD00D1D050 /* CommandBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommandBack.swift; path = Tortoise/Private/CommandBack.swift; sourceTree = "<group>"; };
 		142EA1BF1D69B8FB00D1D050 /* CommandRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommandRight.swift; path = Tortoise/Private/CommandRight.swift; sourceTree = "<group>"; };
+		142EA1C11D69BA0F00D1D050 /* CommandClearScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommandClearScreen.swift; path = Tortoise/Private/CommandClearScreen.swift; sourceTree = "<group>"; };
+		142EA1C31D69BA8A00D1D050 /* CommandClean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommandClean.swift; path = Tortoise/Private/CommandClean.swift; sourceTree = "<group>"; };
 		14432F661D5CC14D00FDEFE7 /* CommandSetHeading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = CommandSetHeading.swift; path = Tortoise/Private/CommandSetHeading.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		14432F681D5CC46800FDEFE7 /* CommandSetX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = CommandSetX.swift; path = Tortoise/Private/CommandSetX.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		14432F6A1D5CC97300FDEFE7 /* MultiCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MultiCommand.swift; path = Tortoise/Private/MultiCommand.swift; sourceTree = "<group>"; };
@@ -161,6 +165,8 @@
 				147248381D5B107C00461689 /* Command.swift */,
 				14432F721D5CD08E00FDEFE7 /* CommandArc.swift */,
 				142EA1BD1D69B7CD00D1D050 /* CommandBack.swift */,
+				142EA1C31D69BA8A00D1D050 /* CommandClean.swift */,
+				142EA1C11D69BA0F00D1D050 /* CommandClearScreen.swift */,
 				140ACC831D5DC4A900E23F24 /* CommandDot.swift */,
 				147248451D5B137300461689 /* CommandDrawTortoise.swift */,
 				14761E051D5B67FA004A6843 /* CommandForward.swift */,
@@ -447,6 +453,7 @@
 				149874131D5AF4510039ADF7 /* Number.swift in Sources */,
 				14432F6F1D5CCA8200FDEFE7 /* CommandSetY.swift in Sources */,
 				142EA1C01D69B8FB00D1D050 /* CommandRight.swift in Sources */,
+				142EA1C41D69BA8A00D1D050 /* CommandClean.swift in Sources */,
 				1472483F1D5B111900461689 /* Tortoise+MoveCommands.swift in Sources */,
 				14432F711D5CCB9E00FDEFE7 /* CommandSetPenWidth.swift in Sources */,
 				14761E281D5C6563004A6843 /* RGBColor.swift in Sources */,
@@ -468,6 +475,7 @@
 				14432F691D5CC46800FDEFE7 /* CommandSetX.swift in Sources */,
 				1472483A1D5B107C00461689 /* Command.swift in Sources */,
 				14432F671D5CC14D00FDEFE7 /* CommandSetHeading.swift in Sources */,
+				142EA1C21D69BA0F00D1D050 /* CommandClearScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

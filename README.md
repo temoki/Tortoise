@@ -7,7 +7,8 @@ This is now developing with Swift 3 and Xcode 8 beta 6.
 ## Example
 
 ```swift
-🐢.SetRGB(0, [0.8, 0.8, 0.8])
+🐢.ClearScreen()
+    .SetRGB(0, [0.8, 0.8, 0.8])
     .Repeat(12) { 🐢
         .SetPenWidth(2)
         .Right(15)
@@ -38,13 +39,13 @@ This is now developing with Swift 3 and Xcode 8 beta 6.
 let 🐢 = Tortoise(canvasWidth: 300, canvasHeight: 300)
 
 // Command 🐢 to draw.
-🐢.Forward(100).Done()
+🐢.Right(90).Forward(100).Done()
 
 // Run and render.
-🐢.Run()
+🐢.run()
 
 // Get rendered image.
-let image = 🐢.image
+let image = 🐢.renderedImage
 ```
 
 ## Commands
@@ -65,6 +66,8 @@ let image = 🐢.image
 
 ### Pen and Canvas state
 
+* `CleanScreen`
+* `Clean`
 * `PenDown`
 * `PenUp`
 * `SetPenColor`
@@ -101,7 +104,6 @@ T.B.D.
 ## Roadmap
 
 * `SetBackground`, `Background` command
-* `CleanScreen`, `Clean` command
 * `SetLineCap`, `SetLineDash` command
 * `SetCanvasSize` command
 * `If`, `While`, `For` statement support
