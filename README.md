@@ -12,14 +12,14 @@ This is now developing with Swift 3 and Xcode 8 beta 6.
         .SetPenWidth(2)
         .Right(15)
         .Repeat(6) { 🐢
-            .SetPenColor(.PenColor({ $0 + 1 }))
+            .SetPenColor({ $0.PenColor + 1 })
             .Forward(50)
             .Right(60)
         }
         .SetPenWidth(1)
         .Right(15)
         .Repeat(6) { 🐢
-            .SetPenColor(.PenColor({ $0 + 1 }))
+            .SetPenColor({ $0.PenColor + 1 })
             .Forward(20)
             .Right(60)
         }
@@ -74,10 +74,13 @@ let image = 🐢.image
 ### Output
 
 * `Random`
+* `Towards`
+* `Shown`
 * `Heading`
 * `Position`
 * `PenColor`
 * `PenWidth`
+* `RGB`
 * `CanvasSize`
 
 ### Control
@@ -97,10 +100,8 @@ T.B.D.
 
 ## Roadmap
 
-* `Shown?` command
 * `SetBackground`, `Background` command
 * `CleanScreen`, `Clean` command
-* `Towards` command
 * `SetLineCap`, `SetLineDash` command
 * `SetCanvasSize` command
 * `If`, `While`, `For` statement support
