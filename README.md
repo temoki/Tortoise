@@ -25,8 +25,7 @@ This is now developing with Swift 3 and Xcode 8 beta 6.
             .Right(60)
         }
     }
-    .Home()
-    .Run()
+    .Done()
 ```
 
 <img src="https://github.com/temoki/Tortoise/blob/master/ReadmeImages/example.png" width="300" /> <img src="https://github.com/temoki/Tortoise/blob/master/ReadmeImages/example.gif" width="300" />
@@ -52,6 +51,8 @@ let image = 🐢.renderedImage
 
 ### Move and Draw
 
+* `CleanScreen`
+* `Clean`
 * `Forward`
 * `Back`
 * `Right`
@@ -66,8 +67,6 @@ let image = 🐢.renderedImage
 
 ### Pen and Canvas state
 
-* `CleanScreen`
-* `Clean`
 * `PenDown`
 * `PenUp`
 * `SetPenColor`
