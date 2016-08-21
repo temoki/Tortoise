@@ -27,6 +27,11 @@ class RGBColor {
         get { return 1 - opacity }
     }
 
+    /// Components [R, G, B, Opacity]
+    var components: [Number] {
+        return [r, g, b, opacity]
+    }
+
     /// CGColor
     let cgColor: CGColor
 
