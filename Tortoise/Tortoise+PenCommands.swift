@@ -50,7 +50,7 @@ public extension Tortoise {
     /// - parameter number: Color number
     /// - returns: self
     public func SetPenColor(_ number: Number) -> Tortoise {
-        return SetPenColor(.Value(number))
+        return SetPenColor({_ in number})
     }
 
 
@@ -70,7 +70,7 @@ public extension Tortoise {
     /// - parameter width: Pen width
     /// - returns: self
     public func SetPenWidth(_ width: Number) -> Tortoise {
-        return SetPenWidth(.Value(width))
+        return SetPenWidth({_ in width})
     }
 
 
@@ -102,7 +102,10 @@ public extension Tortoise {
     /// - parameter componets: RGB and Opacity components
     /// - returns: self
     public func SetRGB(_ number: Number, _ components: [Number]) -> Tortoise {
-        return SetRGB(.Value(number), components.map { .Value($0) })
+        let numberOutputs = components.map { (component) -> NumberOutput in
+            return {(TortoiseProperties) in component}
+        }
+        return SetRGB({_ in number}, numberOutputs)
     }
 
 }
