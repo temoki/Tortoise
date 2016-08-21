@@ -28,13 +28,8 @@ final public class Tortoise {
                           tortoiseImage: tortoiseImage)
     }
 
-    /// Done
-    public func Done() {
-        // end of method chane
-    }
-
     /// Run all commands
-    public func Run() {
+    public func run() {
         nextCommand = 0
         context.resetBitmapContext()
         commands.forEach { (command) in
@@ -47,7 +42,7 @@ final public class Tortoise {
 
     /// Run next command
     /// - returns: whether it has next
-    public func RunNext() -> Bool {
+    public func runNext() -> Bool {
         // Check whethre it has next
         guard nextCommand < commands.count else {
             nextCommand = 0
@@ -68,13 +63,13 @@ final public class Tortoise {
     }
 
     /// Clear all commands
-    public func Clear() {
+    public func clearAllCommands() {
         nextCommand = 0
         commands.removeAll()
     }
 
     /// Drawn bitmap image
-    public var Image: CGImage? {
+    public var renderedImage: CGImage? {
         // swiftlint:disable:previous variable_name
         return context.outputImage
     }

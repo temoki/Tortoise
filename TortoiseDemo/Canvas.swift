@@ -27,20 +27,20 @@ class Canvas: UIView {
     func drawAtOnce() {
         guard let 🐢 = self.🐢 else { return }
         animationMode = false
-        🐢.Run()
+        🐢.run()
         setNeedsDisplay()
     }
 
     func drawOneByOne() {
         guard let 🐢 = self.🐢 else { return }
         animationMode = true
-        if 🐢.RunNext() {
+        if 🐢.runNext() {
             self.setNeedsDisplay()
         }
     }
 
     override func draw(_ rect: CGRect) {
-        guard let image = 🐢?.Image else { return }
+        guard let image = 🐢?.renderedImage else { return }
         guard let currencContext = UIGraphicsGetCurrentContext() else { return }
         currencContext.draw(image, in: self.bounds)
         if animationMode {

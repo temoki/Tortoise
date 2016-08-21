@@ -11,6 +11,14 @@ import Foundation
 /// Tortoise control commands
 public extension Tortoise {
 
+    // MARK:- Done
+    
+    /// Done
+    public func Done() {
+        // end of method chane
+    }
+    
+
     // MARK:- Repeat
 
     /// Run statements statements number times.

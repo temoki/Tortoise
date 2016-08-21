@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func clear(sender: UIButton) {
-        canvas.🐢?.Clear()
+        canvas.🐢?.clearAllCommands()
         canvas.drawAtOnce()
     }
 
@@ -46,7 +46,7 @@ class ViewController: UIViewController {
 
     func commandTortoise() {
         guard let 🐢 = canvas.🐢 else { return }
-        🐢.Clear()
+        🐢.clearAllCommands()
 
         🐢.ClearScreen()
             .SetRGB(0, [0.8, 0.8, 0.8])
