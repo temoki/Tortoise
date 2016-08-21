@@ -11,6 +11,27 @@ import Foundation
 /// Tortoise draw commands
 public extension Tortoise {
 
+    // MARK: - ClearScreen
+
+    /// Clear the graphics screen and set the tortoise to its home position.
+    /// The graphics screen is filled with the current background pen colour.
+    /// The same as doing Clean followed by Home.
+    public func ClearScreen() -> Tortoise {
+        add(command: CommandClearScreen())
+        return self
+    }
+
+
+    // MARK: - Clean
+
+    /// Clear the graphics screen without affecting the tortoise.
+    /// The graphics screen is filled with the current background pen colour.
+    public func Clean() -> Tortoise {
+        add(command: CommandClean())
+        return self
+    }
+
+
     // MARK:- Dot
 
     /// Put a dot of the current colour at position x y on the screen.
