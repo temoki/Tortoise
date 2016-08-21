@@ -18,7 +18,7 @@ public extension Tortoise {
     /// - parameter distance: Distance
     /// - returns: self
     public func Forward(_ distance: NumberOutput) -> Tortoise {
-        add(command: CommandGo(distance: distance, back: false))
+        add(command: CommandForward(distance: distance))
         return self
     }
 
@@ -38,7 +38,7 @@ public extension Tortoise {
     /// - parameter distance: Distance
     /// - returns: self
     public func Back(_ distance: NumberOutput) -> Tortoise {
-        add(command: CommandGo(distance: distance, back: true))
+        add(command: CommandBack(distance: distance))
         return self
     }
 

@@ -1,5 +1,5 @@
 //
-//  CommandGo.swift
+//  CommandForward.swift
 //  Tortoise
 //
 //  Created by temoki on 2016/08/10.
@@ -8,21 +8,22 @@
 
 import CoreGraphics
 
-class CommandGo: Command {
+class CommandForward: Command {
 
     private let distance: NumberOutput
-    private let back: Bool
 
-    init(distance: NumberOutput, back: Bool = false) {
+    func distanceOutput(context: Context) -> Number {
+        return distance(TortoiseProperties(context: context))
+    }
+
+    init(distance: NumberOutput) {
         self.distance = distance
-        self.back = back
     }
 
     func execute(context: Context) {
         let transform = CGAffineTransform(translationX: context.posX, y: context.posY)
             .rotated(by: context.heading.radian)
-        let x = distance(TortoiseProperties(context: context)) * (back ? -1 : 1)
-        let newPos = CGPoint(x: x, y: 0).applying(transform)
+        let newPos = CGPoint(x: distanceOutput(context: context), y: 0).applying(transform)
         if context.penDown {
             context.bitmapContext.addLine(to: newPos)
             context.bitmapContext.strokePath()
