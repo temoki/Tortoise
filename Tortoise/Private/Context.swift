@@ -18,6 +18,7 @@ class Context {
     static let defaultPenDown = true
     static let defaultPenColor = Int(1)
     static let defaultPenWidth = Number(1)
+    static let defaultBackgroundColor = Int(0)
 
     /// Bitmap context
     let bitmapContext: CGContext
@@ -41,6 +42,8 @@ class Context {
     private(set) var penDown = Context.defaultPenDown
     private(set) var penColor = Context.defaultPenColor
     private(set) var penWidth = Context.defaultPenWidth
+    var backgroundColor = Context.defaultBackgroundColor
+
 
     /// Initializer
     /// - parameter context: Graphics context
@@ -81,7 +84,8 @@ class Context {
     func clearCanvas() {
         bitmapContext.clear(canvasRect)
         bitmapContext.saveGState()
-        bitmapContext.setFillColor(CGColor.clearColor)
+        let rgbColor = colorPalette.color(number: backgroundColor)
+        bitmapContext.setFillColor(rgbColor.cgColor)
         bitmapContext.fill(canvasRect)
         bitmapContext.restoreGState()
     }

@@ -48,8 +48,8 @@ class RGBColor {
         self.opacity = min(max(opacity/high, 0), 1)
 
         let components = [self.r, self.g, self.b, (1 - self.opacity)]
-        let cgColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: components)
-        self.cgColor =  cgColor ?? CGColor.blackColor
+        self.cgColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: components)!
+        // swiftlint:disable:previous force_unwrapping
     }
 
     /// Initializer
