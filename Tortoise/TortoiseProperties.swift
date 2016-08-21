@@ -8,9 +8,6 @@
 
 import CoreGraphics
 
-public typealias NumberOutput = (TortoiseProperties) -> Number
-public typealias BooleanOutput = (TortoiseProperties) -> Bool
-
 // swiftlint:disable variable_name
 
 /// Tortoise Properties
