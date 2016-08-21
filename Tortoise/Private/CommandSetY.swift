@@ -18,7 +18,7 @@ class CommandSetY: Command {
 
     func execute(context: Context) {
         let pos = CGPoint(x: context.bitmapContext.currentPointOfPath.x,
-                          y: y.output(context: context))
+                          y: y(TortoiseProperties(context: context)))
         if context.penDown {
             context.bitmapContext.addLine(to: pos)
             context.bitmapContext.strokePath()

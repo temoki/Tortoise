@@ -17,7 +17,7 @@ class CommandSetPenWidth: Command {
     }
 
     func execute(context: Context) {
-        context.setPenWidth(width.output(context: context))
+        context.setPenWidth(width(TortoiseProperties(context: context)))
     }
 
 }

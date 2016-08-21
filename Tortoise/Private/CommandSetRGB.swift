@@ -19,8 +19,8 @@ class CommandSetRGB: Command {
     }
 
     func execute(context: Context) {
-        let number = self.number.output(context: context).integer
-        let components = self.components.map { $0.output(context: context) }
+        let number = self.number(TortoiseProperties(context: context)).integer
+        let components = self.components.map { $0(TortoiseProperties(context: context)) }
         context.colorPalette.set(color: RGBColor(components: components), number: number)
     }
 

@@ -53,14 +53,14 @@ class ViewController: UIViewController {
                 .SetPenWidth(2)
                 .Right(15)
                 .Repeat(6) { 🐢
-                    .SetPenColor(.PenColor({ $0 + 1 }))
+                    .SetPenColor({ $0.PenColor + 1 })
                     .Forward(50)
                     .Right(60)
                 }
                 .SetPenWidth(1)
                 .Right(15)
                 .Repeat(6) { 🐢
-                    .SetPenColor(.PenColor({ $0 + 1 }))
+                    .SetPenColor({ $0.PenColor + 1 })
                     .Forward(20)
                     .Right(60)
                 }

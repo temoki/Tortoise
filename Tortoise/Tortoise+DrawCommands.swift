@@ -29,7 +29,7 @@ public extension Tortoise {
     /// - parameter y: Y coordinate
     /// - returns: self
     public func Dot(_ x: Number, _ y: Number) -> Tortoise {
-        return Dot(.Value(x), .Value(y))
+        return Dot({_ in x}, {_ in y})
     }
 
 
@@ -55,7 +55,7 @@ public extension Tortoise {
     /// - parameter radius: Radius
     /// - returns: self
     public func Arc(_ angle: Number, _ radius: Number) -> Tortoise {
-        return Arc(.Value(angle), .Value(radius))
+        return Arc({_ in angle}, {_ in radius})
     }
 
 }

@@ -27,7 +27,7 @@ public extension Tortoise {
     /// - parameter distance: Distance
     /// - returns: self
     public func Forward(_ distance: Number) -> Tortoise {
-        return Forward(.Value(distance))
+        return Forward({_ in distance})
     }
 
 
@@ -47,7 +47,7 @@ public extension Tortoise {
     /// - parameter distance: Distance
     /// - returns: self
     public func Back(_ distance: Number) -> Tortoise {
-        return Back(.Value(distance))
+        return Back({_ in distance})
     }
 
 
@@ -65,7 +65,7 @@ public extension Tortoise {
     /// - parameter angle: Angle (degree)
     /// - returns: self
     public func Right(_ angle: Number) -> Tortoise {
-        return Right(.Value(angle))
+        return Right({_ in angle})
     }
 
 
@@ -83,7 +83,7 @@ public extension Tortoise {
     /// - parameter angle: Angle (degree)
     /// - returns: self
     public func Left(_ angle: Number) -> Tortoise {
-        return Left(.Value(angle))
+        return Left({_ in angle})
     }
 
 
@@ -118,7 +118,7 @@ public extension Tortoise {
     /// - parameter angle: Angle (degree)
     /// - returns: self
     public func SetHeading(_ angle: Number) -> Tortoise {
-        return SetHeading(.Value(angle))
+        return SetHeading({_ in angle})
     }
 
 
@@ -140,7 +140,7 @@ public extension Tortoise {
     /// - parameter y: Y coordinate
     /// - returns: self
     public func SetPosition(_ x: Number, _ y: Number) -> Tortoise {
-        return SetPosition(.Value(x), .Value(y))
+        return SetPosition({_ in x}, {_ in y})
     }
 
 
@@ -160,7 +160,7 @@ public extension Tortoise {
     /// - parameter x: X coordinate
     /// - returns: self
     public func SetX(_ x: Number) -> Tortoise {
-        return SetX(.Value(x))
+        return SetX({_ in x})
     }
 
 
@@ -180,7 +180,7 @@ public extension Tortoise {
     /// - parameter y: Y coordinate
     /// - returns: self
     public func SetY(_ y: Number) -> Tortoise {
-        return SetY(.Value(y))
+        return SetY({_ in y})
     }
 
 }
