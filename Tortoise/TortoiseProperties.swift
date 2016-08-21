@@ -79,6 +79,14 @@ public class TortoiseProperties {
         return Number(context.penColor)
     }
 
+    /// Output the number of the background colour.
+    /// This is the colour used to fill the graphics window when ClearScreen is called.
+    /// At startup, the background colour is set to zero.
+    /// This is initially white, but can be changed with SetRGB.
+    public var Background: Number {
+        return Number(context.backgroundColor)
+    }
+
     /// Output the red, green, and blue components of colour colour-number.
     /// Each component is a number between 0.0 and 1.0.
     /// Because of the way colours are held within macOS,
