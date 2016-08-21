@@ -52,6 +52,8 @@ let image = 🐢.renderedImage
 
 ### Move and Draw
 
+* `CleanScreen`
+* `Clean`
 * `Forward`
 * `Back`
 * `Right`
@@ -66,8 +68,6 @@ let image = 🐢.renderedImage
 
 ### Pen and Canvas state
 
-* `CleanScreen`
-* `Clean`
 * `PenDown`
 * `PenUp`
 * `SetPenColor`
