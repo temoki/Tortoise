@@ -57,7 +57,7 @@ public extension Tortoise {
     /// - parameter angle: Angle (degree)
     /// - returns: self
     public func Right(_ angle: NumberOutput) -> Tortoise {
-        add(command: CommandRotate(angle: angle, right: true))
+        add(command: CommandRight(angle: angle))
         return self
     }
 
@@ -75,7 +75,7 @@ public extension Tortoise {
     /// - parameter angle: Angle (degree)
     /// - returns: self
     public func Left(_ angle: NumberOutput) -> Tortoise {
-        add(command: CommandRotate(angle: angle))
+        add(command: CommandLeft(angle: angle))
         return self
     }
 
