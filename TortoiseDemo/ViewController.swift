@@ -62,6 +62,7 @@ class ViewController: UIViewController {
                 .Right(15)
                 .Repeat(6) { 🐢
                     .Make("color", { $0["color"] + 1 })
+                    .Print({ $0["color"] })
                     .SetPenColor({ $0["color"] })
                     .Forward(20)
                     .Right(60)

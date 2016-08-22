@@ -14,7 +14,7 @@ public typealias Number = CGFloat
 /// Number output closure by tortoise properties
 public typealias NumberOutput = (TortoiseProperties) -> Number
 
-/// Bool output closure by tortoise properties
+/// Boolean output closure by tortoise properties
 public typealias BoolOutput = (TortoiseProperties) -> Bool
 
 /// Line Cap Style
