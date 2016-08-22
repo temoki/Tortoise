@@ -50,7 +50,6 @@ class ViewController: UIViewController {
 
         🐢.ClearScreen()
             .Make("color", 0)
-            .SetRGB(0, [0.8, 0.8, 0.8])
             .Repeat(12) { 🐢
                 .SetPenWidth(2)
                 .Right(15)
