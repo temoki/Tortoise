@@ -13,7 +13,7 @@ class CommandSetLineDash: Command {
     let phase: NumberOutput
     let dashLengths: [NumberOutput]
 
-    init(_ phase: NumberOutput, _ dashLengths: [NumberOutput]) {
+    init(phase: NumberOutput, dashLengths: [NumberOutput]) {
         self.phase = phase
         self.dashLengths = dashLengths
     }

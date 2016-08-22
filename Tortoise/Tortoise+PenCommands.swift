@@ -98,7 +98,7 @@ public extension Tortoise {
     /// - parameter dashLengths: Dash lengths (drawn-dash-1, empty-dash-1, drawn-dash-2, ...)
     /// - returns: self
     public func SetLineDash(_ phase: NumberOutput, _ dashLengths: [NumberOutput]) -> Tortoise {
-        add(command: CommandSetLineDash(phase, dashLengths))
+        add(command: CommandSetLineDash(phase: phase, dashLengths: dashLengths))
         return self
     }
 
