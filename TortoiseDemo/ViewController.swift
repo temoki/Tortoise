@@ -49,6 +49,7 @@ class ViewController: UIViewController {
         🐢.clearAllCommands()
 
         🐢.ClearScreen()
+            .Make("color", 0)
             .SetRGB(0, [0.8, 0.8, 0.8])
             .Repeat(12) { 🐢
                 .SetPenWidth(2)
@@ -61,7 +62,8 @@ class ViewController: UIViewController {
                 .SetPenWidth(1)
                 .Right(15)
                 .Repeat(6) { 🐢
-                    .SetPenColor({ $0.PenColor + 1 })
+                    .Make("color", { $0["color"] + 1 })
+                    .SetPenColor({ $0["color"] })
                     .Forward(20)
                     .Right(60)
                 }

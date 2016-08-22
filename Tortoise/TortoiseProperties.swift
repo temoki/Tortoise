@@ -23,6 +23,15 @@ public class TortoiseProperties {
     }
 
 
+    // MARK: - Variable
+
+    public subscript(variableName: String) -> Number {
+        get {
+            return context.variables[variableName]!
+        }
+    }
+
+
     // MARK: - Calculation
 
     /// Output a random integer between zero and number.

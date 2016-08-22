@@ -44,6 +44,9 @@ class Context {
     private(set) var penWidth = Context.defaultPenWidth
     var backgroundColor = Context.defaultBackgroundColor
 
+    /// Variables
+    var variables = [String: Number]()
+
 
     /// Initializer
     /// - parameter context: Graphics context
