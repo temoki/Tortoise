@@ -52,4 +52,27 @@ public extension Tortoise {
         return self
     }
 
+
+    // MARK:- Make (Variable)
+
+    /// Give variable name the value object.
+    /// Creates the variable if it doesnʼt exist.
+    /// - parameter variableName: Variable name
+    /// - parameter number: Number
+    /// - returns: self
+    public func Make(_ variableName: String, _ number: NumberOutput) -> Tortoise {
+        add(command: CommandMake(variableName: variableName, number: number))
+        return self
+    }
+
+    /// Give variable name the value object.
+    /// Creates the variable if it doesnʼt exist.
+    /// - parameter variableName: Variable name
+    /// - parameter number: Number
+    /// - returns: self
+    public func Make(_ variableName: String, _ number: Number) -> Tortoise {
+        add(command: CommandMake(variableName: variableName, number: {_ in number}))
+        return self
+    }
+
 }

@@ -8,7 +8,7 @@ This is now developing with Swift 3 and Xcode 8 beta 6.
 
 ```swift
 🐢.ClearScreen()
-    .SetRGB(0, [0.8, 0.8, 0.8])
+    .Make("color", 0)
     .Repeat(12) { 🐢
         .SetPenWidth(2)
         .Right(15)
@@ -20,7 +20,8 @@ This is now developing with Swift 3 and Xcode 8 beta 6.
         .SetPenWidth(1)
         .Right(15)
         .Repeat(6) { 🐢
-            .SetPenColor({ $0.PenColor + 1 })
+            .Make("color", { $0["color"] + 1 })
+            .SetPenColor({ $0["color"] })
             .Forward(20)
             .Right(60)
         }
@@ -94,6 +95,7 @@ let image = 🐢.renderedImage
 * `Repeat`
 * `ShowTortoise`
 * `HideTortoise`
+* `Make` (Variable support)
 
 ## Requirements
 
@@ -108,7 +110,6 @@ T.B.D.
 
 * `SetCanvasSize` command
 * `If`, `While`, `For` statement support
-* Variable support
 * Procedure support
 * `Canvas` view
 * SPM/Carthage/Cocoapods installation
