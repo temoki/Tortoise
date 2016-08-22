@@ -74,6 +74,49 @@ public extension Tortoise {
     }
 
 
+    // MARK:- SetLineCap
+
+    /// Sets the end style for lines to line-end-style,
+    /// which can be butt (the default), round, or square.
+    /// The following diagram shows how the line ending varies for each of the options.
+    /// The red dashed lines show where the lines end.
+    /// - parameter lineCap: Line cap
+    /// - returns: self
+    public func SetLineCap(_ lineCap: LineCap) -> Tortoise {
+        add(command: CommandSetLineCap(lineCap))
+        return self
+    }
+
+
+    // MARK:- SetLineDash
+
+    /// Sets the line dash pattern for drawn lines.
+    /// drawn-dash-1 is the length, in pixels, of the first, drawn, part of the line.
+    /// empty-dash-1 is the length of the first blank part of the line.
+    /// The pattern is then repeated. phase is how far into the pattern the line starts drawing.
+    /// - parameter phase: Phase
+    /// - parameter dashLengths: Dash lengths (drawn-dash-1, empty-dash-1, drawn-dash-2, ...)
+    /// - returns: self
+    public func SetLineDash(_ phase: NumberOutput, _ dashLengths: [NumberOutput]) -> Tortoise {
+        add(command: CommandSetLineDash(phase, dashLengths))
+        return self
+    }
+
+    /// Sets the line dash pattern for drawn lines.
+    /// drawn-dash-1 is the length, in pixels, of the first, drawn, part of the line.
+    /// empty-dash-1 is the length of the first blank part of the line.
+    /// The pattern is then repeated. phase is how far into the pattern the line starts drawing.
+    /// - parameter phase: Phase
+    /// - parameter dashLengths: Dash lengths (drawn-dash-1, empty-dash-1, drawn-dash-2, ...)
+    /// - returns: self
+    public func SetLineDash(_ phase: Number, _ dashLengths: [Number]) -> Tortoise {
+        let numberOutputs = dashLengths.map { (dashLength) -> NumberOutput in
+            return {(TortoiseProperties) in dashLength}
+        }
+        return SetLineDash({_ in phase}, numberOutputs)
+    }
+
+
     // MARK:- SetRGB
 
     /// Set red, green, and blue components of colour colour-number to red, green, blue.
