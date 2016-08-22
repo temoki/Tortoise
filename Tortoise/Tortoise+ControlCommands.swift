@@ -71,8 +71,40 @@ public extension Tortoise {
     /// - parameter number: Number
     /// - returns: self
     public func Make(_ variableName: String, _ number: Number) -> Tortoise {
-        add(command: CommandMake(variableName: variableName, number: {_ in number}))
+        return Make(variableName, {_ in number})
+    }
+
+
+    // MARK:- Print
+
+    /// Prints out a number to the debug console.
+    /// - parameter number: Number
+    /// - returns: self
+    public func Print(_ number: NumberOutput) -> Tortoise {
+        add(command: CommandPrint(number: number))
         return self
+    }
+
+    /// Prints out a number to the debug console.
+    /// - parameter number: Number
+    /// - returns: self
+    public func Print(_ number: Number) -> Tortoise {
+        return Print({_ in number})
+    }
+
+    /// Prints out a boolean to the debug console.
+    /// - parameter number: Number
+    /// - returns: self
+    public func Print(_ boolean: BoolOutput) -> Tortoise {
+        add(command: CommandPrint(boolean: boolean))
+        return self
+    }
+
+    /// Prints out a boolean to the debug console.
+    /// - parameter number: Number
+    /// - returns: self
+    public func Print(_ boolean: Bool) -> Tortoise {
+        return Print({_ in boolean})
     }
 
 }

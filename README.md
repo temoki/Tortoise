@@ -96,6 +96,7 @@ let image = 🐢.renderedImage
 * `ShowTortoise`
 * `HideTortoise`
 * `Make` (Variable support)
+* `Print`
 
 ## Requirements
 
