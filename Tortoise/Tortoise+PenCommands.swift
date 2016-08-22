@@ -117,6 +117,26 @@ public extension Tortoise {
     }
 
 
+    // MARK:- SetBackground
+
+    /// Set the background colour to colour-number.
+    /// This colour will be used when ClearScreen or Clean is called.
+    /// - parameter number: Color number
+    /// - returns: self
+    public func SetBackground(_ number: NumberOutput) -> Tortoise {
+        add(command: CommandSetBackground(number: number))
+        return self
+    }
+
+    /// Set the background colour to colour-number.
+    /// This colour will be used when ClearScreen or Clean is called.
+    /// - parameter number: Color number
+    /// - returns: self
+    public func SetBackground(_ number: Number) -> Tortoise {
+        return SetBackground({_ in number})
+    }
+
+
     // MARK:- SetRGB
 
     /// Set red, green, and blue components of colour colour-number to red, green, blue.

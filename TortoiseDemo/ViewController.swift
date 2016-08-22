@@ -48,7 +48,7 @@ class ViewController: UIViewController {
         guard let 🐢 = canvas.🐢 else { return }
         🐢.clearAllCommands()
 
-        🐢.ClearScreen()
+        🐢.SetBackground(6).ClearScreen()
             .SetRGB(0, [0.8, 0.8, 0.8])
             .Repeat(12) { 🐢
                 .SetPenWidth(2)

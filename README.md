@@ -73,6 +73,7 @@ let image = 🐢.renderedImage
 * `SetPenWidth`
 * `SetLineCap`
 * `SetLineDash`
+* `SetBackground`
 * `SetRGB`
 
 ### Output
@@ -84,6 +85,7 @@ let image = 🐢.renderedImage
 * `Position`
 * `PenColor`
 * `PenWidth`
+* `Background`
 * `RGB`
 * `CanvasSize`
 
@@ -104,7 +106,6 @@ T.B.D.
 
 ## Roadmap
 
-* `SetBackground`, `Background` command
 * `SetCanvasSize` command
 * `If`, `While`, `For` statement support
 * Variable support
