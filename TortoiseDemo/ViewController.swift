@@ -51,11 +51,12 @@ class ViewController: UIViewController {
         tortoise.🐢
             .ClearScreen()
             .Define("Triangle", ["length"]) { $0
+                .Local("angle", 120)
                 .Repeat(3) { $0
                     .Forward({ $0["length"] })
-                    .Right(120)
+                    .Right({ $0["angle"] })
                 }
-        }.Call("Triangle", ["length": 30]).Done()
+        }.Call("Triangle", ["length": 200]).Done()
         // TODO:
         /*
         tortoise.🐢.ClearScreen()

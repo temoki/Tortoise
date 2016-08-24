@@ -11,18 +11,18 @@ import CoreGraphics
 class CommandCall: Command {
 
     let name: String
-    let arguments: [String: NumberOutput]
+    let parameters: [String: NumberOutput]
 
-    init(name: String, arguments: [String: NumberOutput]) {
+    init(name: String, parameters: [String: NumberOutput]) {
         self.name = name
-        self.arguments = arguments
+        self.parameters = parameters
     }
 
     func execute(context: Context) {
         guard let procedure = context.procedures[name] else { return }
         let properties = Properties(context: context)
-        arguments.forEach { (argument) in
-            procedure.variables[argument.key] = argument.value(properties)
+        parameters.forEach { (parameter) in
+            procedure.variables[parameter.key] = parameter.value(properties)
         }
         procedure.execute(context: context)
     }

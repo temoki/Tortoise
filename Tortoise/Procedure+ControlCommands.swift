@@ -19,53 +19,6 @@ public extension Procedure {
     }
 
 
-    // MARK:- Define
-
-    /// Define a procedure.
-    /// Create procedure name with parameters parameters and statements statements.
-    public func Define(_ procedureName: String,
-                       _ argumentNames: [String],
-                       _ statements: (Procedure) -> Procedure) -> Procedure {
-        let procedure = Procedure()
-        argumentNames.forEach { (argumentName) in
-            procedure.variables[argumentName] = 0
-        }
-        add(command: CommandDefine(name: procedureName, procedure: statements(procedure)))
-        return self
-    }
-
-
-    // MARK:- Call
-
-    /// Call a procedure.
-    public func Call(_ procedureName: String, _ arguments: [String: NumberOutput]) -> Procedure {
-        add(command: CommandCall(name: procedureName, arguments: arguments))
-        return self
-    }
-
-    /// Call a procedure.
-    public func Call(_ procedureName: String, _ arguments: [String: Number]) -> Procedure {
-        var newArguments: [String: NumberOutput] = [:]
-        arguments.forEach { (keyValue) in
-            newArguments[keyValue.key] = {_ in keyValue.value}
-        }
-        return Call(procedureName, newArguments)
-    }
-
-
-    // MARK:- Repeat
-
-    /// Run statements statements number times.
-    /// - parameter number: Repeat times
-    /// - parameter statements: Repeat statements
-    /// - returns: self
-    public func Repeat(_ times: Number, _ statements: (Procedure) -> Procedure) -> Procedure {
-        let procedure = statements(Procedure())
-        add(command: CommandRepeat(procedure: procedure, times: times.integer))
-        return self
-    }
-
-
     // MARK:- ShowTortoise
 
     /// Show the tortoise if it is hidden.
@@ -82,6 +35,63 @@ public extension Procedure {
     /// in the same way as when it is showing.
     public func HideTortoise() -> Procedure {
         add(command: CommandShowTortoise(show: false))
+        return self
+    }
+
+
+    // MARK:- Define (Procedure)
+
+    /// Define a procedure.
+    /// Create procedure name with parameters parameters and statements statements.
+    /// - parameter procedureName: Procedure name
+    /// - parameter parameterNames: Parameter names
+    /// - parameter statements: Procedure statements
+    /// - returns: self
+    public func Define(_ procedureName: String,
+                       _ parameterNames: [String],
+                       _ statements: (Procedure) -> Procedure) -> Procedure {
+        let procedure = Procedure()
+        parameterNames.forEach { (parameterName) in
+            procedure.variables[parameterName] = 0
+        }
+        add(command: CommandDefine(name: procedureName, procedure: statements(procedure)))
+        return self
+    }
+
+
+    // MARK:- Call (Procedure)
+
+    /// Call a procedure with parameters.
+    /// - parameter procedureName: Procedure name
+    /// - parameter parameters: Parameters
+    /// - returns: self
+    public func Call(_ procedureName: String, _ parameters: [String: NumberOutput]) -> Procedure {
+        add(command: CommandCall(name: procedureName, parameters: parameters))
+        return self
+    }
+
+    /// Call a procedure with parameters.
+    /// - parameter procedureName: Procedure name
+    /// - parameter parameters: Parameters
+    /// - returns: self
+    public func Call(_ procedureName: String, _ parameters: [String: Number]) -> Procedure {
+        var newparameters: [String: NumberOutput] = [:]
+        parameters.forEach { (keyValue) in
+            newparameters[keyValue.key] = {_ in keyValue.value}
+        }
+        return Call(procedureName, newparameters)
+    }
+
+
+    // MARK:- Repeat
+
+    /// Run statements statements number times.
+    /// - parameter number: Repeat times
+    /// - parameter statements: Repeat statements
+    /// - returns: self
+    public func Repeat(_ times: Number, _ statements: (Procedure) -> Procedure) -> Procedure {
+        let procedure = statements(Procedure())
+        add(command: CommandRepeat(procedure: procedure, times: times.integer))
         return self
     }
 
@@ -105,6 +115,26 @@ public extension Procedure {
     /// - returns: self
     public func Make(_ variableName: String, _ number: Number) -> Procedure {
         return Make(variableName, {_ in number})
+    }
+
+
+    // MARK: - Local (Variable)
+
+    /// Declare a name as local to a procedure - effectively a local variable.
+    /// - parameter variableName: Variable name
+    /// - parameter number: Number
+    /// - returns: self
+    public func Local(_ variableName: String, _ number: NumberOutput) -> Procedure {
+        add(command: CommandLocal(variableName: variableName, number: number))
+        return self
+    }
+
+    /// Declare a name as local to a procedure - effectively a local variable.
+    /// - parameter variableName: Variable name
+    /// - parameter number: Number
+    /// - returns: self
+    public func Local(_ variableName: String, _ number: Number) -> Procedure {
+        return Local(variableName, {_ in number})
     }
 
 

@@ -95,7 +95,10 @@ let image = 🐢.renderedImage
 * `Repeat`
 * `ShowTortoise`
 * `HideTortoise`
+* `Define` (Procedure support)
+* `Call` (Procedure support)
 * `Make` (Variable support)
+* `Local` (Variable support)
 * `Print`
 
 ## Requirements
@@ -109,9 +112,8 @@ T.B.D.
 
 ## Roadmap
 
-* Procedure support (`To` and Local variables)
 * `If`, `While`, `For` statement support
-* Shortstyle commands (`Fd`, `Rt`, ...)
+* Short-style commands (`Fd`, `Rt`, ...)
 * `Canvas` view
 * `SetCanvasSize` command
 * SPM/Carthage/Cocoapods installation
