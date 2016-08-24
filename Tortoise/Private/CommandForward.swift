@@ -13,7 +13,7 @@ class CommandForward: Command {
     private let distance: NumberOutput
 
     func distanceOutput(context: Context) -> Number {
-        return distance(TortoiseProperties(context: context))
+        return distance(Properties(context: context))
     }
 
     init(distance: NumberOutput) {

@@ -17,7 +17,7 @@ class CommandSetPenColor: Command {
     }
 
     func execute(context: Context) {
-        context.setPenColor(number(TortoiseProperties(context: context)).integer)
+        context.setPenColor(number(Properties(context: context)).integer)
     }
 
 }

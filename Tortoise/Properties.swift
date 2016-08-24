@@ -1,24 +1,24 @@
 //
-//  TortoiseProperties.swift
+//  Properties.swift
 //  Tortoise
 //
 //  Created by temoki on 2016/08/15.
 //  Copyright © 2016 temoki. All rights reserved.
 //
 
-import CoreGraphics
+import Foundation
 
 // swiftlint:disable variable_name
 
-/// Tortoise Properties
-public class TortoiseProperties {
+/// Properties
+public class Properties {
 
     /// Context
     let context: Context
 
     /// Initializer
     /// - parameter context: Context
-    init(context: Context) {
+    internal init(context: Context) {
         self.context = context
     }
 
@@ -27,7 +27,14 @@ public class TortoiseProperties {
 
     public subscript(variableName: String) -> Number {
         get {
-            return context.variables[variableName]!
+            let reversed = context.localVariablesStack.reversed()
+            for variables in reversed {
+                if let value = variables[variableName] {
+                    return value
+                }
+            }
+            // If local variable does not exist, return global variable.
+            return context.globalVariables[variableName]!
         }
     }
 

@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func clear(sender: UIButton) {
-        canvas.🐢?.clearAllCommands()
+        canvas.tortoise?.clear()
         canvas.drawAtOnce()
     }
 
@@ -45,22 +45,37 @@ class ViewController: UIViewController {
     }
 
     func commandTortoise() {
-        guard let 🐢 = canvas.🐢 else { return }
-        🐢.clearAllCommands()
+        guard let tortoise = canvas.tortoise else { return }
+        tortoise.clear()
 
-        🐢.ClearScreen()
+        tortoise.🐢
+            .ClearScreen()
+            .Define("Triangle", ["length"]) { $0
+                .Repeat(3) { $0
+                    .Forward({ $0["length"] })
+                    .Right(120)
+                }
+        }.Call("Triangle", ["length": 30]).Done()
+        // TODO:
+        /*
+        tortoise.🐢.ClearScreen()
+            .Define("Hoge", ["penColor"]) { $0
+                .SetPenColor({ $0["penColor"] + 1 })
+                .Forward(50)
+                .Right(60)
+            }
             .Make("color", 0)
-            .Repeat(12) { 🐢
+            .Repeat(12) { $0
                 .SetPenWidth(2)
                 .Right(15)
-                .Repeat(6) { 🐢
-                    .SetPenColor({ $0.PenColor + 1 })
+                .Repeat(6) { $0
+                    .Call("Hoge", ["penColor": { $0.PenColor + 1 }])
                     .Forward(50)
                     .Right(60)
                 }
                 .SetPenWidth(1)
                 .Right(15)
-                .Repeat(6) { 🐢
+                .Repeat(6) { $0
                     .Make("color", { $0["color"] + 1 })
                     .Print({ $0["color"] })
                     .SetPenColor({ $0["color"] })
@@ -69,6 +84,7 @@ class ViewController: UIViewController {
                 }
             }
             .Done()
+ */
     }
 
 }

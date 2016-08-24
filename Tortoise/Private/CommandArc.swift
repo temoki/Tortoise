@@ -20,8 +20,8 @@ class CommandArc: Command {
 
     func execute(context: Context) {
         guard context.penDown else { return }
-        let angle = self.angle(TortoiseProperties(context: context))
-        let radius = self.radius(TortoiseProperties(context: context))
+        let angle = self.angle(Properties(context: context))
+        let radius = self.radius(Properties(context: context))
 
         // Current position = Center of Arc
         let centerPos = context.bitmapContext.currentPointOfPath

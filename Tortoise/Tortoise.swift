@@ -6,35 +6,36 @@
 //  Copyright © 2016 temoki. All rights reserved.
 //
 
-import CoreGraphics
+import Foundation
 
 /// Tortoise
 final public class Tortoise {
 
+    /// Main procedure
+    public let 🐢: Procedure
+
     /// Context
     private let context: Context
 
-    /// Commands
-    private var commands: [Command] = []
-
-    /// Next run command index
-    private var nextCommand: Int = 0
-
     /// Initializer
-    /// - parameter context: Graphics context
     public required init(canvasWidth: Number, canvasHeight: Number, tortoiseImage: CGImage? = nil) {
         context = Context(canvasWidth: canvasWidth,
                           canvasHeight: canvasHeight,
                           tortoiseImage: tortoiseImage)
+        🐢 = Procedure()
+        context.procedures[Context.mainProcedureName] = 🐢
     }
 
-    /// Run all commands
-    public func run() {
-        nextCommand = 0
+    /// Clear
+    public func clear() {
         context.resetBitmapContext()
-        commands.forEach { (command) in
-            command.execute(context: context)
-        }
+        🐢.clear()
+    }
+
+    /// Run
+    public func run() {
+        context.resetBitmapContext()
+        🐢.execute(context: context)
         if context.show {
             CommandDrawTortoise().execute(context: context)
         }
@@ -42,6 +43,8 @@ final public class Tortoise {
 
     /// Run next command
     /// - returns: whether it has next
+    // TODO:
+    /*
     public func runNext() -> Bool {
         // Check whethre it has next
         guard nextCommand < commands.count else {
@@ -61,12 +64,8 @@ final public class Tortoise {
         nextCommand += 1
         return true
     }
+    */
 
-    /// Clear all commands
-    public func clearAllCommands() {
-        nextCommand = 0
-        commands.removeAll()
-    }
 
     /// Drawn bitmap image
     public var renderedImage: CGImage? {
@@ -75,11 +74,6 @@ final public class Tortoise {
     }
 
 
-    // MARK: Internal
 
-    /// Add command
-    internal func add(command: Command) {
-        commands.append(command)
-    }
 
 }

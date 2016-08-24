@@ -13,7 +13,7 @@ class CommandLeft: Command {
     private let angle: NumberOutput
 
     func angleOutput(context: Context) -> Number {
-        return angle(TortoiseProperties(context: context))
+        return angle(Properties(context: context))
     }
 
     init(angle: NumberOutput) {

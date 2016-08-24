@@ -109,9 +109,10 @@ T.B.D.
 
 ## Roadmap
 
-* `SetCanvasSize` command
+* Procedure support (`To` and Local variables)
 * `If`, `While`, `For` statement support
-* Procedure support
+* Shortstyle commands (`Fd`, `Rt`, ...)
 * `Canvas` view
+* `SetCanvasSize` command
 * SPM/Carthage/Cocoapods installation
 * macOS support

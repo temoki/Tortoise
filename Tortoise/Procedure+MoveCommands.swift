@@ -8,8 +8,8 @@
 
 import Foundation
 
-/// Tortoise move commands
-public extension Tortoise {
+/// Procedure: Move commands
+public extension Procedure {
 
     // MARK:- Forward
 
@@ -17,7 +17,7 @@ public extension Tortoise {
     /// If the pen is down, a line is drawn.
     /// - parameter distance: Distance
     /// - returns: self
-    public func Forward(_ distance: NumberOutput) -> Tortoise {
+    public func Forward(_ distance: NumberOutput) -> Procedure {
         add(command: CommandForward(distance: distance))
         return self
     }
@@ -26,7 +26,7 @@ public extension Tortoise {
     /// If the pen is down, a line is drawn.
     /// - parameter distance: Distance
     /// - returns: self
-    public func Forward(_ distance: Number) -> Tortoise {
+    public func Forward(_ distance: Number) -> Procedure {
         return Forward({_ in distance})
     }
 
@@ -37,7 +37,7 @@ public extension Tortoise {
     /// Draws a line if the pen is down.
     /// - parameter distance: Distance
     /// - returns: self
-    public func Back(_ distance: NumberOutput) -> Tortoise {
+    public func Back(_ distance: NumberOutput) -> Procedure {
         add(command: CommandBack(distance: distance))
         return self
     }
@@ -46,7 +46,7 @@ public extension Tortoise {
     /// Draws a line if the pen is down.
     /// - parameter distance: Distance
     /// - returns: self
-    public func Back(_ distance: Number) -> Tortoise {
+    public func Back(_ distance: Number) -> Procedure {
         return Back({_ in distance})
     }
 
@@ -56,7 +56,7 @@ public extension Tortoise {
     /// Rotate the tortoise clockwise through angle degrees.
     /// - parameter angle: Angle (degree)
     /// - returns: self
-    public func Right(_ angle: NumberOutput) -> Tortoise {
+    public func Right(_ angle: NumberOutput) -> Procedure {
         add(command: CommandRight(angle: angle))
         return self
     }
@@ -64,7 +64,7 @@ public extension Tortoise {
     /// Rotate the tortoise clockwise through angle degrees.
     /// - parameter angle: Angle (degree)
     /// - returns: self
-    public func Right(_ angle: Number) -> Tortoise {
+    public func Right(_ angle: Number) -> Procedure {
         return Right({_ in angle})
     }
 
@@ -74,7 +74,7 @@ public extension Tortoise {
     /// Rotate the tortoise anti-clockwise through angle degrees.
     /// - parameter angle: Angle (degree)
     /// - returns: self
-    public func Left(_ angle: NumberOutput) -> Tortoise {
+    public func Left(_ angle: NumberOutput) -> Procedure {
         add(command: CommandLeft(angle: angle))
         return self
     }
@@ -82,7 +82,7 @@ public extension Tortoise {
     /// Rotate the tortoise anti-clockwise through angle degrees.
     /// - parameter angle: Angle (degree)
     /// - returns: self
-    public func Left(_ angle: Number) -> Tortoise {
+    public func Left(_ angle: Number) -> Procedure {
         return Left({_ in angle})
     }
 
@@ -92,7 +92,7 @@ public extension Tortoise {
     /// Move the tortoise to the middle of the screen (position [0 0])
     /// and set its heading to zero (pointing straight up).
     /// - returns: self
-    public func Home() -> Tortoise {
+    public func Home() -> Procedure {
         add(command: CommandHome())
         return self
     }
@@ -106,7 +106,7 @@ public extension Tortoise {
     /// The heading increases as you go clockwise - straight down is 180.
     /// - parameter angle: Angle (degree)
     /// - returns: self
-    public func SetHeading(_ angle: NumberOutput) -> Tortoise {
+    public func SetHeading(_ angle: NumberOutput) -> Procedure {
         add(command: CommandSetHeading(angle: angle))
         return self
     }
@@ -117,7 +117,7 @@ public extension Tortoise {
     /// The heading increases as you go clockwise - straight down is 180.
     /// - parameter angle: Angle (degree)
     /// - returns: self
-    public func SetHeading(_ angle: Number) -> Tortoise {
+    public func SetHeading(_ angle: Number) -> Procedure {
         return SetHeading({_ in angle})
     }
 
@@ -129,7 +129,7 @@ public extension Tortoise {
     /// - parameter x: X coordinate
     /// - parameter y: Y coordinate
     /// - returns: self
-    public func SetPosition(_ x: NumberOutput, _ y: NumberOutput) -> Tortoise {
+    public func SetPosition(_ x: NumberOutput, _ y: NumberOutput) -> Procedure {
         add(command: CommandSetPosition(x: x, y: y))
         return self
     }
@@ -139,7 +139,7 @@ public extension Tortoise {
     /// - parameter x: X coordinate
     /// - parameter y: Y coordinate
     /// - returns: self
-    public func SetPosition(_ x: Number, _ y: Number) -> Tortoise {
+    public func SetPosition(_ x: Number, _ y: Number) -> Procedure {
         return SetPosition({_ in x}, {_ in y})
     }
 
@@ -150,7 +150,7 @@ public extension Tortoise {
     /// Draws a line if the pen is down.
     /// - parameter x: X coordinate
     /// - returns: self
-    public func SetX(_ x: NumberOutput) -> Tortoise {
+    public func SetX(_ x: NumberOutput) -> Procedure {
         add(command: CommandSetX(x))
         return self
     }
@@ -159,7 +159,7 @@ public extension Tortoise {
     /// Draws a line if the pen is down.
     /// - parameter x: X coordinate
     /// - returns: self
-    public func SetX(_ x: Number) -> Tortoise {
+    public func SetX(_ x: Number) -> Procedure {
         return SetX({_ in x})
     }
 
@@ -170,7 +170,7 @@ public extension Tortoise {
     /// Draws a line if the pen is down.
     /// - parameter y: Y coordinate
     /// - returns: self
-    public func SetY(_ y: NumberOutput) -> Tortoise {
+    public func SetY(_ y: NumberOutput) -> Procedure {
         add(command: CommandSetY(y))
         return self
     }
@@ -179,7 +179,7 @@ public extension Tortoise {
     /// Draws a line if the pen is down.
     /// - parameter y: Y coordinate
     /// - returns: self
-    public func SetY(_ y: Number) -> Tortoise {
+    public func SetY(_ y: Number) -> Procedure {
         return SetY({_ in y})
     }
 

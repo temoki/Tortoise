@@ -12,35 +12,38 @@ import Tortoise
 class Canvas: UIView {
 
     // swiftlint:disable:next variable_name
-    var 🐢: Tortoise?
+    var tortoise: Tortoise?
 
     private var animationMode = false
 
     func setup() {
-        if self.🐢 == nil {
-            self.🐢 = Tortoise(canvasWidth: self.bounds.width,
-                                 canvasHeight: self.bounds.height,
-                                 tortoiseImage: #imageLiteral(resourceName: "Tortoise").cgImage)
+        if self.tortoise == nil {
+            self.tortoise = Tortoise(canvasWidth: self.bounds.width,
+                                     canvasHeight: self.bounds.height,
+                                     tortoiseImage: #imageLiteral(resourceName: "Tortoise").cgImage)
         }
     }
 
     func drawAtOnce() {
-        guard let 🐢 = self.🐢 else { return }
+        guard let tortoise = self.tortoise else { return }
         animationMode = false
-        🐢.run()
+        tortoise.run()
         setNeedsDisplay()
     }
 
     func drawOneByOne() {
-        guard let 🐢 = self.🐢 else { return }
+        // TODO:
+        /*
+        guard let tortoise = self.tortoise else { return }
         animationMode = true
         if 🐢.runNext() {
             self.setNeedsDisplay()
         }
+        */
     }
 
     override func draw(_ rect: CGRect) {
-        guard let image = 🐢?.renderedImage else { return }
+        guard let image = tortoise?.renderedImage else { return }
         guard let currencContext = UIGraphicsGetCurrentContext() else { return }
         currencContext.draw(image, in: self.bounds)
         if animationMode {

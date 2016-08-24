@@ -19,7 +19,7 @@ class CommandMake: Command {
     }
 
     func execute(context: Context) {
-        context.variables[variableName] = number(TortoiseProperties(context: context))
+        context.globalVariables[variableName] = number(Properties(context: context))
     }
 
 }

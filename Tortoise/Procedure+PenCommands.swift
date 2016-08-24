@@ -8,15 +8,15 @@
 
 import Foundation
 
-/// Tortoise pen commands
-public extension Tortoise {
+/// Procedure: Pen commands
+public extension Procedure {
 
     // MARK:- PenDown
 
     /// Put the pen into draw state.
     /// If the tortoise moves, it will draw a line.
     /// - returns: self
-    public func PenDown() -> Tortoise {
+    public func PenDown() -> Procedure {
         add(command: CommandPenDown(true))
         return self
     }
@@ -26,7 +26,7 @@ public extension Tortoise {
 
     /// Put the pen into non-draw state.
     /// - returns: self
-    public func PenUp() -> Tortoise {
+    public func PenUp() -> Procedure {
         add(command: CommandPenDown(false))
         return self
     }
@@ -39,7 +39,7 @@ public extension Tortoise {
     /// Use SetRGB to set this colour number to a particular colour value.
     /// - parameter number: Color number
     /// - returns: self
-    public func SetPenColor(_ number: NumberOutput) -> Tortoise {
+    public func SetPenColor(_ number: NumberOutput) -> Procedure {
         add(command: CommandSetPenColor(number: number))
         return self
     }
@@ -49,7 +49,7 @@ public extension Tortoise {
     /// Use SetRGB to set this colour number to a particular colour value.
     /// - parameter number: Color number
     /// - returns: self
-    public func SetPenColor(_ number: Number) -> Tortoise {
+    public func SetPenColor(_ number: Number) -> Procedure {
         return SetPenColor({_ in number})
     }
 
@@ -60,7 +60,7 @@ public extension Tortoise {
     /// New lines are drawn with this width.
     /// - parameter width: Pen width
     /// - returns: self
-    public func SetPenWidth(_ width: NumberOutput) -> Tortoise {
+    public func SetPenWidth(_ width: NumberOutput) -> Procedure {
         add(command: CommandSetPenWidth(width))
         return self
     }
@@ -69,7 +69,7 @@ public extension Tortoise {
     /// New lines are drawn with this width.
     /// - parameter width: Pen width
     /// - returns: self
-    public func SetPenWidth(_ width: Number) -> Tortoise {
+    public func SetPenWidth(_ width: Number) -> Procedure {
         return SetPenWidth({_ in width})
     }
 
@@ -82,7 +82,7 @@ public extension Tortoise {
     /// The red dashed lines show where the lines end.
     /// - parameter lineCap: Line cap
     /// - returns: self
-    public func SetLineCap(_ lineCap: LineCap) -> Tortoise {
+    public func SetLineCap(_ lineCap: LineCap) -> Procedure {
         add(command: CommandSetLineCap(lineCap))
         return self
     }
@@ -97,7 +97,7 @@ public extension Tortoise {
     /// - parameter phase: Phase
     /// - parameter dashLengths: Dash lengths (drawn-dash-1, empty-dash-1, drawn-dash-2, ...)
     /// - returns: self
-    public func SetLineDash(_ phase: NumberOutput, _ dashLengths: [NumberOutput]) -> Tortoise {
+    public func SetLineDash(_ phase: NumberOutput, _ dashLengths: [NumberOutput]) -> Procedure {
         add(command: CommandSetLineDash(phase: phase, dashLengths: dashLengths))
         return self
     }
@@ -109,9 +109,9 @@ public extension Tortoise {
     /// - parameter phase: Phase
     /// - parameter dashLengths: Dash lengths (drawn-dash-1, empty-dash-1, drawn-dash-2, ...)
     /// - returns: self
-    public func SetLineDash(_ phase: Number, _ dashLengths: [Number]) -> Tortoise {
+    public func SetLineDash(_ phase: Number, _ dashLengths: [Number]) -> Procedure {
         let numberOutputs = dashLengths.map { (dashLength) -> NumberOutput in
-            return {(TortoiseProperties) in dashLength}
+            return {(Properties) in dashLength}
         }
         return SetLineDash({_ in phase}, numberOutputs)
     }
@@ -123,7 +123,7 @@ public extension Tortoise {
     /// This colour will be used when ClearScreen or Clean is called.
     /// - parameter number: Color number
     /// - returns: self
-    public func SetBackground(_ number: NumberOutput) -> Tortoise {
+    public func SetBackground(_ number: NumberOutput) -> Procedure {
         add(command: CommandSetBackground(number: number))
         return self
     }
@@ -132,7 +132,7 @@ public extension Tortoise {
     /// This colour will be used when ClearScreen or Clean is called.
     /// - parameter number: Color number
     /// - returns: self
-    public func SetBackground(_ number: Number) -> Tortoise {
+    public func SetBackground(_ number: Number) -> Procedure {
         return SetBackground({_ in number})
     }
 
@@ -149,7 +149,7 @@ public extension Tortoise {
     /// - parameter number: Color number
     /// - parameter componets: RGB and Opacity components
     /// - returns: self
-    public func SetRGB(_ number: NumberOutput, _ components: [NumberOutput]) -> Tortoise {
+    public func SetRGB(_ number: NumberOutput, _ components: [NumberOutput]) -> Procedure {
         add(command: CommandSetRGB(number: number, components: components))
         return self
     }
@@ -164,9 +164,9 @@ public extension Tortoise {
     /// - parameter number: Color number
     /// - parameter componets: RGB and Opacity components
     /// - returns: self
-    public func SetRGB(_ number: Number, _ components: [Number]) -> Tortoise {
+    public func SetRGB(_ number: Number, _ components: [Number]) -> Procedure {
         let numberOutputs = components.map { (component) -> NumberOutput in
-            return {(TortoiseProperties) in component}
+            return {(Properties) in component}
         }
         return SetRGB({_ in number}, numberOutputs)
     }

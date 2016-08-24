@@ -17,7 +17,7 @@ class CommandSetHeading: Command {
     }
 
     func execute(context: Context) {
-        let angle = self.angle(TortoiseProperties(context: context))
+        let angle = self.angle(Properties(context: context))
         context.setHeading(Context.defaultHeading - angle)
     }
 

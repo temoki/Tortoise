@@ -25,9 +25,9 @@ class CommandPrint: Command {
 
     func execute(context: Context) {
         let header = "🐢> "
-        if let number = number?(TortoiseProperties(context: context)) {
+        if let number = number?(Properties(context: context)) {
             print("\(header) \(number)")
-        } else if let boolean = boolean?(TortoiseProperties(context: context)) {
+        } else if let boolean = boolean?(Properties(context: context)) {
             print("\(header) \(boolean)")
         }
     }

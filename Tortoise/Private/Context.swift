@@ -9,6 +9,7 @@
 import CoreGraphics
 
 class Context {
+    static let mainProcedureName = "🐢"
 
     /// Default Values
     static let defaultShow = true
@@ -44,8 +45,12 @@ class Context {
     private(set) var penWidth = Context.defaultPenWidth
     var backgroundColor = Context.defaultBackgroundColor
 
-    /// Variables
-    var variables = [String: Number]()
+    /// Variables [variable-name: value]
+    var globalVariables: [String: Number] = [:]
+    var localVariablesStack: [[String: Number]] = []
+
+    // Procdures [procedure-name: procedure]
+    var procedures: [String: Procedure] = [:]
 
 
     /// Initializer

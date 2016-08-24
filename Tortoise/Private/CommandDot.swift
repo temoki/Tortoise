@@ -20,8 +20,8 @@ class CommandDot: Command {
 
     func execute(context: Context) {
         if context.penDown {
-            let posX = x(TortoiseProperties(context: context))
-            let posY = y(TortoiseProperties(context: context))
+            let posX = x(Properties(context: context))
+            let posY = y(Properties(context: context))
             let dotRect = CGRect(x: posX - (context.penWidth / 2),
                                  y: posY - (context.penWidth / 2),
                                  width: context.penWidth,

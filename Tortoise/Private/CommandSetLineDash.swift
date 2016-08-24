@@ -19,8 +19,8 @@ class CommandSetLineDash: Command {
     }
 
     func execute(context: Context) {
-        let phase = self.phase(TortoiseProperties(context: context))
-        let dashLengths = self.dashLengths.map { $0(TortoiseProperties(context: context)) }
+        let phase = self.phase(Properties(context: context))
+        let dashLengths = self.dashLengths.map { $0(Properties(context: context)) }
         context.bitmapContext.setLineDash(phase: phase, lengths: dashLengths)
     }
 

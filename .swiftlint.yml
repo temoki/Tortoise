@@ -5,6 +5,7 @@ opt_in_rules:
 
 variable_name:
   excluded:
+    - 🐢
     - x
     - y
     - z

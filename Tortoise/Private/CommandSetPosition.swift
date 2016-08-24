@@ -19,8 +19,8 @@ class CommandSetPosition: Command {
     }
 
     func execute(context: Context) {
-        let pos = CGPoint(x: x(TortoiseProperties(context: context)),
-                          y: y(TortoiseProperties(context: context)))
+        let pos = CGPoint(x: x(Properties(context: context)),
+                          y: y(Properties(context: context)))
         if context.penDown {
             context.bitmapContext.addLine(to: pos)
             context.bitmapContext.strokePath()

@@ -8,15 +8,15 @@
 
 import Foundation
 
-/// Tortoise draw commands
-public extension Tortoise {
+/// Procedure: Draw commands
+public extension Procedure {
 
     // MARK: - ClearScreen
 
     /// Clear the graphics screen and set the tortoise to its home position.
     /// The graphics screen is filled with the current background pen colour.
     /// The same as doing Clean followed by Home.
-    public func ClearScreen() -> Tortoise {
+    public func ClearScreen() -> Procedure {
         add(command: CommandClearScreen())
         return self
     }
@@ -26,7 +26,7 @@ public extension Tortoise {
 
     /// Clear the graphics screen without affecting the tortoise.
     /// The graphics screen is filled with the current background pen colour.
-    public func Clean() -> Tortoise {
+    public func Clean() -> Procedure {
         add(command: CommandClean())
         return self
     }
@@ -39,7 +39,7 @@ public extension Tortoise {
     /// - parameter x: X coordinate
     /// - parameter y: Y coordinate
     /// - returns: self
-    public func Dot(_ x: NumberOutput, _ y: NumberOutput) -> Tortoise {
+    public func Dot(_ x: NumberOutput, _ y: NumberOutput) -> Procedure {
         add(command: CommandDot(x: x, y: y))
         return self
     }
@@ -49,7 +49,7 @@ public extension Tortoise {
     /// - parameter x: X coordinate
     /// - parameter y: Y coordinate
     /// - returns: self
-    public func Dot(_ x: Number, _ y: Number) -> Tortoise {
+    public func Dot(_ x: Number, _ y: Number) -> Procedure {
         return Dot({_ in x}, {_ in y})
     }
 
@@ -63,7 +63,7 @@ public extension Tortoise {
     /// - parameter angle: Angle (degree)
     /// - parameter radius: Radius
     /// - returns: self
-    public func Arc(_ angle: NumberOutput, _ radius: NumberOutput) -> Tortoise {
+    public func Arc(_ angle: NumberOutput, _ radius: NumberOutput) -> Procedure {
         add(command: CommandArc(angle: angle, radius: radius))
         return self
     }
@@ -75,7 +75,7 @@ public extension Tortoise {
     /// - parameter angle: Angle (degree)
     /// - parameter radius: Radius
     /// - returns: self
-    public func Arc(_ angle: Number, _ radius: Number) -> Tortoise {
+    public func Arc(_ angle: Number, _ radius: Number) -> Procedure {
         return Arc({_ in angle}, {_ in radius})
     }
 

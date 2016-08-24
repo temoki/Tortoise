@@ -6,16 +6,16 @@
 //  Copyright © 2016 temoki. All rights reserved.
 //
 
-import Foundation
+import CoreGraphics
 
 /// Number type in the Tortoise's world
 public typealias Number = CGFloat
 
 /// Number output closure by tortoise properties
-public typealias NumberOutput = (TortoiseProperties) -> Number
+public typealias NumberOutput = (Properties) -> Number
 
 /// Boolean output closure by tortoise properties
-public typealias BoolOutput = (TortoiseProperties) -> Bool
+public typealias BoolOutput = (Properties) -> Bool
 
 /// Line Cap Style
 public typealias LineCap = CGLineCap
