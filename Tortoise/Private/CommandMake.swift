@@ -19,7 +19,9 @@ class CommandMake: Command {
     }
 
     func execute(context: Context) {
-        context.globalVariables[variableName] = number(Properties(context: context))
+        if !context.variablesStack.isEmpty {
+            context.variablesStack[0][variableName] = number(Properties(context: context))
+        }
     }
 
 }

@@ -19,9 +19,9 @@ class CommandLocal: Command {
     }
 
     func execute(context: Context) {
-        if !context.localVariablesStack.isEmpty {
-            let last = context.localVariablesStack.count - 1
-            context.localVariablesStack[last][variableName] = number(Properties(context: context))
+        if !context.variablesStack.isEmpty {
+            let last = context.variablesStack.count - 1
+            context.variablesStack[last][variableName] = number(Properties(context: context))
         }
     }
 

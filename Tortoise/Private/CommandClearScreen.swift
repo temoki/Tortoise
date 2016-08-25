@@ -11,7 +11,7 @@ import CoreGraphics
 class CommandClearScreen: Command {
 
     func execute(context: Context) {
-        context.resetBitmapContext()
+        context.clearScreen()
     }
 
 }

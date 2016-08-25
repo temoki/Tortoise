@@ -10,15 +10,16 @@ import CoreGraphics
 
 class CommandRepeat: Command {
 
+    let number: NumberOutput
     let procedure: Procedure
-    let times: Int
 
-    init(procedure: Procedure, times: Int) {
+    init(number: NumberOutput, procedure: Procedure) {
+        self.number = number
         self.procedure = procedure
-        self.times = times
     }
 
     func execute(context: Context) {
+        let times = self.number(Properties(context: context)).integer
         for _ in 0..<times {
             procedure.execute(context: context)
         }

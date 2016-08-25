@@ -15,7 +15,7 @@ public extension Procedure {
 
     /// Done
     public func Done() {
-        // end of method chane
+        // end of method chain
     }
 
 
@@ -75,11 +75,11 @@ public extension Procedure {
     /// - parameter parameters: Parameters
     /// - returns: self
     public func Call(_ procedureName: String, _ parameters: [String: Number]) -> Procedure {
-        var newparameters: [String: NumberOutput] = [:]
+        var newParameters: [String: NumberOutput] = [:]
         parameters.forEach { (keyValue) in
-            newparameters[keyValue.key] = {_ in keyValue.value}
+            newParameters[keyValue.key] = {_ in keyValue.value}
         }
-        return Call(procedureName, newparameters)
+        return Call(procedureName, newParameters)
     }
 
 
@@ -89,10 +89,19 @@ public extension Procedure {
     /// - parameter number: Repeat times
     /// - parameter statements: Repeat statements
     /// - returns: self
-    public func Repeat(_ times: Number, _ statements: (Procedure) -> Procedure) -> Procedure {
+    public func Repeat(_ number: NumberOutput,
+                       _ statements: (Procedure) -> Procedure) -> Procedure {
         let procedure = statements(Procedure())
-        add(command: CommandRepeat(procedure: procedure, times: times.integer))
+        add(command: CommandRepeat(number: number, procedure: procedure))
         return self
+    }
+
+    /// Run statements statements number times.
+    /// - parameter number: Repeat times
+    /// - parameter statements: Repeat statements
+    /// - returns: self
+    public func Repeat(_ number: Number, _ statements: (Procedure) -> Procedure) -> Procedure {
+        return Repeat({_ in number}, statements)
     }
 
 

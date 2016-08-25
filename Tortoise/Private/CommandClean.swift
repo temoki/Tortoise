@@ -11,7 +11,7 @@ import CoreGraphics
 class CommandClean: Command {
 
     func execute(context: Context) {
-        context.clearCanvas()
+        context.clearScreen()
     }
 
 }

@@ -17,7 +17,7 @@ class CommandSetBackground: Command {
     }
 
     func execute(context: Context) {
-        context.backgroundColor = number(Properties(context: context)).integer
+        context.setBackgroundColor(number(Properties(context: context)).integer)
     }
 
 }

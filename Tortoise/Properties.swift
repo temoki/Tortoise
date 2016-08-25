@@ -14,7 +14,7 @@ import Foundation
 public class Properties {
 
     /// Context
-    let context: Context
+    private let context: Context
 
     /// Initializer
     /// - parameter context: Context
@@ -25,16 +25,15 @@ public class Properties {
 
     // MARK: - Variable
 
+    /// Refer variable
     public subscript(variableName: String) -> Number {
         get {
-            let reversed = context.localVariablesStack.reversed()
-            for variables in reversed {
+            for variables in context.variablesStack.reversed() {
                 if let value = variables[variableName] {
                     return value
                 }
             }
-            // If local variable does not exist, return global variable.
-            return context.globalVariables[variableName]!
+            fatalError("Variable [\(variableName)] is not declared.")
         }
     }
 
@@ -54,7 +53,7 @@ public class Properties {
     /// - parameter y: Towards position y
     /// - returns: Angle
     public func Towards(_ x: Number, _ y: Number) -> Number {
-        let tan = (y - context.posY) / (x - context.posX)
+        let tan = (y - context.position.y) / (x - context.position.x)
         return atan(tan).degree
     }
 
@@ -63,7 +62,7 @@ public class Properties {
 
     /// Shown
     public var Shown: Bool {
-        return context.show
+        return context.showTortoise
     }
 
     /// Output the heading angle of the tortoise.
@@ -79,7 +78,7 @@ public class Properties {
 
     /// Output a list containing the tortoiseʼs x and y co-ordinates.
     public var Position: (x: Number, y: Number) {
-        return (x: context.posX, y: context.posY)
+        return (x: context.position.x, y: context.position.y)
     }
 
     /// Output the size of the drawing pen.
@@ -113,7 +112,7 @@ public class Properties {
 
     /// Outputs the width and height of the canvas (drawing area) as a list.
     public var CanvasSize: (width: Number, height: Number) {
-        return (width: context.canvasWidth, height: context.canvasHeight)
+        return (width: context.canvasRect.size.width, height: context.canvasRect.size.height)
     }
 
 }

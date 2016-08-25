@@ -8,13 +8,16 @@
 
 import CoreGraphics
 
+/// Tortoise
+public typealias Tortoise = Procedure
+
 /// Number type in the Tortoise's world
 public typealias Number = CGFloat
 
-/// Number output closure by tortoise properties
+/// Number output closure type
 public typealias NumberOutput = (Properties) -> Number
 
-/// Boolean output closure by tortoise properties
+/// Boolean output closure type
 public typealias BoolOutput = (Properties) -> Bool
 
 /// Line Cap Style

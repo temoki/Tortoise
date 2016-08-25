@@ -21,14 +21,14 @@ class CommandForward: Command {
     }
 
     func execute(context: Context) {
-        let transform = CGAffineTransform(translationX: context.posX, y: context.posY)
+        let transform = CGAffineTransform(translationX: context.position.x, y: context.position.y)
             .rotated(by: context.heading.radian)
         let newPos = CGPoint(x: distanceOutput(context: context), y: 0).applying(transform)
         if context.penDown {
             context.bitmapContext.addLine(to: newPos)
             context.bitmapContext.strokePath()
         }
-        context.setPosition(newPos.x, newPos.y)
+        context.setPosition(newPos)
     }
 
 }

@@ -10,25 +10,25 @@ import Foundation
 
 public class Procedure: Command {
 
-    internal var commandList: [Command] = []
+    var commandList: [Command] = []
 
-    internal var variables: [String: Number] = [:]
+    var variables: [String: Number] = [:]
 
-    internal func add(command: Command) {
+    func add(command: Command) {
         commandList.append(command)
     }
 
-    internal func clear() {
+    func clear() {
         commandList.removeAll()
         variables.removeAll()
     }
 
-    internal func execute(context: Context) {
-        context.localVariablesStack.append(variables)
+    func execute(context: Context) {
+        context.variablesStack.append(variables)
         commandList.forEach { (command) in
             command.execute(context: context)
         }
-        context.localVariablesStack.removeLast()
+        context.variablesStack.removeLast()
     }
 
 }

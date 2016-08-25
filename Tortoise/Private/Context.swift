@@ -9,79 +9,105 @@
 import CoreGraphics
 
 class Context {
-    static let mainProcedureName = "🐢"
 
-    /// Default Values
-    static let defaultShow = true
-    static let defaultPosX = Number(0)
-    static let defaultPosY = Number(0)
+    // MARK:- Constant values
+
+    static let mainProcedureName = "🐢"
+    static let defaultShowTortoise = true
+    static let defaultPosition = CGPoint.zero
     static let defaultHeading = Number(90)
     static let defaultPenDown = true
-    static let defaultPenColor = Int(1)
+    static let defaultPenColor = 1
     static let defaultPenWidth = Number(1)
-    static let defaultBackgroundColor = Int(0)
+    static let defaultBackgroundColor = 0
+
+    // MARK:- Properties (Canvas)
 
     /// Bitmap context
     let bitmapContext: CGContext
 
-    /// Canvas Size
-    let canvasWidth: Number
-    let canvasHeight: Number
+    /// Canvas rect
     let canvasRect: CGRect
 
-    /// Tortoise Image
+    /// Tortoise icon mage
     let tortoiseImage: CGImage?
 
     /// Color Palette
-    let colorPalette = ColorPalette()
+    let colorPalette: ColorPalette
 
-    /// Tortoise's current state
-    var show = Context.defaultShow
-    private(set) var posX = Context.defaultPosX
-    private(set) var posY = Context.defaultPosY
+
+    // MARK:- Properties (Current State)
+
+    private(set) var backgroundColor = Context.defaultBackgroundColor
+    private(set) var showTortoise = Context.defaultShowTortoise
+    private(set) var position = Context.defaultPosition
     private(set) var heading = Context.defaultHeading
     private(set) var penDown = Context.defaultPenDown
     private(set) var penColor = Context.defaultPenColor
     private(set) var penWidth = Context.defaultPenWidth
-    var backgroundColor = Context.defaultBackgroundColor
 
-    /// Variables [variable-name: value]
-    var globalVariables: [String: Number] = [:]
-    var localVariablesStack: [[String: Number]] = []
+
+    // MARK:- Properties (Variables & Procedures)
+
+    /// Variables stack [variable-name: value]
+    var variablesStack: [[String: Number]]
 
     // Procdures [procedure-name: procedure]
-    var procedures: [String: Procedure] = [:]
+    var procedures: [String: Procedure]
 
 
     /// Initializer
-    /// - parameter context: Graphics context
-    required init(canvasWidth: Number, canvasHeight: Number, tortoiseImage: CGImage? = nil) {
+    /// - parameter canvasSize: Canvas size
+    /// - parameter tortoiseImage: Tortoise icon image
+    required init(canvasSize: CGSize, tortoiseImage: CGImage? = nil) {
+        let halfWidth = canvasSize.width * 0.5
+        let halfHeight = canvasSize.height * 0.5
+
+        // Init properties of canvas.
         self.bitmapContext = CGContext(data: nil,
-                                       width: canvasWidth.integer,
-                                       height: canvasHeight.integer,
+                                       width: canvasSize.width.integer,
+                                       height: canvasSize.height.integer,
                                        bitsPerComponent: 8,
-                                       bytesPerRow: canvasWidth.integer * 4,
+                                       bytesPerRow: canvasSize.width.integer * 4,
                                        space: CGColorSpaceCreateDeviceRGB(),
                                        bitmapInfo: CGImageAlphaInfo.premultipliedFirst.rawValue)!
         // swiftlint:disable:previous force_unwrapping
-
-        self.canvasWidth = canvasWidth
-        self.canvasHeight = canvasHeight
+        self.canvasRect = CGRect(origin: CGPoint(x: -halfWidth, y: -halfHeight), size: canvasSize)
         self.tortoiseImage = tortoiseImage
-        self.canvasRect = CGRect(x: -(canvasWidth*0.5),
-                                 y: -(canvasHeight*0.5),
-                                 width: canvasWidth,
-                                 height: canvasHeight)
+        self.colorPalette = ColorPalette()
 
-        // Convert origin
-        bitmapContext.translateBy(x: 0, y: canvasHeight)
-        bitmapContext.scaleBy(x: 1, y: -1)
-        bitmapContext.translateBy(x: canvasWidth*0.5, y: canvasHeight*0.5)
+        // Convert bitmap origin
+        self.bitmapContext.translateBy(x: 0, y: canvasSize.height)
+        self.bitmapContext.scaleBy(x: 1, y: -1)
+        self.bitmapContext.translateBy(x: halfWidth, y: halfHeight)
+
+        self.variablesStack = [[:]]
+        self.procedures = [Context.mainProcedureName: Procedure()]
     }
 
-    /// Reset bitmap context
-    func resetBitmapContext() {
-        clearCanvas()
+
+    // MARK: Methods
+
+    /// Make rendered CGImage
+    func makeRenderedImage() -> CGImage? {
+        bitmapContext.flush()
+        return bitmapContext.makeImage()
+    }
+
+    /// Reset context
+    func reset() {
+        self.variablesStack = [[:]]
+        self.procedures = [Context.mainProcedureName: Procedure()]
+        colorPalette.reset()
+        clearScreen()
+    }
+
+    /// Clear screen
+    func clearScreen() {
+        setBackgroundColor()
+        clean()
+
+        setShowTortoise()
         setPosition()
         setHeading()
         setPenDown()
@@ -89,7 +115,8 @@ class Context {
         setPenWidth()
     }
 
-    func clearCanvas() {
+    /// Clean
+    func clean() {
         bitmapContext.clear(canvasRect)
         bitmapContext.saveGState()
         let rgbColor = colorPalette.color(number: backgroundColor)
@@ -98,41 +125,37 @@ class Context {
         bitmapContext.restoreGState()
     }
 
-    /// Set position
-    func setPosition(_ x: Number = Context.defaultPosX, _ y: Number = Context.defaultPosY) {
-        posX = x
-        posY = y
-        bitmapContext.move(to: CGPoint(x: posX, y: posY))
+    func setBackgroundColor(_ backgroundColor: Int = Context.defaultBackgroundColor) {
+        self.backgroundColor = backgroundColor
     }
 
-    /// Set heading
+    func setShowTortoise(_ showTortoise: Bool = Context.defaultShowTortoise) {
+        self.showTortoise = showTortoise
+    }
+
+    func setPosition(_ position: CGPoint = Context.defaultPosition) {
+        self.position = position
+        bitmapContext.move(to: position)
+    }
+
     func setHeading(_ heading: Number = Context.defaultHeading) {
         self.heading = heading
     }
 
-    /// Set pen down
-    func setPenDown(_ down: Bool = Context.defaultPenDown) {
-        penDown = down
+    func setPenDown(_ penDown: Bool = Context.defaultPenDown) {
+        self.penDown = penDown
     }
 
-    /// Set pen color
-    func setPenColor(_ color: Int = Context.defaultPenColor) {
-        penColor = color
+    func setPenColor(_ penColor: Int = Context.defaultPenColor) {
+        self.penColor = penColor
         let rgbColor = colorPalette.color(number: penColor)
         bitmapContext.setStrokeColor(rgbColor.cgColor)
         bitmapContext.setFillColor(rgbColor.cgColor)
     }
 
-    /// Set pen width
-    func setPenWidth(_ width: Number = Context.defaultPenWidth) {
-        penWidth = width
+    func setPenWidth(_ penWidth: Number = Context.defaultPenWidth) {
+        self.penWidth = penWidth
         bitmapContext.setLineWidth(penWidth)
-    }
-
-    // Output CGImage
-    var outputImage: CGImage? {
-        bitmapContext.flush()
-        return bitmapContext.makeImage()
     }
 
 }

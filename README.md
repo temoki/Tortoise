@@ -114,7 +114,7 @@ T.B.D.
 
 * `If`, `While`, `For` statement support
 * Short-style commands (`Fd`, `Rt`, ...)
-* `Canvas` view
+* Canvas view component
 * `SetCanvasSize` command
 * SPM/Carthage/Cocoapods installation
 * macOS support
