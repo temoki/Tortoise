@@ -8,23 +8,21 @@ This is now developing with Swift 3 and Xcode 8 beta 6.
 
 ```swift
 🐢.ClearScreen()
-    .Make("color", 0)
-    .Repeat(12) { 🐢
+    .Define("Hexagon", ["length"]) { $0
+        .Repeat(6) { $0
+            .Forward({ $0["length"] })
+            .Right(60)
+        }
+    }
+    .Make("count", 12)
+    .Repeat({ $0["count"] }) { $0
+        .SetPenColor({ $0.PenColor + 1 })
+        .Right(15)
         .SetPenWidth(2)
+        .Call("Hexagon", ["length": 50])
         .Right(15)
-        .Repeat(6) { 🐢
-            .SetPenColor({ $0.PenColor + 1 })
-            .Forward(50)
-            .Right(60)
-        }
         .SetPenWidth(1)
-        .Right(15)
-        .Repeat(6) { 🐢
-            .Make("color", { $0["color"] + 1 })
-            .SetPenColor({ $0["color"] })
-            .Forward(20)
-            .Right(60)
-        }
+        .Call("Hexagon", ["length": 20])
     }
     .Done()
 ```
@@ -35,17 +33,17 @@ This is now developing with Swift 3 and Xcode 8 beta 6.
 ## Usage
 
 ```swift
-// Instantiate 🐢 with canvas size.
-let 🐢 = Tortoise(canvasWidth: 300, canvasHeight: 300)
+// Instantiate 🐢's canvas.
+let canvas = Canvas(width: 300, height: 300)
 
 // Command 🐢 to draw.
-🐢.Right(90).Forward(100).Done()
+canvas.🐢.Right(90).Forward(100).Done()
 
-// Run and render.
-🐢.run()
+// Draw canvas.
+canvas.draw()
 
-// Get rendered image.
-let image = 🐢.renderedImage
+// Get rendered `CGImage`.
+let image = canvas.rendered
 ```
 
 ## Commands

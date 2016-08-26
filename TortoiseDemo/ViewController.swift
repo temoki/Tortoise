@@ -45,22 +45,26 @@ class ViewController: UIViewController {
     }
 
     func commandTortoise() {
-        guard let canvas = canvasView.canvas else { return }
-        canvas.🐢
-            .ClearScreen()
-            .Make("count", 3)
-            .Define("Triangle", ["length"]) { $0
-                .Local("angle", 120)
-                .Repeat({ $0["count"] }) { $0
+        guard let 🐢 = canvasView.canvas?.🐢 else { return }
+
+        🐢.ClearScreen()
+            .Define("Hexagon", ["length"]) { $0
+                .Repeat(6) { $0
                     .Forward({ $0["length"] })
-                    .Right({ $0["angle"] })
+                    .Right(60)
                 }
             }
-            .Repeat(10) { $0
-                .Right({ $0.Random(45) })
-                .Call("Triangle", ["length": 200])
+            .Make("count", 12)
+            .Repeat({ $0["count"] }) { $0
+                .SetPenColor({ $0.PenColor + 1 })
+                .Right(15)
+                .SetPenWidth(2)
+                .Call("Hexagon", ["length": 50])
+                .Right(15)
+                .SetPenWidth(1)
+                .Call("Hexagon", ["length": 20])
             }
             .Done()
-    }
 
+    }
 }
