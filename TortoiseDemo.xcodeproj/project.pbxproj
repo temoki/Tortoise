@@ -22,6 +22,7 @@
 		14432F731D5CD08E00FDEFE7 /* CommandArc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14432F721D5CD08E00FDEFE7 /* CommandArc.swift */; };
 		1444F18F1D61F45F00851ACE /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444F18E1D61F45F00851ACE /* Properties.swift */; };
 		14471A8D1D71D64B0013AE33 /* CommandIf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14471A8C1D71D64B0013AE33 /* CommandIf.swift */; };
+		14471A8F1D71DAB20013AE33 /* CommandWhile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14471A8E1D71DAB20013AE33 /* CommandWhile.swift */; };
 		145529DB1D6DE189000FFCBD /* Procedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145529DA1D6DE189000FFCBD /* Procedure.swift */; };
 		145529DD1D6DF2CC000FFCBD /* CommandRepeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145529DC1D6DF2CC000FFCBD /* CommandRepeat.swift */; };
 		145529DF1D6DF441000FFCBD /* CommandDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145529DE1D6DF441000FFCBD /* CommandDefine.swift */; };
@@ -101,6 +102,7 @@
 		14432F721D5CD08E00FDEFE7 /* CommandArc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = CommandArc.swift; path = Tortoise/Private/CommandArc.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1444F18E1D61F45F00851ACE /* Properties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
 		14471A8C1D71D64B0013AE33 /* CommandIf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommandIf.swift; path = Tortoise/Private/CommandIf.swift; sourceTree = "<group>"; };
+		14471A8E1D71DAB20013AE33 /* CommandWhile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommandWhile.swift; path = Tortoise/Private/CommandWhile.swift; sourceTree = "<group>"; };
 		145529DA1D6DE189000FFCBD /* Procedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Procedure.swift; sourceTree = "<group>"; };
 		145529DC1D6DF2CC000FFCBD /* CommandRepeat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommandRepeat.swift; path = Tortoise/Private/CommandRepeat.swift; sourceTree = "<group>"; };
 		145529DE1D6DF441000FFCBD /* CommandDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommandDefine.swift; path = Tortoise/Private/CommandDefine.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				14432F681D5CC46800FDEFE7 /* CommandSetX.swift */,
 				14432F6E1D5CCA8200FDEFE7 /* CommandSetY.swift */,
 				14E6D7151D68A4AE00305F6E /* CommandShowTurtle.swift */,
+				14471A8E1D71DAB20013AE33 /* CommandWhile.swift */,
 				147248391D5B107C00461689 /* Context.swift */,
 				147248461D5B137300461689 /* Number+Helper.swift */,
 				14761E251D5C6563004A6843 /* RGBColor.swift */,
@@ -499,6 +502,7 @@
 				14432F6D1D5CCA2C00FDEFE7 /* CommandSetPosition.swift in Sources */,
 				140ACC861D5DC71700E23F24 /* Procedure+DrawCommands.swift in Sources */,
 				145529DF1D6DF441000FFCBD /* CommandDefine.swift in Sources */,
+				14471A8F1D71DAB20013AE33 /* CommandWhile.swift in Sources */,
 				14761E271D5C6563004A6843 /* CommandSetPenColor.swift in Sources */,
 				14A280251D5DB28D007A66FD /* CommandSetRGB.swift in Sources */,
 				14432F691D5CC46800FDEFE7 /* CommandSetX.swift in Sources */,

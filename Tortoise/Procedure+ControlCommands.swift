@@ -105,6 +105,20 @@ public extension Procedure {
     }
 
 
+    // MARK:- While
+    
+    /// Run statements statements while condition is true.
+    /// - parameter condition: condition
+    /// - parameter statements: Repeat statements
+    /// - returns: self
+    public func While(_ condition: BoolOutput,
+                      _ statements: (Procedure) -> Procedure) -> Procedure {
+        let procedure = statements(Procedure())
+        add(command: CommandWhile(condition: condition, procedure: procedure))
+        return self
+    }
+
+
     // MARK:- If
 
     /// If condition condition is true, execute true-statements, otherwise execute false-statements.
