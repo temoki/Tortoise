@@ -90,9 +90,11 @@ let image = canvas.rendered
 
 ### Control
 
-* `Repeat`
 * `ShowTortoise`
 * `HideTortoise`
+* `Repeat`
+* `While`
+* `If`
 * `Define` (Procedure support)
 * `Call` (Procedure support)
 * `Make` (Variable support)
@@ -110,7 +112,6 @@ T.B.D.
 
 ## Roadmap
 
-* `If`, `While`, `For` statement support
 * Short-style commands (`Fd`, `Rt`, ...)
 * Canvas view component
 * `SetCanvasSize` command
