@@ -105,6 +105,36 @@ public extension Procedure {
     }
 
 
+    // MARK:- If
+
+    /// If condition condition is true, execute true-statements, otherwise execute false-statements.
+    /// - parameter condition: condition
+    /// - parameter Then: True-statements
+    /// - parameter Else: False-statements
+    /// - returns: self
+    public func If(_ condition: BoolOutput,
+                   Then: (Procedure) -> Procedure,
+                   Else: (Procedure) -> Procedure) -> Procedure {
+        let thenProcedure = Then(Procedure())
+        let elseProcedure = Else(Procedure())
+        add(command: CommandIf(condition: condition,
+                               thenProcedure: thenProcedure,
+                               elseProcedure: elseProcedure))
+        return self
+    }
+
+    /// If condition condition is true, execute true-statements, otherwise execute false-statements.
+    /// - parameter condition: condition
+    /// - parameter Then: True-statements
+    /// - parameter Else: False-statements
+    /// - returns: self
+    public func If(_ condition: Bool,
+                   Then: (Procedure) -> Procedure,
+                   Else: (Procedure) -> Procedure) -> Procedure {
+        return If({_ in condition}, Then: Then, Else: Else)
+    }
+
+
     // MARK:- Make (Variable)
 
     /// Give variable name the value object.
