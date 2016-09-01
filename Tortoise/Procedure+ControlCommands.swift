@@ -106,7 +106,7 @@ public extension Procedure {
 
 
     // MARK:- While
-    
+
     /// Run statements statements while condition is true.
     /// - parameter condition: condition
     /// - parameter statements: Repeat statements

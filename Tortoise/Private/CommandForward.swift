@@ -28,7 +28,7 @@ class CommandForward: Command {
             context.bitmapContext.addLine(to: newPos)
             context.bitmapContext.strokePath()
         }
-        context.setPosition(newPos)
+        context.position = newPos
     }
 
 }

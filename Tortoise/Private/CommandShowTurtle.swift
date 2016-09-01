@@ -17,7 +17,7 @@ class CommandShowTortoise: Command {
     }
 
     func execute(context: Context) {
-        context.setShowTortoise(show)
+        context.showTortoise = show
     }
 
 }

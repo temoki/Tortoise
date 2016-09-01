@@ -24,10 +24,10 @@ class CommandArc: Command {
         let radius = self.radius(Properties(context: context))
 
         // Current position = Center of Arc
-        let centerPos = context.bitmapContext.currentPointOfPath
+        let center = context.position
 
         // Arc start position
-        let transform = CGAffineTransform(translationX: centerPos.x, y: centerPos.y)
+        let transform = CGAffineTransform(translationX: center.x, y: center.y)
             .rotated(by: context.heading.radian)
         let startPos = CGPoint(x: radius, y: 0).applying(transform)
 
@@ -37,12 +37,12 @@ class CommandArc: Command {
 
         // Draw
         context.bitmapContext.move(to: startPos)
-        context.bitmapContext.addArc(center: centerPos, radius: radius,
+        context.bitmapContext.addArc(center: center, radius: radius,
                                      startAngle: startAngle, endAngle: endAngle, clockwise: true)
         context.bitmapContext.strokePath()
 
         // Back to current position
-        context.bitmapContext.move(to: centerPos)
+        context.position = center
     }
 
 }

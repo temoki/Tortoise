@@ -17,7 +17,7 @@ class CommandSetPenColor: Command {
     }
 
     func execute(context: Context) {
-        context.setPenColor(number(Properties(context: context)).integer)
+        context.penColor = number(Properties(context: context)).integer
     }
 
 }

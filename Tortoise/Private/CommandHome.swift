@@ -11,8 +11,8 @@ import Foundation
 class CommandHome: Command {
 
     func execute(context: Context) {
-        context.setPosition()
-        context.setHeading()
+        context.position = Context.defaultPosition
+        context.heading = Context.defaultHeading
     }
 
 }

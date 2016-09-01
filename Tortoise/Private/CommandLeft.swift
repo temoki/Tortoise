@@ -21,7 +21,7 @@ class CommandLeft: Command {
     }
 
     func execute(context: Context) {
-        context.setHeading(context.heading + angleOutput(context: context))
+        context.heading = context.heading + angleOutput(context: context)
     }
 
 }

@@ -17,13 +17,13 @@ class CommandSetX: Command {
     }
 
     func execute(context: Context) {
-        let pos = CGPoint(x: x(Properties(context: context)),
-                          y: context.bitmapContext.currentPointOfPath.y)
+        let position = CGPoint(x: x(Properties(context: context)),
+                               y: context.position.y)
         if context.penDown {
-            context.bitmapContext.addLine(to: pos)
+            context.bitmapContext.addLine(to: position)
             context.bitmapContext.strokePath()
         }
-        context.bitmapContext.move(to: pos)
+        context.position = position
     }
 
 }

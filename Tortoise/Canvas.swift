@@ -19,7 +19,7 @@ final public class Canvas {
 
     /// Tortoise
     public var tortoise: Tortoise {
-        return context.procedures[Context.mainProcedureName]!
+        return context.procedures[Context.defaultProcedureName]!
     }
 
     /// Tortoise
