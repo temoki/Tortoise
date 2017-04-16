@@ -18,7 +18,7 @@ class CommandDot: Command {
         self.y = y
     }
 
-    func execute(context: Context) {
+    func execute(context: Context) throws {
         if context.penDown {
             let posX = x(Properties(context: context))
             let posY = y(Properties(context: context))

@@ -10,7 +10,7 @@ import CoreGraphics
 
 class CommandClearScreen: Command {
 
-    func execute(context: Context) {
+    func execute(context: Context) throws {
         context.clearScreen()
     }
 

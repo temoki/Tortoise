@@ -18,7 +18,7 @@ class CommandLocal: Command {
         self.number = number
     }
 
-    func execute(context: Context) {
+    func execute(context: Context) throws {
         if !context.variablesStack.isEmpty {
             let last = context.variablesStack.count - 1
             context.variablesStack[last][variableName] = number(Properties(context: context))

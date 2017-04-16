@@ -18,7 +18,7 @@ class CommandSetRGB: Command {
         self.components = components
     }
 
-    func execute(context: Context) {
+    func execute(context: Context) throws {
         let number = self.number(Properties(context: context)).integer
         let components = self.components.map { $0(Properties(context: context)) }
         context.colorPalette.set(color: RGBColor(components: components), number: number)

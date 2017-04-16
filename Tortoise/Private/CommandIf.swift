@@ -20,11 +20,11 @@ class CommandIf: Command {
         self.elseProcedure = elseProcedure
     }
 
-    func execute(context: Context) {
+    func execute(context: Context) throws {
         if condition(Properties(context: context)) {
-            thenProcedure.execute(context: context)
+            try thenProcedure.doExecute(context: context)
         } else {
-            elseProcedure.execute(context: context)
+            try elseProcedure.doExecute(context: context)
         }
     }
 

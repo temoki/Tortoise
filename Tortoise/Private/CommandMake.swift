@@ -18,7 +18,7 @@ class CommandMake: Command {
         self.number = number
     }
 
-    func execute(context: Context) {
+    func execute(context: Context) throws {
         if !context.variablesStack.isEmpty {
             context.variablesStack[0][variableName] = number(Properties(context: context))
         }

@@ -10,7 +10,7 @@ import Foundation
 
 class CommandHome: Command {
 
-    func execute(context: Context) {
+    func execute(context: Context) throws {
         context.position = Context.defaultPosition
         context.heading = Context.defaultHeading
     }

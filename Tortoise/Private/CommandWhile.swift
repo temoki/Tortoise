@@ -18,9 +18,9 @@ class CommandWhile: Command {
         self.procedure = procedure
     }
 
-    func execute(context: Context) {
+    func execute(context: Context) throws {
         while condition(Properties(context: context)) {
-            procedure.execute(context: context)
+            try procedure.doExecute(context: context)
         }
     }
 

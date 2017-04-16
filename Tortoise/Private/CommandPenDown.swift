@@ -16,7 +16,7 @@ class CommandPenDown: Command {
         self.penDown = penDown
     }
 
-    func execute(context: Context) {
+    func execute(context: Context) throws {
         context.penDown = penDown
     }
 

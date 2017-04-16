@@ -14,6 +14,17 @@ final public class Canvas {
     /// Context
     private let context: Context
 
+    /// Drawing Step
+    public enum DrawingStep {
+        case AtOnce
+        case OneByOne
+    }
+    public var drawingStep: DrawingStep = .AtOnce {
+        didSet {
+            context.drawOneByOne = drawingStep == .OneByOne
+        }
+    }
+
 
     // MARK:- Properties
 
@@ -56,12 +67,13 @@ final public class Canvas {
 
     /// Draw to canvas
     public func draw() {
-        tortoise.execute(context: context)
-        if context.showTortoise {
-            CommandDrawTortoise().execute(context: context)
+        do {
+            try tortoise.doExecute(context: context)
+            throw CommandError.AllFinished
+        } catch {
+            // Finish drawing
         }
+        context.drawTortoise()
     }
-
-    /// TODO: Draw to canvas per one procedure
 
 }

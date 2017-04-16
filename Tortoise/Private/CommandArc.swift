@@ -18,7 +18,7 @@ class CommandArc: Command {
         self.radius = radius
     }
 
-    func execute(context: Context) {
+    func execute(context: Context) throws {
         guard context.penDown else { return }
         let angle = self.angle(Properties(context: context))
         let radius = self.radius(Properties(context: context))

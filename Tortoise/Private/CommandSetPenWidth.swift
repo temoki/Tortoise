@@ -16,7 +16,7 @@ class CommandSetPenWidth: Command {
         self.width = width
     }
 
-    func execute(context: Context) {
+    func execute(context: Context) throws {
         context.penWidth = width(Properties(context: context))
     }
 

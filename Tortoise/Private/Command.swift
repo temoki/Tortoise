@@ -12,7 +12,22 @@ import Foundation
 protocol Command {
 
     /// Execute this command
-    /// - parameter context: Context
-    func execute(context: Context)
+    func execute(context: Context) throws
+
+}
+
+enum CommandError: Error {
+    case AllFinished
+    case ShouldDiscontinue
+}
+
+extension Command {
+
+    func doExecute(context: Context) throws {
+        try execute(context: context)
+        if context.shouldDiscontinueDrawing {
+            throw CommandError.ShouldDiscontinue
+        }
+    }
 
 }

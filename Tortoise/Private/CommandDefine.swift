@@ -18,7 +18,7 @@ class CommandDefine: Command {
         self.procedure = procedure
     }
 
-    func execute(context: Context) {
+    func execute(context: Context) throws {
         context.procedures[name] = procedure
     }
 

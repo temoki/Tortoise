@@ -141,4 +141,55 @@ class Context {
         return bitmapContext.makeImage()
     }
 
+    func drawTortoise() {
+        guard showTortoise else { return }
+        bitmapContext.saveGState()
+        if let image = tortoiseImage {
+            // Draw tortoise image
+            let imageSize = CGSize(width: image.width, height: image.height)
+            let drawRect = CGRect(origin: CGPoint.zero, size: imageSize)
+            bitmapContext.translateBy(x: position.x, y: position.y)
+            bitmapContext.rotate(by: (heading-Context.defaultHeading).radian)
+            bitmapContext.translateBy(x: -imageSize.width*0.5, y: -imageSize.height*0.5)
+            bitmapContext.draw(image, in: drawRect)
+
+        } else {
+            // Dras triangle's 3 points.
+            let transform = CGAffineTransform(translationX: position.x, y: position.y)
+                .rotated(by: heading.radian)
+            let pos1 = CGPoint(x:  10, y:  0).applying(transform)
+            let pos2 = CGPoint(x: -10, y:  5).applying(transform)
+            let pos3 = CGPoint(x: -10, y: -5).applying(transform)
+
+            bitmapContext.move(to: pos1)
+            bitmapContext.addLine(to: pos2)
+            bitmapContext.addLine(to: pos3)
+            bitmapContext.closePath()
+            bitmapContext.fillPath()
+        }
+        bitmapContext.restoreGState()
+    }
+
+    private var currentDrawCount = 0
+    private var lastDrawCount = 0
+    var drawOneByOne: Bool = false {
+        didSet {
+            currentDrawCount = 0
+            lastDrawCount = 0
+        }
+    }
+    var shouldDiscontinueDrawing: Bool {
+        if drawOneByOne {
+            currentDrawCount += 1
+            print("shouldFinishDrawing? [\(currentDrawCount) / \(lastDrawCount)]")
+            if currentDrawCount > lastDrawCount {
+                print("  -> Yes")
+                lastDrawCount = currentDrawCount
+                currentDrawCount = 0
+                return true
+            }
+            print("  -> No")
+        }
+        return false
+    }
 }

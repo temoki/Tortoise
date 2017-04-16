@@ -23,10 +23,10 @@ public class Procedure: Command {
         variables.removeAll()
     }
 
-    func execute(context: Context) {
+    func execute(context: Context) throws {
         context.variablesStack.append(variables)
-        commandList.forEach { (command) in
-            command.execute(context: context)
+        try commandList.forEach { (command) in
+            try command.doExecute(context: context)
         }
         context.variablesStack.removeLast()
     }

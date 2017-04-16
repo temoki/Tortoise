@@ -18,7 +18,7 @@ class CommandSetPosition: Command {
         self.y = y
     }
 
-    func execute(context: Context) {
+    func execute(context: Context) throws {
         let pos = CGPoint(x: x(Properties(context: context)),
                           y: y(Properties(context: context)))
         if context.penDown {

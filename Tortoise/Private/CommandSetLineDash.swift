@@ -18,7 +18,7 @@ class CommandSetLineDash: Command {
         self.dashLengths = dashLengths
     }
 
-    func execute(context: Context) {
+    func execute(context: Context) throws {
         let phase = self.phase(Properties(context: context))
         let dashLengths = self.dashLengths.map { $0(Properties(context: context)) }
         context.bitmapContext.setLineDash(phase: phase, lengths: dashLengths)

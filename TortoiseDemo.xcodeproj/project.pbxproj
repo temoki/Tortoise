@@ -31,7 +31,6 @@
 		1472483A1D5B107C00461689 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147248381D5B107C00461689 /* Command.swift */; };
 		1472483B1D5B107C00461689 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147248391D5B107C00461689 /* Context.swift */; };
 		1472483F1D5B111900461689 /* Procedure+MoveCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1472483E1D5B111900461689 /* Procedure+MoveCommands.swift */; };
-		147248481D5B137300461689 /* CommandDrawTortoise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147248451D5B137300461689 /* CommandDrawTortoise.swift */; };
 		147248491D5B137300461689 /* Number+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147248461D5B137300461689 /* Number+Helper.swift */; };
 		1475E0E21D6B3945001EAD22 /* CommandSetLineCap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1475E0E11D6B3945001EAD22 /* CommandSetLineCap.swift */; };
 		1475E0E41D6B3CEC001EAD22 /* CommandSetLineDash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1475E0E31D6B3CEC001EAD22 /* CommandSetLineDash.swift */; };
@@ -111,7 +110,6 @@
 		147248381D5B107C00461689 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Command.swift; path = Tortoise/Private/Command.swift; sourceTree = "<group>"; };
 		147248391D5B107C00461689 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = Context.swift; path = Tortoise/Private/Context.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1472483E1D5B111900461689 /* Procedure+MoveCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Procedure+MoveCommands.swift"; sourceTree = "<group>"; };
-		147248451D5B137300461689 /* CommandDrawTortoise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommandDrawTortoise.swift; path = Tortoise/Private/CommandDrawTortoise.swift; sourceTree = "<group>"; };
 		147248461D5B137300461689 /* Number+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = "Number+Helper.swift"; path = "Tortoise/Private/Number+Helper.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1475E0E11D6B3945001EAD22 /* CommandSetLineCap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommandSetLineCap.swift; path = Tortoise/Private/CommandSetLineCap.swift; sourceTree = "<group>"; };
 		1475E0E31D6B3CEC001EAD22 /* CommandSetLineDash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommandSetLineDash.swift; path = Tortoise/Private/CommandSetLineDash.swift; sourceTree = "<group>"; };
@@ -187,7 +185,6 @@
 				142EA1C11D69BA0F00D1D050 /* CommandClearScreen.swift */,
 				145529DE1D6DF441000FFCBD /* CommandDefine.swift */,
 				140ACC831D5DC4A900E23F24 /* CommandDot.swift */,
-				147248451D5B137300461689 /* CommandDrawTortoise.swift */,
 				14761E051D5B67FA004A6843 /* CommandForward.swift */,
 				14761E1B1D5B88F2004A6843 /* CommandHome.swift */,
 				14471A8C1D71D64B0013AE33 /* CommandIf.swift */,
@@ -472,7 +469,6 @@
 				14432F731D5CD08E00FDEFE7 /* CommandArc.swift in Sources */,
 				149874111D5AF41B0039ADF7 /* Canvas.swift in Sources */,
 				147248491D5B137300461689 /* Number+Helper.swift in Sources */,
-				147248481D5B137300461689 /* CommandDrawTortoise.swift in Sources */,
 				14761E161D5B8389004A6843 /* Procedure+ControlCommands.swift in Sources */,
 				14761E181D5B83CA004A6843 /* CommandPenDown.swift in Sources */,
 				142EA1BE1D69B7CD00D1D050 /* CommandBack.swift in Sources */,

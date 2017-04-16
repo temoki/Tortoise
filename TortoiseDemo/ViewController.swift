@@ -24,28 +24,28 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         canvasView.setup()
-        canvasView.drawAtOnce()
+        canvasView.draw()
     }
 
     @IBAction func clear(sender: UIButton) {
-        canvasView.canvas?.clear()
+        canvasView.clear()
         canvasView.drawAtOnce()
     }
 
     @IBAction func drawAtOnce(sender: UIButton) {
-        canvasView.canvas?.clear()
+        canvasView.clear()
         commandTortoise()
         canvasView.drawAtOnce()
     }
 
     @IBAction func drawOneByOne(sender: UIButton) {
-        canvasView.canvas?.clear()
+        canvasView.clear()
         commandTortoise()
         canvasView.drawOneByOne()
     }
 
     func commandTortoise() {
-        guard let 🐢 = canvasView.canvas?.🐢 else { return }
+        guard let 🐢 = canvasView.🐢 else { return }
 
         🐢.ClearScreen()
             .Define("Hexagon", ["length"]) { $0

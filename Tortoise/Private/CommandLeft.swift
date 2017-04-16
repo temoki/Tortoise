@@ -20,7 +20,7 @@ class CommandLeft: Command {
         self.angle = angle
     }
 
-    func execute(context: Context) {
+    func execute(context: Context) throws {
         context.heading = context.heading + angleOutput(context: context)
     }
 

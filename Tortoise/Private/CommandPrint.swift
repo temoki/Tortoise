@@ -23,7 +23,7 @@ class CommandPrint: Command {
         self.boolean = boolean
     }
 
-    func execute(context: Context) {
+    func execute(context: Context) throws {
         let header = "🐢> "
         if let number = number?(Properties(context: context)) {
             print("\(header) \(number)")

@@ -20,7 +20,7 @@ class CommandForward: Command {
         self.distance = distance
     }
 
-    func execute(context: Context) {
+    func execute(context: Context) throws {
         let transform = CGAffineTransform(translationX: context.position.x, y: context.position.y)
             .rotated(by: context.heading.radian)
         let newPos = CGPoint(x: distanceOutput(context: context), y: 0).applying(transform)

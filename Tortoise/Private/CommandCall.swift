@@ -18,13 +18,13 @@ class CommandCall: Command {
         self.parameters = parameters
     }
 
-    func execute(context: Context) {
+    func execute(context: Context) throws {
         guard let procedure = context.procedures[name] else { return }
         let properties = Properties(context: context)
         parameters.forEach { (parameter) in
             procedure.variables[parameter.key] = parameter.value(properties)
         }
-        procedure.execute(context: context)
+        try procedure.doExecute(context: context)
     }
 
 

@@ -18,10 +18,10 @@ class CommandRepeat: Command {
         self.procedure = procedure
     }
 
-    func execute(context: Context) {
+    func execute(context: Context) throws {
         let times = self.number(Properties(context: context)).integer
         for _ in 0..<times {
-            procedure.execute(context: context)
+            try procedure.doExecute(context: context)
         }
     }
 

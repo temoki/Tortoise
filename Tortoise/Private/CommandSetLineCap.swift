@@ -16,7 +16,7 @@ class CommandSetLineCap: Command {
         self.lineCap = lineCap
     }
 
-    func execute(context: Context) {
+    func execute(context: Context) throws {
         context.bitmapContext.setLineCap(lineCap)
     }
 

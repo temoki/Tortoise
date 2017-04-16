@@ -16,7 +16,7 @@ class CommandSetHeading: Command {
         self.angle = angle
     }
 
-    func execute(context: Context) {
+    func execute(context: Context) throws {
         let angle = self.angle(Properties(context: context))
         context.heading = Context.defaultHeading - angle
     }

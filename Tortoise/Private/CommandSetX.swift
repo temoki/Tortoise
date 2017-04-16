@@ -16,7 +16,7 @@ class CommandSetX: Command {
         self.x = x
     }
 
-    func execute(context: Context) {
+    func execute(context: Context) throws {
         let position = CGPoint(x: x(Properties(context: context)),
                                y: context.position.y)
         if context.penDown {
