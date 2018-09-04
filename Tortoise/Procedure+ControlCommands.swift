@@ -11,15 +11,14 @@ import Foundation
 /// Procedure: Control commands
 public extension Procedure {
 
-    // MARK:- Done
+    // MARK: - Done
 
     /// Done
     public func Done() {
         // end of method chain
     }
 
-
-    // MARK:- ShowTortoise
+    // MARK: - ShowTortoise
 
     /// Show the tortoise if it is hidden.
     /// - returns: self
@@ -28,7 +27,7 @@ public extension Procedure {
         return self
     }
 
-    // MARK:- HideTortoise
+    // MARK: - HideTortoise
 
     /// Hide the tortoise. Its position remains the same.
     /// Drawing happens in the same way, and the tortoiseʼs position is affected by drawing commands
@@ -38,8 +37,7 @@ public extension Procedure {
         return self
     }
 
-
-    // MARK:- Define (Procedure)
+    // MARK: - Define (Procedure)
 
     /// Define a procedure.
     /// Create procedure name with parameters parameters and statements statements.
@@ -58,8 +56,7 @@ public extension Procedure {
         return self
     }
 
-
-    // MARK:- Call (Procedure)
+    // MARK: - Call (Procedure)
 
     /// Call a procedure with parameters.
     /// - parameter procedureName: Procedure name
@@ -82,8 +79,7 @@ public extension Procedure {
         return Call(procedureName, newParameters)
     }
 
-
-    // MARK:- Repeat
+    // MARK: - Repeat
 
     /// Run statements statements number times.
     /// - parameter number: Repeat times
@@ -104,8 +100,7 @@ public extension Procedure {
         return Repeat({_ in number}, statements)
     }
 
-
-    // MARK:- While
+    // MARK: - While
 
     /// Run statements statements while condition is true.
     /// - parameter condition: condition
@@ -118,8 +113,7 @@ public extension Procedure {
         return self
     }
 
-
-    // MARK:- If
+    // MARK: - If
 
     /// If condition condition is true, execute true-statements, otherwise execute false-statements.
     /// - parameter condition: condition
@@ -148,8 +142,7 @@ public extension Procedure {
         return If({_ in condition}, Then: Then, Else: Else)
     }
 
-
-    // MARK:- Make (Variable)
+    // MARK: - Make (Variable)
 
     /// Give variable name the value object.
     /// Creates the variable if it doesnʼt exist.
@@ -170,7 +163,6 @@ public extension Procedure {
         return Make(variableName, {_ in number})
     }
 
-
     // MARK: - Local (Variable)
 
     /// Declare a name as local to a procedure - effectively a local variable.
@@ -190,8 +182,7 @@ public extension Procedure {
         return Local(variableName, {_ in number})
     }
 
-
-    // MARK:- Print
+    // MARK: - Print
 
     /// Prints out a number to the debug console.
     /// - parameter number: Number

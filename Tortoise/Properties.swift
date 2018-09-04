@@ -22,7 +22,6 @@ public class Properties {
         self.context = context
     }
 
-
     // MARK: - Variable
 
     /// Refer variable
@@ -36,7 +35,6 @@ public class Properties {
             fatalError("Variable [\(variableName)] is not declared.")
         }
     }
-
 
     // MARK: - Calculation
 
@@ -56,7 +54,6 @@ public class Properties {
         let tan = (y - context.position.y) / (x - context.position.x)
         return atan(tan).degree
     }
-
 
     // MARK: - Tortoise properties
 

@@ -21,7 +21,6 @@ public extension Procedure {
         return self
     }
 
-
     // MARK: - Clean
 
     /// Clear the graphics screen without affecting the tortoise.
@@ -31,8 +30,7 @@ public extension Procedure {
         return self
     }
 
-
-    // MARK:- Dot
+    // MARK: - Dot
 
     /// Put a dot of the current colour at position x y on the screen.
     /// Note that positive y-values go up the screen.
@@ -53,8 +51,7 @@ public extension Procedure {
         return Dot({_ in x}, {_ in y})
     }
 
-
-    // MARK:- Arc
+    // MARK: - Arc
 
     /// Draws an arc of radius radius,
     /// entred on the current tortoise position and starting

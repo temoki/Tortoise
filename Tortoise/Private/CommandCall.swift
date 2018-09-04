@@ -27,5 +27,4 @@ class CommandCall: Command {
         try procedure.doExecute(context: context)
     }
 
-
 }

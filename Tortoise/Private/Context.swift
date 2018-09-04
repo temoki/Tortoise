@@ -23,8 +23,7 @@ class Context {
     static let defaultProcedureName = "🐢"
     static var defaultProcedures: [String: Procedure] { return [defaultProcedureName: Procedure()] }
 
-
-    // MARK:- Properties
+    // MARK: - Properties
 
     let canvasRect: CGRect
 
@@ -66,8 +65,7 @@ class Context {
 
     var procedures: [String: Procedure]
 
-
-    // MARK:- Initializer
+    // MARK: - Initializer
 
     init(canvasSize: CGSize, tortoiseImage: CGImage? = nil) {
         let halfWidth = canvasSize.width * 0.5
@@ -104,8 +102,7 @@ class Context {
         self.procedures = Context.defaultProcedures
     }
 
-
-    // MARK:- Methods
+    // MARK: - Methods
 
     func reset() {
         colorPalette.reset()
@@ -114,7 +111,6 @@ class Context {
         variablesStack = Context.defaultVariableStack
         procedures = Context.defaultProcedures
     }
-
 
     func clearScreen() {
         backgroundColor = Context.defaultBackgroundColor

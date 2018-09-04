@@ -25,8 +25,7 @@ final public class Canvas {
         }
     }
 
-
-    // MARK:- Properties
+    // MARK: - Properties
 
     /// Tortoise
     public var tortoise: Tortoise {
@@ -44,8 +43,7 @@ final public class Canvas {
         return context.makeRenderedImage()
     }
 
-
-    // MARK:- Initializer
+    // MARK: - Initializer
 
     /// Initializer
     /// - parameter width: Canvas width
@@ -55,7 +53,6 @@ final public class Canvas {
         context = Context(canvasSize: CGSize(width: width, height: height),
                           tortoiseImage: tortoiseImage)
     }
-
 
     // MARK: - Methods
 

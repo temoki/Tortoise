@@ -11,7 +11,7 @@ import Foundation
 /// Procedure: Move commands
 public extension Procedure {
 
-    // MARK:- Forward
+    // MARK: - Forward
 
     /// Move the tortoise forward distance pixels.
     /// If the pen is down, a line is drawn.
@@ -30,8 +30,7 @@ public extension Procedure {
         return Forward({_ in distance})
     }
 
-
-    // MARK:- Back
+    // MARK: - Back
 
     /// Move the tortoise backwards distance pixels.
     /// Draws a line if the pen is down.
@@ -50,8 +49,7 @@ public extension Procedure {
         return Back({_ in distance})
     }
 
-
-    // MARK:- Right
+    // MARK: - Right
 
     /// Rotate the tortoise clockwise through angle degrees.
     /// - parameter angle: Angle (degree)
@@ -68,8 +66,7 @@ public extension Procedure {
         return Right({_ in angle})
     }
 
-
-    // MARK:- Left
+    // MARK: - Left
 
     /// Rotate the tortoise anti-clockwise through angle degrees.
     /// - parameter angle: Angle (degree)
@@ -86,8 +83,7 @@ public extension Procedure {
         return Left({_ in angle})
     }
 
-
-    // MARK:- Home
+    // MARK: - Home
 
     /// Move the tortoise to the middle of the screen (position [0 0])
     /// and set its heading to zero (pointing straight up).
@@ -97,8 +93,7 @@ public extension Procedure {
         return self
     }
 
-
-    // MARK:- SetHeading
+    // MARK: - SetHeading
 
     /// Set the tortoise heading to angle.
     /// The heading is the direction in which the tortoise is pointing.
@@ -121,8 +116,7 @@ public extension Procedure {
         return SetHeading({_ in angle})
     }
 
-
-    // MARK:- SetPosition
+    // MARK: - SetPosition
 
     /// Move the tortoise to position x,y.
     /// If the pen is down, a line is drawn in the current colour.
@@ -143,8 +137,7 @@ public extension Procedure {
         return SetPosition({_ in x}, {_ in y})
     }
 
-
-    // MARK:- SetX
+    // MARK: - SetX
 
     /// Set the x-co-ordinate of the tortoise to x.
     /// Draws a line if the pen is down.
@@ -163,8 +156,7 @@ public extension Procedure {
         return SetX({_ in x})
     }
 
-
-    // MARK:- SetY
+    // MARK: - SetY
 
     /// Set the y-co-ordinate of the tortoise to y.
     /// Draws a line if the pen is down.

@@ -11,7 +11,7 @@ import Foundation
 /// Procedure: Pen commands
 public extension Procedure {
 
-    // MARK:- PenDown
+    // MARK: - PenDown
 
     /// Put the pen into draw state.
     /// If the tortoise moves, it will draw a line.
@@ -21,8 +21,7 @@ public extension Procedure {
         return self
     }
 
-
-    // MARK:- PenUp
+    // MARK: - PenUp
 
     /// Put the pen into non-draw state.
     /// - returns: self
@@ -31,8 +30,7 @@ public extension Procedure {
         return self
     }
 
-
-    // MARK:- SetPenColor
+    // MARK: - SetPenColor
 
     /// Set the drawing colour to colour-number.
     /// This is the colour number used to draw lines and do fills.
@@ -53,8 +51,7 @@ public extension Procedure {
         return SetPenColor({_ in number})
     }
 
-
-    // MARK:- SetPenWidth
+    // MARK: - SetPenWidth
 
     /// Set the width of the pen to width.
     /// New lines are drawn with this width.
@@ -73,8 +70,7 @@ public extension Procedure {
         return SetPenWidth({_ in width})
     }
 
-
-    // MARK:- SetLineCap
+    // MARK: - SetLineCap
 
     /// Sets the end style for lines to line-end-style,
     /// which can be butt (the default), round, or square.
@@ -87,8 +83,7 @@ public extension Procedure {
         return self
     }
 
-
-    // MARK:- SetLineDash
+    // MARK: - SetLineDash
 
     /// Sets the line dash pattern for drawn lines.
     /// drawn-dash-1 is the length, in pixels, of the first, drawn, part of the line.
@@ -111,13 +106,12 @@ public extension Procedure {
     /// - returns: self
     public func SetLineDash(_ phase: Number, _ dashLengths: [Number]) -> Procedure {
         let numberOutputs = dashLengths.map { (dashLength) -> NumberOutput in
-            return {(Properties) in dashLength}
+            return {(_) in dashLength}
         }
         return SetLineDash({_ in phase}, numberOutputs)
     }
 
-
-    // MARK:- SetBackground
+    // MARK: - SetBackground
 
     /// Set the background colour to colour-number.
     /// This colour will be used when ClearScreen or Clean is called.
@@ -136,8 +130,7 @@ public extension Procedure {
         return SetBackground({_ in number})
     }
 
-
-    // MARK:- SetRGB
+    // MARK: - SetRGB
 
     /// Set red, green, and blue components of colour colour-number to red, green, blue.
     /// Each component is a number between 0.0 and 1.0. 0.0 means that
@@ -166,7 +159,7 @@ public extension Procedure {
     /// - returns: self
     public func SetRGB(_ number: Number, _ components: [Number]) -> Procedure {
         let numberOutputs = components.map { (component) -> NumberOutput in
-            return {(Properties) in component}
+            return {(_) in component}
         }
         return SetRGB({_ in number}, numberOutputs)
     }
